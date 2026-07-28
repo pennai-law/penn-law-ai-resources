@@ -2427,12 +2427,22 @@
     });
   });
 
-  function activateFromHash() {
+  function activateFromHash(onLoad) {
     const target = location.hash.slice(1);
-    if (paneIds.has(target)) activateTab(target);
+    if (!target) return;
+    if (paneIds.has(target)) { activateTab(target); return; }
+    // Anchor inside a pane (#card-pennchat, #pennchat-no-web, …): open its tab first,
+    // since the browser can't scroll to an element in a display:none pane.
+    const el = document.getElementById(target);
+    const pane = el && el.closest('.tab-pane');
+    if (!pane) return;
+    activateTab(pane.id);
+    // On load, wait a frame so the newly-shown pane has laid out before scrolling.
+    if (onLoad) requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
+    else el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
-  activateFromHash();
-  window.addEventListener('hashchange', activateFromHash);
+  activateFromHash(true);
+  window.addEventListener('hashchange', () => activateFromHash(false));
 
   document.querySelectorAll('.overview-col').forEach(col => {
     col.addEventListener('click', () => {
