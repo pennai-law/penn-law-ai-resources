@@ -20,7 +20,7 @@ The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools
 
 ## Structure
 
-- `index.html` — the whole portal: a six-tab layout (Getting Started · Using AI · Agentic AI · Advanced Claude · Policies · AI at Penn) with inline CSS/JS and a Cmd+K site search. Self-contained. Tab display names differ from internal ids kept stable for links: `use-cases` (Using AI), `tools` (Advanced Claude), `policies` (Policies).
+- `index.html` — the whole portal: a six-tab layout (Getting Started · Using AI · Agentic AI · Advanced Claude · Policies · AI at Penn) with inline CSS/JS and a Cmd+K site search. Self-contained. Tab display names differ from internal ids kept stable for links: `use-cases` (Using AI), `tools` (Advanced Claude), `policies` (Policies). Any element with an `id` inside a pane is deep-linkable — `activateFromHash` resolves the owning tab via `closest('.tab-pane')`, so a new anchor works in a shared URL with no routing table to update.
 - `agentic-ai-security.html` — long-form security guide for faculty use of agentic tools (linked from the portal).
 - `agentic-ai-overview.html` — redirect stub → `index.html#agentic-ai` (kept for old inbound links).
 - `claude-skills.html` — listing of the public AI skills.
