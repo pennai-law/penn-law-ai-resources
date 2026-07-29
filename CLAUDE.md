@@ -4,11 +4,11 @@ Guidance for Claude Code (and the Lab team) working in this repository.
 
 ## What this is
 
-The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools, use cases, policies, agentic-AI guidance, and the broader Penn AI ecosystem. It is a project of the **Penn Carey Law AI Teaching Lab** (`github.com/ai-teaching-lab`), and is featured as a card in the Lab site's Toolkit.
+The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools, use cases, policies, agentic-AI guidance, and the broader Penn AI ecosystem. It is a project of the **Penn Carey Law AI Teaching Lab** (`github.com/pennai-law`), and is featured as a card in the Lab site's Toolkit.
 
 - **Live:** https://ai-resources.ai-teaching-lab.org/
 - **Shortlink:** pennlaw.link/ai-resources (managed on Rebrandly)
-- **Repo:** `ai-teaching-lab/penn-law-ai-resources` (public)
+- **Repo:** `pennai-law/penn-law-ai-resources` (public)
 - **Audience:** Penn Carey Law faculty. (Staff guidance is handled separately by Penn Law ITS.)
 - **Voice:** Polk Wagner's. Keep edits in his voice; faculty-only framing.
 
