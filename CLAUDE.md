@@ -4,23 +4,23 @@ Guidance for Claude Code (and the Lab team) working in this repository.
 
 ## What this is
 
-The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools, use cases, policies, agentic-AI guidance, and the broader Penn AI ecosystem. It is a project of the **Penn Carey Law AI Teaching Lab** (`github.com/ai-teaching-lab`), and is featured as a card in the Lab site's Toolkit.
+The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools, use cases, policies, agentic-AI guidance, and the broader Penn AI ecosystem. It is a project of the **Penn Carey Law AI Project** (`github.com/pennai-law`), and is featured as a card in the Lab site's Toolkit.
 
-- **Live:** https://ai-resources.ai-teaching-lab.org/
+- **Live:** https://resources.pennai.law/
 - **Shortlink:** pennlaw.link/ai-resources (managed on Rebrandly)
-- **Repo:** `ai-teaching-lab/penn-law-ai-resources` (public)
+- **Repo:** `pennai-law/penn-law-ai-resources` (public)
 - **Audience:** Penn Carey Law faculty. (Staff guidance is handled separately by Penn Law ITS.)
 - **Voice:** Polk Wagner's. Keep edits in his voice; faculty-only framing.
 
 ## Deploy
 
-**No build step.** Static HTML site served by **GitHub Pages, "Deploy from a branch"** (`main`, root `/`). Push to `main` → live in a minute or two. The custom domain is set by the root `CNAME` file (`ai-resources.ai-teaching-lab.org`); don't delete it. Preview locally by opening `index.html` in a browser.
+**No build step.** Static HTML site served by **GitHub Pages, "Deploy from a branch"** (`main`, root `/`). Push to `main` → live in a minute or two. The custom domain is set by the root `CNAME` file (`resources.pennai.law`); don't delete it. Preview locally by opening `index.html` in a browser.
 
 `_config.yml` excludes `CLAUDE.md`/`README.md` from the published site (Jekyll), so these notes stay in the repo but off the live site.
 
 ## Structure
 
-- `index.html` — the whole portal: a six-tab layout (Getting Started · Using AI · Agentic AI · Advanced Claude · Policies · AI at Penn) with inline CSS/JS and a Cmd+K site search. Self-contained. Tab display names differ from internal ids kept stable for links: `use-cases` (Using AI), `tools` (Advanced Claude), `policies` (Policies).
+- `index.html` — the whole portal: a six-tab layout (Getting Started · Using AI · Agentic AI · Advanced Claude · Policies · AI at Penn) with inline CSS/JS and a Cmd+K site search. Self-contained. Tab display names differ from internal ids kept stable for links: `use-cases` (Using AI), `tools` (Advanced Claude), `policies` (Policies). Any element with an `id` inside a pane is deep-linkable — `activateFromHash` resolves the owning tab via `closest('.tab-pane')`, so a new anchor works in a shared URL with no routing table to update.
 - `agentic-ai-security.html` — long-form security guide for faculty use of agentic tools (linked from the portal).
 - `agentic-ai-overview.html` — redirect stub → `index.html#agentic-ai` (kept for old inbound links).
 - `claude-skills.html` — listing of the public AI skills.
@@ -42,3 +42,5 @@ Penn navy (`#011F5B`), red (`#990000`), cream (`#FAF8F3`), gold (`#B8960C`); EB 
 ## History note
 
 Migrated 2026-05-30 from a personal project (`polkwagner/penn-law-ai-resources`, served at `polkwagner.github.io/...`) to the `ai-teaching-lab` org and the `ai-resources.ai-teaching-lab.org` subdomain. Git history was purged of the prior `CLAUDE.md` and `docs/` before the repo went public.
+
+Rebranded 2026-07-29. The AI Teaching Lab became the **Penn Carey Law AI Project**, the org was renamed `ai-teaching-lab` → `pennai-law`, and the portal moved to `resources.pennai.law`. The old subdomain redirects via the `ai-resources-redirect` repo, which preserves path **and fragment** so the PennChat deep links keep resolving; it must not be retired. Earlier names are deliberately preserved where they are historically accurate — the AI Law Lab Boot Camp, and the alumni credits in the Lab site's Toolkit.

@@ -5,3 +5,5 @@ exclude:
   - CLAUDE.md
   - README.md
   - _config.yml
+  - docs/superpowers
+  - decks
