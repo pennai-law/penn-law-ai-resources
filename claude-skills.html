@@ -35,6 +35,15 @@
   body { display: flex; flex-direction: column; }
 
   /* Lab attribution stripe (above the screen) */
+  /* ── PENN BAR ──
+     Shared chrome with pennai.law and the portal index: the same 4px navy/red
+     stripe opens every surface. */
+  .penn-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+      var(--navy) 0%, var(--navy) 62%, var(--red) 62%, var(--red) 100%);
+  }
+
   .lab-stripe {
     background: #FAF3DD;
     border-bottom: 1px solid #E8DEB9;
@@ -280,6 +289,8 @@
 <body>
 
 <!-- TOP STRIPE: Penn Carey Law AI Project attribution -->
+<div class="penn-bar" aria-hidden="true"></div>
+
 <div class="lab-stripe">
   <a class="lab-stripe-link" href="https://pennai.law/" target="_blank" rel="noopener">
     <span class="lab-stripe-text">A project of the <strong>Penn Carey Law AI Project</strong> &mdash; research, tools, and teaching on AI in legal education and practice.</span>
