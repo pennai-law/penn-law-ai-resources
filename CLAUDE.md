@@ -31,7 +31,14 @@ The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools
 
 ## Design system
 
-Penn navy (`#011F5B`), red (`#990000`), cream (`#FAF8F3`), gold (`#B8960C`); EB Garamond (headings) + DM Sans (body), via Google Fonts (the only external dependency). The portal keeps its own design — it is a distinct site, not styled to match the main Lab theme.
+Penn navy (`#011F5B`), red (`#990000`), cream (`#FAF8F3`), gold (`#B8960C`); EB Garamond (headings) + DM Sans (body), via Google Fonts (the only external dependency).
+
+**The portal keeps its own design, with two deliberate exceptions.** It is a distinct site and is *not* restyled to match `pennai.law` — the Project site is Rajdhani + IBM Plex on white, and converting the portal would mean rewriting inline CSS across eight standalone files to no benefit. The portal is read at length, and EB Garamond suits that better than a condensed display face. The cream ground and the gold are the portal's own and signal "reference material" against the Project site's white; keep them.
+
+What *is* shared, on purpose, so the two read as siblings:
+
+- **The Penn bar** — the same 4px navy/red stripe opens every page that has site chrome (`index`, `agentic-ai-security`, `claude-skills`, `license`). `ai-office-hours` and `ai-signage` are chrome-less by design; do not add it there.
+- **The W2 lockup**, in the footer only, at `assets/pennai-lockup-white.svg`. It must render **at least 288px wide**: the mark carries `pennai.law` inside it, which drops below 8px and stops being legible under that, and 288px is 75px tall — too heavy for the header or the attribution stripe, which is why it lives in the footer. Below a 400px viewport it is hidden rather than shrunk; the top stripe still carries the attribution as text. Colour version is `assets/pennai-lockup.svg`; regenerate both from `brand/` in the `ai-teaching-lab.org` repo, never by hand.
 
 ## Conventions
 
