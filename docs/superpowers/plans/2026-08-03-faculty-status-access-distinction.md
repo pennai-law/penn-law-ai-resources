@@ -276,9 +276,11 @@ Replace with: `Requires a paid Claude subscription, which full-time faculty can 
 
 - [ ] **Step 5: Claude Code card, Getting Started tab (`index.html:1290`)**
 
-Find: `It&rsquo;s the engine behind the Law Faculty Skills. Requires a paid Claude subscription.`
+Find: `It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription.`
 
-Replace with: `It&rsquo;s the engine behind the Law Faculty Skills. Requires a paid Claude subscription, which full-time faculty can fund through a research account.`
+Replace with: `It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription, which full-time faculty can fund through a research account.`
+
+Note the **straight** apostrophe in `It's` — this file mixes straight and curly apostrophes, and this line uses a straight one. Do not normalize it either way.
 
 - [ ] **Step 6: Harvey card (`index.html:1308`)**
 
@@ -309,7 +311,14 @@ Run:
 cd "/Users/polkwagner/Penn Law Dropbox/Polk Wagner/code/penn-law-ai-resources"
 grep -n 'research account' index.html | grep -iv 'full-time' | grep -v 'adjunct-faculty'
 ```
-Expected: no output, apart from the callout paragraph from Task 2 which says "faculty research accounts" generically and is correct in context. If that line appears, confirm it reads `Most of Penn Law&rsquo;s AI licensing runs through faculty research accounts` and move on.
+Expected: **exactly two lines** at this point in the plan.
+
+1. `index.html:1221` — the Task 2 callout's `Most of Penn Law&rsquo;s AI licensing runs through faculty research accounts.` This speaks generally about how licensing works rather than about one tool's eligibility. Correct as written; do not edit it.
+2. `index.html:1913` — the Policies tab's `(faculty via research accounts; 1Ls via …)`. This is **Task 4 Step 3's target** and must be left alone here.
+
+A third line means one of Steps 1–8 was missed.
+
+Related: `grep -c 'research account' index.html` returns **5** before this task and **7** after — Steps 4 and 5 each add a new mention to a card that previously had none. A count of 5 after the edits means Steps 4 and 5 did not land.
 
 - [ ] **Step 10: Verify the Harvey card's cross-link works**
 
