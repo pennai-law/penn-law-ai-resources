@@ -102,7 +102,9 @@ class T(html.parser.HTMLParser):
         super().__init__(); self.inTable=False; self.rows=[]; self.n=0
     def handle_starttag(self, tag, attrs):
         d=dict(attrs)
-        if tag=='table' and 'access-table' in d.get('class',''): self.inTable=True
+        # Exact class match, not substring — index.html:1670 has an unrelated
+        # <table class="access-table model-table"> that a substring test catches.
+        if tag=='table' and d.get('class','').strip()=='access-table': self.inTable=True
         elif self.inTable and tag=='tr': self.n=0
         elif self.inTable and tag in ('td','th'): self.n+=1
     def handle_endtag(self, tag):
