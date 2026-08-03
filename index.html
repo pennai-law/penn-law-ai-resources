@@ -1188,6 +1188,7 @@
       .access-table thead th { background: var(--navy); color: #fff; font-weight: 600; font-size: 12.5px; letter-spacing: 0.02em; }
       .access-table tbody th { font-weight: 600; color: var(--navy); white-space: nowrap; }
       .access-table td.c { text-align: center; font-size: 15px; }
+      .access-table thead th.c { text-align: center; }
       .access-table tbody tr:nth-child(even) { background: var(--cream); }
       .access-note { font-size: 12.5px; color: var(--mid-gray); margin: 0 0 2rem; line-height: 1.6; }
       .access-note strong { color: var(--navy); }
@@ -1195,23 +1196,38 @@
     <div class="access-wrap">
       <table class="access-table">
         <thead>
-          <tr><th>Tool</th><th class="c">Faculty</th><th class="c">1Ls</th><th class="c">2L&nbsp;/&nbsp;3L&nbsp;/&nbsp;LLM</th><th class="c">Staff</th><th>Use case</th></tr>
+          <tr><th>Tool</th><th class="c">Full-Time<br>Faculty</th><th class="c">Adjunct<br>Faculty</th><th class="c">1Ls</th><th class="c">2L&nbsp;/&nbsp;3L&nbsp;/&nbsp;LLM</th><th class="c">Staff</th><th>Use case</th></tr>
         </thead>
         <tbody>
-          <tr><th><a href="#card-pennchat" style="color:var(--navy);">PennChat</a></th><td class="c">◐</td><td class="c">◐</td><td class="c">◐</td><td class="c">◐</td><td>Secure chat access to Claude and GPT models; approved for most University data. No web search.</td></tr>
-          <tr><th><a href="#card-claude" style="color:var(--navy);">Claude.ai</a></th><td class="c">✓</td><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td>General chat, drafting, and summarizing; customizable via skills and plugins. Anthropic models.</td></tr>
-          <tr><th><a href="#card-chatgpt" style="color:var(--navy);">ChatGPT EDU</a></th><td class="c">✓</td><td class="c">—</td><td class="c">—</td><td class="c">✓</td><td>General chat, drafting, and summarizing; customizable via custom GPTs. OpenAI models.</td></tr>
-          <tr><th><a href="#card-claude-code" style="color:var(--navy);">Claude Code</a></th><td class="c">✓</td><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td>Agentic coding and file workflows; most powerful (but least intuitive) way to access AI models; highly customizable.</td></tr>
-          <tr><th><a href="#card-claude-cowork" style="color:var(--navy);">Claude Cowork</a></th><td class="c">✓</td><td class="c">—</td><td class="c">—</td><td class="c">◐</td><td>App-based agent tool; allows access to local files; most of the power of Code with an easier interface; highly customizable.</td></tr>
-          <tr><th><a href="#card-copilot" style="color:var(--navy);">Microsoft Copilot</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td>AI drafting and answers inside your Office apps.</td></tr>
-          <tr><th><a href="#card-harvey" style="color:var(--navy);">Harvey</a></th><td class="c">✓</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td><td>Legal research, drafting, and other law-practice-specific tools.</td></tr>
-          <tr><th><a href="#card-legora" style="color:var(--navy);">Legora</a></th><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td class="c">◐</td><td>Legal research, drafting, and other law-practice-specific tools.</td></tr>
-          <tr><th><a href="#card-westlaw" style="color:var(--navy);">Westlaw AI</a> / <a href="#card-lexis" style="color:var(--navy);">Lexis+ AI</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td><td>AI legal research inside Westlaw / Lexis.</td></tr>
-          <tr><th><a href="#card-zoom" style="color:var(--navy);">Zoom AI Companion</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td>Meeting summaries, recaps, and action items.</td></tr>
+          <tr><th><a href="#card-pennchat" style="color:var(--navy);">PennChat</a></th><td class="c">◐</td><td class="c">◐</td><td class="c">◐</td><td class="c">◐</td><td class="c">◐</td><td>Secure chat access to Claude and GPT models; approved for most University data. No web search.</td></tr>
+          <tr><th><a href="#card-claude" style="color:var(--navy);">Claude.ai</a></th><td class="c">✓</td><td class="c">—</td><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td>General chat, drafting, and summarizing; customizable via skills and plugins. Anthropic models.</td></tr>
+          <tr><th><a href="#card-chatgpt" style="color:var(--navy);">ChatGPT EDU</a></th><td class="c">✓</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">✓</td><td>General chat, drafting, and summarizing; customizable via custom GPTs. OpenAI models.</td></tr>
+          <tr><th><a href="#card-claude-code" style="color:var(--navy);">Claude Code</a></th><td class="c">✓</td><td class="c">—</td><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td>Agentic coding and file workflows; most powerful (but least intuitive) way to access AI models; highly customizable.</td></tr>
+          <tr><th><a href="#card-claude-cowork" style="color:var(--navy);">Claude Cowork</a></th><td class="c">✓</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">◐</td><td>App-based agent tool; allows access to local files; most of the power of Code with an easier interface; highly customizable.</td></tr>
+          <tr><th><a href="#card-copilot" style="color:var(--navy);">Microsoft Copilot</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td>AI drafting and answers inside your Office apps.</td></tr>
+          <tr><th><a href="#card-harvey" style="color:var(--navy);">Harvey</a></th><td class="c">✓</td><td class="c">○</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td><td>Legal research, drafting, and other law-practice-specific tools.</td></tr>
+          <tr><th><a href="#card-legora" style="color:var(--navy);">Legora</a></th><td class="c">◐</td><td class="c">◐</td><td class="c">—</td><td class="c">◐</td><td class="c">◐</td><td>Legal research, drafting, and other law-practice-specific tools.</td></tr>
+          <tr><th><a href="#card-westlaw" style="color:var(--navy);">Westlaw AI</a> / <a href="#card-lexis" style="color:var(--navy);">Lexis+ AI</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td><td>AI legal research inside Westlaw / Lexis.</td></tr>
+          <tr><th><a href="#card-zoom" style="color:var(--navy);">Zoom AI Companion</a></th><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td>Meeting summaries, recaps, and action items.</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="access-note"><strong>✓</strong> available now &nbsp;·&nbsp; <strong>◐</strong> in pilot / available in August 2026 &nbsp;·&nbsp; <strong>—</strong> not provided by Penn Law. Personal-account tools (e.g., <a href="#card-gemini" style="color:var(--navy);">Gemini</a>) are covered in the cards below. Use only approved tools for Penn data, and never put confidential (High-risk) information into a tool not cleared for it. PCL users are strongly urged to avoid use of free versions of AI tools.</p>
+    <p class="access-note"><strong>✓</strong> available now &nbsp;·&nbsp; <strong>◐</strong> in pilot / available in August 2026 &nbsp;·&nbsp; <strong>○</strong> by request to Penn Law ITS &nbsp;·&nbsp; <strong>—</strong> not provided by Penn Law. Personal-account tools (e.g., <a href="#card-gemini" style="color:var(--navy);">Gemini</a>) are covered in the cards below. Use only approved tools for Penn data, and never put confidential (High-risk) information into a tool not cleared for it. PCL users are strongly urged to avoid use of free versions of AI tools.</p>
+
+    <div id="adjunct-faculty" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin:0 0 2rem; scroll-margin-top:70px;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Adjunct Faculty</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">What&rsquo;s different for you</h3>
+      </div>
+      <p style="margin:0 0 0.9rem;">Most of Penn Law&rsquo;s AI licensing runs through faculty research accounts. Adjunct faculty don&rsquo;t have one, so Claude.ai, ChatGPT EDU, Claude Code, and Claude Cowork aren&rsquo;t provisioned for you through the law school. Here&rsquo;s what is:</p>
+      <ul style="margin:0 0 0.9rem;">
+        <li><strong>Harvey is available on request.</strong> Ask <a href="https://www.law.upenn.edu/its/docs/ai/harvey-ai/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Law ITS</a> for access and log in with your LawKey username.</li>
+        <li><strong>Microsoft Copilot and Zoom AI Companion</strong> come with your Penn Carey Law accounts. Nothing to request.</li>
+        <li><strong>Westlaw AI and Lexis+ AI</strong> are available under Penn Law&rsquo;s existing subscriptions.</li>
+        <li><strong>PennChat and Legora are still being settled.</strong> Adjunct eligibility hasn&rsquo;t been confirmed for either ahead of their August launches. Check back.</li>
+      </ul>
+      <p style="margin:0;"><strong>If you use your own paid subscription instead, keep student material out of it.</strong> A personal Claude, ChatGPT, or Gemini account is fine for your own preparation, but it carries none of Penn&rsquo;s approvals. Student records are FERPA-protected and don&rsquo;t belong in a tool <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Penn hasn&rsquo;t reviewed</a>.</p>
+    </div>
 
     <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500;">General AI Tools</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">General-purpose AI assistants &mdash; chat tools for writing, analysis, summarizing, and brainstorming. Each runs on one or more underlying models; PennChat, for instance, fronts Anthropic and OpenAI models in one Penn-secured interface.</p>
@@ -1237,7 +1253,7 @@
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
         <h3 id="card-claude">Claude.ai</h3>
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-everyday">Everyday AI</span><span class="mode-badge mode-working">Working with AI</span></div>
-        <p>Anthropic's AI assistant &mdash; leading models, quite strong at writing, analysis, long documents, and coding. Faculty can obtain licenses via your research account; a University-wide Claude agreement is expected by August. For 2026&ndash;27, 1Ls will receive Claude.ai (and, likely, Claude Code), integrated into the 1L Legal Practice Skills curriculum.</p>
+        <p>Anthropic's AI assistant &mdash; leading models, quite strong at writing, analysis, long documents, and coding. Full-time faculty can obtain licenses via a research account; a University-wide Claude agreement is expected by August. For 2026&ndash;27, 1Ls will receive Claude.ai (and, likely, Claude Code), integrated into the 1L Legal Practice Skills curriculum.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Agentic Claude tools</a>
@@ -1247,7 +1263,7 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/openai.png" alt="" /></div>
         <h3 id="card-chatgpt">ChatGPT EDU</h3>
-        <p>OpenAI's GPT models via Penn's institutional agreement &mdash; approved for Moderate-risk data. Available to faculty and staff via research or departmental budgets. Note that Penn&rsquo;s ChatGPT EDU deployment does not currently enable Codex or OpenAI API access; for OpenAI&rsquo;s agentic tools, you need a personal Plus/Pro/Business/Enterprise subscription.</p>
+        <p>OpenAI's GPT models via Penn's institutional agreement &mdash; approved for Moderate-risk data. Available to full-time faculty and staff via research or departmental budgets. Note that Penn&rsquo;s ChatGPT EDU deployment does not currently enable Codex or OpenAI API access; for OpenAI&rsquo;s agentic tools, you need a personal Plus/Pro/Business/Enterprise subscription.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/ai/chat-gpt/" target="_blank" rel="noopener">Penn Law ITS guide</a>
@@ -1257,7 +1273,7 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/gemini.png" alt="" /></div>
         <h3 id="card-gemini">Google Gemini</h3>
-        <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available with a Google account; paid tiers for advanced models. Not a Penn-provided tool &mdash; use a (paid) personal account. Faculty can use research accounts.</p>
+        <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available with a Google account; paid tiers for advanced models. Not a Penn-provided tool &mdash; use a (paid) personal account, which full-time faculty can fund through a research account.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Gemini CLI (agentic)</a>
@@ -1275,7 +1291,7 @@
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
         <h3 id="card-claude-cowork">Claude Cowork</h3>
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-working">Working with AI</span><span class="mode-badge mode-building">Building with AI</span></div>
-        <p>Anthropic's app-based agent &mdash; hand it a task (research, drafting, analysis) through the Claude desktop app and it works in the background. A friendlier alternative to the terminal agents. Requires a paid Claude subscription; a limited PCL staff pilot begins in July.</p>
+        <p>Anthropic's app-based agent &mdash; hand it a task (research, drafting, analysis) through the Claude desktop app and it works in the background. A friendlier alternative to the terminal agents. Requires a paid Claude subscription, which full-time faculty can fund through a research account; a limited PCL staff pilot begins in July.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
           <a class="card-link" style="margin-top:0;" href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork" target="_blank" rel="noopener">Cowork guide</a>
@@ -1287,7 +1303,7 @@
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
         <h3 id="card-claude-code">Claude Code</h3>
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-building">Building with AI</span></div>
-        <p>Anthropic's agentic command-line tool &mdash; works in your terminal, IDE, desktop app, or browser. Reads and edits files, runs commands, and orchestrates multi-step tasks. It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription.</p>
+        <p>Anthropic's agentic command-line tool &mdash; works in your terminal, IDE, desktop app, or browser. Reads and edits files, runs commands, and orchestrates multi-step tasks. It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription, which full-time faculty can fund through a research account.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a>
           <a class="card-link" style="margin-top:0;" href="https://code.claude.com/docs" target="_blank" rel="noopener">Documentation</a>
@@ -1305,7 +1321,7 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/harvey.png" alt="" /></div>
         <h3 id="card-harvey">Harvey</h3>
-        <p>Legal-specific AI for research, drafting, and analysis. Enterprise agreement with Penn Law &mdash; your data is not used for training. All upper-level students, full-time faculty, and staff have access. Log in with your LawKey username.</p>
+        <p>Legal-specific AI for research, drafting, and analysis. Enterprise agreement with Penn Law &mdash; your data is not used for training. All upper-level students, full-time faculty, and staff have access; <a href="#adjunct-faculty" onclick="return goToCard('getting-started','adjunct-faculty');" style="color:var(--navy);">adjunct faculty can request access</a> from Penn Law ITS. Log in with your LawKey username.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://app.harvey.ai" target="_blank" rel="noopener">Log in to Harvey</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/ai/harvey-ai/" target="_blank" rel="noopener">Penn Law ITS guide</a>
@@ -1359,7 +1375,7 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/zoom.png" alt="" /></div>
         <h3 id="card-zoom">Zoom AI Companion</h3>
-        <p>Generative-AI assistant built into Zoom &mdash; meeting summaries, recaps, and action items. Available on full-time faculty, staff, and student Zoom accounts.</p>
+        <p>Generative-AI assistant built into Zoom &mdash; meeting summaries, recaps, and action items. Available on faculty, staff, and student Penn Zoom accounts.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://upenn.zoom.us" target="_blank" rel="noopener">Penn Zoom</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/room-tech-conferencing/zoom-ai-companion.php" target="_blank" rel="noopener">Zoom AI guide</a>
@@ -1475,7 +1491,7 @@
       <div class="card">
         <h3 id="card-ag-claude-code">Claude Code</h3>
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-building">Building with AI</span></div>
-        <p>Anthropic&rsquo;s agentic coding tool, available in your terminal, IDE, desktop app, or browser. Reads and edits files, runs shell commands, executes scripts, and orchestrates multi-step tasks on your computer. Widely used for coding but equally useful for document workflows, data analysis, and any task that touches files. Requires a paid Claude subscription. At Penn Law, faculty can use it via a research account.</p>
+        <p>Anthropic&rsquo;s agentic coding tool, available in your terminal, IDE, desktop app, or browser. Reads and edits files, runs shell commands, executes scripts, and orchestrates multi-step tasks on your computer. Widely used for coding but equally useful for document workflows, data analysis, and any task that touches files. Requires a paid Claude subscription. At Penn Law, full-time faculty can use it via a research account.</p>
         <a class="card-link" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code overview &amp; installation</a>
       </div>
 
@@ -1893,11 +1909,11 @@
       <ul>
         <li><strong>PennChat</strong> &mdash; Penn's secure, University-hosted AI portal (Anthropic's Claude and OpenAI's ChatGPT, chat only), free to you during the pilot and credit-based after the enterprise launch; long-term pricing is still to be determined. Approved for <strong>Low, Moderate, and most High Risk Data</strong> (excluding SSNs and credit-card data; avoid identifiable PHI) &mdash; the broadest data approval at PCL, alongside Microsoft Copilot Chat. Requires PennNet / AirPennNet or the GlobalProtect VPN. See the <a href="https://isc.upenn.edu/resources/pennchat-pilot-FAQs" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">PennChat FAQ</a>.</li>
         <li><strong>Microsoft Copilot Chat</strong> &mdash; <strong>free for all PCL faculty, staff, and students</strong> via Penn's Microsoft enterprise agreement. Approved for <strong>Low, Moderate, and most High Risk Data</strong> (excluding SSNs and credit card data) &mdash; matching PennChat as the broadest data approval among general-purpose AI tools at PCL. Web-based AI search, content generation, and summarization. See the <a href="https://www.law.upenn.edu/its/docs/ai/copilot/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">PCL ITS Copilot Chat Guide</a>.</li>
-        <li><strong>Harvey AI</strong> &mdash; legal-AI platform via Penn Law's enterprise agreement. Approved for <strong>Low and Moderate Risk Data only</strong>; do not input high-sensitivity data (clinical, HIPAA/PHI, financial account information, SSNs, or credit cards). Available to full-time faculty, staff, and 2L/3L/LLM students (not 1Ls). LawKey login at app.harvey.ai.</li>
+        <li><strong>Harvey AI</strong> &mdash; legal-AI platform via Penn Law's enterprise agreement. Approved for <strong>Low and Moderate Risk Data only</strong>; do not input high-sensitivity data (clinical, HIPAA/PHI, financial account information, SSNs, or credit cards). Available to full-time faculty, staff, and 2L/3L/LLM students (not 1Ls); adjunct faculty on request to Penn Law ITS. LawKey login at app.harvey.ai.</li>
         <li><strong>Legora</strong> &mdash; new legal-AI platform arriving ~August 2026 (agreement being finalized). Anticipated approval for <strong>Low and Moderate Risk Data</strong>, to be confirmed at rollout.</li>
-        <li><strong>ChatGPT EDU</strong> &mdash; approved for <strong>Low and Moderate Risk Data only</strong>. No HIPAA/PHI, financial account information, SSNs, or credit cards. Remains available to faculty and staff (students are moving to Claude for 2026&ndash;27); request access via Penn Law ITS. See the <a href="https://isc.upenn.edu/ai/chatgpt-edu-faq" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">ChatGPT EDU FAQ</a>.</li>
-        <li><strong>Claude</strong> &mdash; arriving school-wide under a University agreement expected ~August 2026 (faculty via research accounts; 1Ls via the 1L Legal Practice Skills curriculum). Anticipated approval for <strong>Low and Moderate Risk Data</strong>, to be confirmed at rollout.</li>
-        <li><strong>Zoom AI Companion</strong> &mdash; in-meeting AI for Zoom: live questions, meeting summaries, smart recordings. Available to full-time faculty, staff, and students with a Penn Zoom account. See the PCL ITS Zoom AI Companion Guide.</li>
+        <li><strong>ChatGPT EDU</strong> &mdash; approved for <strong>Low and Moderate Risk Data only</strong>. No HIPAA/PHI, financial account information, SSNs, or credit cards. Remains available to full-time faculty and staff (students are moving to Claude for 2026&ndash;27); request access via Penn Law ITS. See the <a href="https://isc.upenn.edu/ai/chatgpt-edu-faq" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">ChatGPT EDU FAQ</a>.</li>
+        <li><strong>Claude</strong> &mdash; arriving school-wide under a University agreement expected ~August 2026 (full-time faculty via research accounts; 1Ls via the 1L Legal Practice Skills curriculum). Anticipated approval for <strong>Low and Moderate Risk Data</strong>, to be confirmed at rollout.</li>
+        <li><strong>Zoom AI Companion</strong> &mdash; in-meeting AI for Zoom: live questions, meeting summaries, smart recordings. Available to faculty, staff, and students with a Penn Zoom account. See the PCL ITS Zoom AI Companion Guide.</li>
       </ul>
       <p>Penn ISC's central list reviews additional tools beyond those above &mdash; <strong>Microsoft 365 Copilot</strong> (the premium tier embedded in Office apps; requires a paid per-user license), <strong>Gemini for Google Workspace</strong>, <strong>Google NotebookLM</strong>, <strong>Grammarly</strong>, and others &mdash; with their own per-tier mappings. Availability for PCL community members varies; the full Penn-wide list is at <a href="https://isc.upenn.edu/ai/tools/penn-generative-ai-tools-resources" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Generative AI Tools &amp; Resources</a>. Westlaw AI and Lexis+ AI are covered separately under Penn Law's existing legal research subscriptions.</p>
       <p>For AI tools beyond those Penn Law ITS or Penn ISC has reviewed, the framework is the same one Penn applies internally: identify the risk tier of any Penn data involved, check the vendor's data-handling terms, and reach out to Penn Law ITS or me with use-case-specific questions.</p>
@@ -1906,7 +1922,7 @@
       <p>For teaching prep, scholarship drafting, summarizing public legal materials, and most administrative tasks, the PCL ITS-reviewed tools above work well. <strong>For sensitive Penn data &mdash; student PII, personnel matters, confidential committee deliberations &mdash; PennChat and Microsoft Copilot Chat have the broadest approval among the PCL-reviewed tools (Low, Moderate, and most High Risk); Harvey, ChatGPT EDU, and Zoom AI Companion are reviewed for Low and Moderate Risk only.</strong> For SSNs, credit card data, or HIPAA-protected information: don't put it into any AI tool, period.</p>
 
       <h3>Personal-Account Use of Other Tools</h3>
-      <p>If you're using Claude, ChatGPT (consumer version, not EDU), or any other AI tool on a personal account rather than through Penn's institutional access, the Penn approvals above don't apply &mdash; you're operating under that vendor's terms. <strong>Always use the paid tier</strong>, the strongest model available, with training opt-outs enabled. Free tiers may use your inputs as training data and lack the privacy controls. Personal-account tools should never see Penn's Moderate or High Risk Data.</p>
+      <p>If you're using Claude, ChatGPT (consumer version, not EDU), or any other AI tool on a personal account rather than through Penn's institutional access, the Penn approvals above don't apply &mdash; you're operating under that vendor's terms. <strong>Always use the paid tier</strong>, the strongest model available, with training opt-outs enabled. Free tiers may use your inputs as training data and lack the privacy controls. Personal-account tools should never see Penn's Moderate or High Risk Data. This comes up most often for <a href="#adjunct-faculty" onclick="return goToCard('getting-started','adjunct-faculty');" style="color:var(--navy); text-decoration:underline;">adjunct faculty</a>, who have no research account and so are likeliest to be working on their own subscription. Student records are FERPA-protected and don&rsquo;t belong there.</p>
 
     </div>
 
@@ -2122,7 +2138,7 @@
       <p>AI is integrated into the 1L Legal Practice Skills program &mdash; students engage AI tools as part of foundational legal training, not as an elective. Faculty across the curriculum have also experimented with AI-integrated assignments, simulations, and new assessment approaches.</p>
 
       <h3>Technology Partnerships</h3>
-      <p>We have institutional access to a growing set of AI tools &mdash; <strong>Claude</strong>, arriving school-wide for 2026&ndash;27 and integrated into the 1L curriculum; the legal-specific platforms <strong>Harvey</strong> and <strong>Legora</strong>; and <strong>ChatGPT EDU</strong> for faculty and staff &mdash; supporting AI use across teaching, research, and administration. Details and access info are on the <a href="#" onclick="activateTab('getting-started'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Getting Started</a> tab.</p>
+      <p>We have institutional access to a growing set of AI tools &mdash; <strong>Claude</strong>, arriving school-wide for 2026&ndash;27 and integrated into the 1L curriculum; the legal-specific platforms <strong>Harvey</strong> and <strong>Legora</strong>; and <strong>ChatGPT EDU</strong> for full-time faculty and staff &mdash; supporting AI use across teaching, research, and administration. Details and access info are on the <a href="#" onclick="activateTab('getting-started'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Getting Started</a> tab.</p>
 
       <h3>Faculty Support</h3>
       <p>Workshops on AI use cases, pedagogy, and tool adoption. A faculty AI toolkit with practical guidance and best practices. Regular communications keeping faculty current on developments. I coordinate all of this &mdash; reach out if you want to get involved.</p>
