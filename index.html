@@ -1188,6 +1188,7 @@
       .access-table thead th { background: var(--navy); color: #fff; font-weight: 600; font-size: 12.5px; letter-spacing: 0.02em; }
       .access-table tbody th { font-weight: 600; color: var(--navy); white-space: nowrap; }
       .access-table td.c { text-align: center; font-size: 15px; }
+      .access-table thead th.c { text-align: center; }
       .access-table tbody tr:nth-child(even) { background: var(--cream); }
       .access-note { font-size: 12.5px; color: var(--mid-gray); margin: 0 0 2rem; line-height: 1.6; }
       .access-note strong { color: var(--navy); }
@@ -1221,10 +1222,11 @@
       <p style="margin:0 0 0.9rem;">Most of Penn Law&rsquo;s AI licensing runs through faculty research accounts. Adjunct faculty don&rsquo;t have one, so Claude.ai, ChatGPT EDU, Claude Code, and Claude Cowork aren&rsquo;t provisioned for you through the law school. Here&rsquo;s what is:</p>
       <ul style="margin:0 0 0.9rem;">
         <li><strong>Harvey is available on request.</strong> Ask <a href="https://www.law.upenn.edu/its/docs/ai/harvey-ai/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Law ITS</a> for access and log in with your LawKey username.</li>
-        <li><strong>Microsoft Copilot, Westlaw AI, Lexis+ AI, and Zoom AI Companion</strong> come with your Penn Carey Law accounts. Nothing to request.</li>
-        <li><strong>PennChat eligibility is still being settled.</strong> Adjunct access hasn&rsquo;t been confirmed ahead of the enterprise launch. Check back after August.</li>
+        <li><strong>Microsoft Copilot and Zoom AI Companion</strong> come with your Penn Carey Law accounts. Nothing to request.</li>
+        <li><strong>Westlaw AI and Lexis+ AI</strong> are available under Penn Law&rsquo;s existing subscriptions.</li>
+        <li><strong>PennChat and Legora are still being settled.</strong> Adjunct eligibility hasn&rsquo;t been confirmed for either ahead of their August launches. Check back.</li>
       </ul>
-      <p style="margin:0;"><strong>If you use your own paid subscription instead, keep student material out of it.</strong> A personal Claude, ChatGPT, or Gemini account is fine for your own preparation, but it carries none of Penn&rsquo;s approvals. Student records &mdash; grades, exams, papers, evaluations &mdash; are protected under FERPA and sit at Moderate or High Risk under <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Penn&rsquo;s data classification</a>. They don&rsquo;t belong in a tool you&rsquo;re paying for yourself.</p>
+      <p style="margin:0;"><strong>If you use your own paid subscription instead, keep student material out of it.</strong> A personal Claude, ChatGPT, or Gemini account is fine for your own preparation, but it carries none of Penn&rsquo;s approvals. Student records &mdash; grades, exams, papers, and written feedback &mdash; are protected under FERPA and sit at Moderate or High Risk under <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Penn&rsquo;s data classification</a>. They don&rsquo;t belong in a tool Penn hasn&rsquo;t reviewed.</p>
     </div>
 
     <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500;">General AI Tools</h3>
@@ -1271,7 +1273,7 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/gemini.png" alt="" /></div>
         <h3 id="card-gemini">Google Gemini</h3>
-        <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available with a Google account; paid tiers for advanced models. Not a Penn-provided tool &mdash; use a (paid) personal account. Full-time faculty can use research accounts.</p>
+        <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available with a Google account; paid tiers for advanced models. Not a Penn-provided tool &mdash; use a (paid) personal account, which full-time faculty can fund through a research account.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Gemini CLI (agentic)</a>
@@ -1920,7 +1922,7 @@
       <p>For teaching prep, scholarship drafting, summarizing public legal materials, and most administrative tasks, the PCL ITS-reviewed tools above work well. <strong>For sensitive Penn data &mdash; student PII, personnel matters, confidential committee deliberations &mdash; PennChat and Microsoft Copilot Chat have the broadest approval among the PCL-reviewed tools (Low, Moderate, and most High Risk); Harvey, ChatGPT EDU, and Zoom AI Companion are reviewed for Low and Moderate Risk only.</strong> For SSNs, credit card data, or HIPAA-protected information: don't put it into any AI tool, period.</p>
 
       <h3>Personal-Account Use of Other Tools</h3>
-      <p>If you're using Claude, ChatGPT (consumer version, not EDU), or any other AI tool on a personal account rather than through Penn's institutional access, the Penn approvals above don't apply &mdash; you're operating under that vendor's terms. <strong>Always use the paid tier</strong>, the strongest model available, with training opt-outs enabled. Free tiers may use your inputs as training data and lack the privacy controls. Personal-account tools should never see Penn's Moderate or High Risk Data. This comes up most often for <a href="#adjunct-faculty" onclick="return goToCard('getting-started','adjunct-faculty');" style="color:var(--navy); text-decoration:underline;">adjunct faculty</a>, who have no research account and so are likeliest to be working on their own subscription &mdash; student records are FERPA-protected and sit in exactly that Moderate-to-High band.</p>
+      <p>If you're using Claude, ChatGPT (consumer version, not EDU), or any other AI tool on a personal account rather than through Penn's institutional access, the Penn approvals above don't apply &mdash; you're operating under that vendor's terms. <strong>Always use the paid tier</strong>, the strongest model available, with training opt-outs enabled. Free tiers may use your inputs as training data and lack the privacy controls. Personal-account tools should never see Penn's Moderate or High Risk Data. This comes up most often for <a href="#adjunct-faculty" onclick="return goToCard('getting-started','adjunct-faculty');" style="color:var(--navy); text-decoration:underline;">adjunct faculty</a>, who have no research account and so are likeliest to be working on their own subscription. Student records are FERPA-protected and sit in that Moderate-to-High band.</p>
 
     </div>
 
@@ -2136,7 +2138,7 @@
       <p>AI is integrated into the 1L Legal Practice Skills program &mdash; students engage AI tools as part of foundational legal training, not as an elective. Faculty across the curriculum have also experimented with AI-integrated assignments, simulations, and new assessment approaches.</p>
 
       <h3>Technology Partnerships</h3>
-      <p>We have institutional access to a growing set of AI tools &mdash; <strong>Claude</strong>, arriving school-wide for 2026&ndash;27 and integrated into the 1L curriculum; the legal-specific platforms <strong>Harvey</strong> and <strong>Legora</strong>; and <strong>ChatGPT EDU</strong> for faculty and staff &mdash; supporting AI use across teaching, research, and administration. Details and access info are on the <a href="#" onclick="activateTab('getting-started'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Getting Started</a> tab.</p>
+      <p>We have institutional access to a growing set of AI tools &mdash; <strong>Claude</strong>, arriving school-wide for 2026&ndash;27 and integrated into the 1L curriculum; the legal-specific platforms <strong>Harvey</strong> and <strong>Legora</strong>; and <strong>ChatGPT EDU</strong> for full-time faculty and staff &mdash; supporting AI use across teaching, research, and administration. Details and access info are on the <a href="#" onclick="activateTab('getting-started'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Getting Started</a> tab.</p>
 
       <h3>Faculty Support</h3>
       <p>Workshops on AI use cases, pedagogy, and tool adoption. A faculty AI toolkit with practical guidance and best practices. Regular communications keeping faculty current on developments. I coordinate all of this &mdash; reach out if you want to get involved.</p>
