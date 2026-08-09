@@ -16,7 +16,7 @@ The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools
 
 **No build step.** Static HTML site served by **GitHub Pages, "Deploy from a branch"** (`main`, root `/`). Push to `main` → live in a minute or two. The custom domain is set by the root `CNAME` file (`resources.pennai.law`); don't delete it. Preview locally by opening `index.html` in a browser.
 
-`_config.yml` excludes `CLAUDE.md`/`README.md` from the published site (Jekyll), so these notes stay in the repo but off the live site.
+`_config.yml` excludes `CLAUDE.md`/`AGENTS.md`/`README.md` from the published site (Jekyll), so these notes stay in the repo but off the live site.
 
 ## Structure
 
