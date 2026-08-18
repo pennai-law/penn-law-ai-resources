@@ -1421,6 +1421,8 @@
 
       <p style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">A note on agentic AI:</strong> the framing above describes <em>chat</em> AI &mdash; the kind you type at. Increasingly, faculty are also using <em>agentic</em> AI: tools that read files, run commands, and act on your behalf. The dynamics are different, and so is the safety setup. See the dedicated <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color: var(--navy); text-decoration: underline;">Agentic AI tab</a>.</p>
 
+      <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">You don't have to start from scratch:</strong> there are ready-made <em>skills</em> for the tasks faculty repeat &mdash; generating multiple choice and essay exam questions, class prep, lecture-slide review, memo and email drafting, editorial review. Install one and invoke it by name. See <a href="#" onclick="activateTab('tools'); setTimeout(function(){ document.getElementById('ai-skills').scrollIntoView({behavior:'smooth', block:'start'}); }, 60); return false;" style="color: var(--navy); text-decoration: underline;">Cross-Tool AI Skills</a>, or browse the <a href="claude-skills.html" style="color: var(--navy); text-decoration: underline;">full catalog</a>.</p>
+
     </div>
 
   </section>
@@ -1845,8 +1847,51 @@
     <div class="divider"></div>
 
     <p class="section-label">AI Skills for Faculty</p>
-    <h2 class="section-title">Cross-Tool AI Skills</h2>
-    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.5rem; max-width:640px; line-height:1.65;">I've built a set of open-source AI skills for common faculty tasks &mdash; install the ones you want and use them in natural conversation. Built on the open <a href="https://agentskills.io/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;"><strong>Agent Skills</strong></a> standard, they work with <a href="https://claude.com/product/claude-code" target="_blank" style="color:var(--navy); text-decoration:underline;">Claude Code</a>, <a href="https://chatgpt.com/" target="_blank" style="color:var(--navy); text-decoration:underline;">ChatGPT</a>, and other compatible tools. Requires a <strong>paid Claude or ChatGPT subscription</strong> (including ChatGPT EDU). Email me if you want help getting set up.</p>
+    <h2 class="section-title" id="ai-skills" style="scroll-margin-top:70px;">Cross-Tool AI Skills</h2>
+    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1rem; max-width:640px; line-height:1.65;">I've built a set of open-source AI skills for common faculty tasks &mdash; install the ones you want and use them in natural conversation. Built on the open <a href="https://agentskills.io/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;"><strong>Agent Skills</strong></a> standard, they work with <a href="https://claude.com/product/claude-code" target="_blank" style="color:var(--navy); text-decoration:underline;">Claude Code</a>, <a href="https://chatgpt.com/" target="_blank" style="color:var(--navy); text-decoration:underline;">ChatGPT</a>, and other compatible tools. Requires a <strong>paid Claude or ChatGPT subscription</strong> (including ChatGPT EDU). Email me if you want help getting set up.</p>
+
+    <p style="font-size:14px; margin-bottom:1.5rem; max-width:640px; line-height:1.65;"><a href="claude-skills.html" style="color:var(--navy); text-decoration:underline; font-weight:600;">Browse the full skill catalog &rarr;</a> &mdash; all twelve skills on one page, with installation instructions.</p>
+
+    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.75rem; font-weight:500;">Teaching &amp; Assessment</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Skill</span>
+        <h3>MCQ Generator</h3>
+        <p>Generate multiple choice exam questions grounded in psychometric research &mdash; distractor validation, cognitive taxonomy tagging, coverage balancing. Supports course presets. Good for graded exams and for in-semester reading comprehension quizzes.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills/tree/main/law-mcq-generator" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="card">
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Skill</span>
+        <h3>Essay Question Generator</h3>
+        <p>Generate essay exam questions and issue spotters with SOLO taxonomy layering, construct alignment to your course materials, and rubrics designed for AI-assisted grading.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills/tree/main/law-essay-generator" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="card">
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Skill</span>
+        <h3>Class Prep</h3>
+        <p>Comprehensive preparation for a single class session &mdash; checks slide-to-reading alignment, reviews class problems, and produces a lecture guide. All three in one pass.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills/tree/main/law-class-prep" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="card">
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Skill</span>
+        <h3>Class Problems</h3>
+        <p>Create and revise adversarial in-class hypotheticals for any law course. Enforces problem-to-reading alignment and pedagogical rigor.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills/tree/main/law-class-problems" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="card">
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Skill</span>
+        <h3>Lecture Slide Reviewer</h3>
+        <p>Review lecture slides against assigned readings for coverage, pacing, and gaps. Runs standalone or as part of full class prep.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills/tree/main/lecture-slide-reviewer" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+
+    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.75rem; margin-top:2rem; font-weight:500;">Faculty Tools</h3>
 
     <div class="card-grid">
       <div class="card">
@@ -1892,8 +1937,8 @@
       </div>
     </div>
 
-    <p style="font-size:13px; color:var(--mid-gray); margin-bottom:0.5rem;">For teaching-specific skills &mdash; exam question generators, class prep, slide review &mdash; see the AI Skills section on the <a href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener" style="color:var(--navy);">Pedagogy Resources portal</a>.</p>
-    <p style="font-size:13px; color:var(--mid-gray); margin-bottom:2.5rem;">Full list with installation instructions (Claude Code + ChatGPT): <a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener" style="color:var(--navy);">github.com/polkwagner/law-faculty-skills</a></p>
+    <p style="font-size:13px; color:var(--mid-gray); margin-bottom:0.5rem;">The teaching-specific skills above &mdash; exam question generators, class prep, slide review &mdash; are also discussed in context on the <a href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener" style="color:var(--navy);">Pedagogy Resources portal</a>.</p>
+    <p style="font-size:13px; color:var(--mid-gray); margin-bottom:2.5rem;">Full catalog: <a href="claude-skills.html" style="color:var(--navy);">all twelve skills on one page</a>. Source and installation instructions (Claude Code + ChatGPT): <a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener" style="color:var(--navy);">github.com/polkwagner/law-faculty-skills</a></p>
 
   </section>
 
