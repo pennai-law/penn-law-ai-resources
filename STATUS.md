@@ -1,18 +1,13 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-08-17
+**Updated:** 2026-08-18
 
-The faculty AI portal is live at resources.pennai.law and deploys straight from `main` via GitHub Pages, with no build step. Content this cycle arrived from the other machine and the bi-weekly stale-check routine: PRs #15–#18 split the access table into full-time and adjunct faculty columns, qualified the research-account claims, noted that Zoom's AI features are off by default, enlarged the by-request glyphs so they read at a glance, and named the destination in the attribution-stripe CTA. A prior session added `AGENTS.md`, a Codex-facing counterpart to `CLAUDE.md`, and excluded it from the published site alongside the other repo notes. This session made no content changes — it recorded the 2026-08-17 AI office hours and queued the portal gaps that session exposed.
+The 2026-08-17 AI office hours produced a work queue, and this session cleared its first item. Two faculty couldn't find skills that already existed, and the cause was worse than it looked: `claude-skills.html` — the full twelve-skill catalog — was linked from nowhere in `index.html`, and "multiple choice" appeared zero times, so Cmd+K returned nothing. The install path they'd land on after clicking through was broken too. The `law-faculty-skills` README led with `/install-skill`, which is not a Claude Code command, above a `cp` that assumed an unmentioned `git clone`. Both are fixed, merged, and verified live.
 
-**Where it stands:** Deployable and current. `main` is clean and level with origin. The portal keeps its own design — EB Garamond on cream — and shares only the Penn bar and the footer W2 lockup with pennai.law; that divergence is deliberate and documented in `CLAUDE.md`.
+Scrubbing the Advanced Claude tab against Anthropic's live docs then exposed a recurring pattern worth watching for: the page kept documenting the mechanism an engineer would reach for rather than the one a faculty reader would — "drop a file called `CLAUDE.md`" (it's `/init`), "commit it into your git repository" (their folder is already in Dropbox), skills as slash commands only (Claude loads them on its own).
 
-**Next:** Four items, all from live faculty questions at AI office hours on 2026-08-17 (full note: Box → `PCL AI Project/Lab/workstreams/01-lab-ops/meeting-summaries/ai-office-hours-2026-08-17.md`). These are observed navigation failures, not speculative additions — two faculty could not find things that are already on the site.
+**Where it stands:** Deployed and verified at resources.pennai.law. `main` is clean and level with origin; PR #20 here and PR #1 on `law-faculty-skills` are both merged.
 
-- **Skill discoverability.** Cathie Struve knew the MCQ skill existed and still asked "where's that?"; Allison Hoffman asked how she would find the published skills at all. `claude-skills.html` exists and is linked, but not from where people look. Surface it from Getting Started and from the Advanced Claude tab, not only from the toolkit link.
-- **Penn Claude vs. personal Claude.** The comparison came up twice and is not on the site. The short version faculty need: no feature differences except **Cowork is absent from the Penn version**, no educational discount so no price advantage, and the only substantive difference is the Anthropic–Penn indemnification agreement — which is precisely what makes the Penn version the FERPA path. Whether skills/agents can be shared inside Penn Claude is still unknown; say so rather than implying it works.
-- **FERPA guidance.** Worth a short block on the line as drawn live: student surveys and name/email lists alone are not FERPA; linkage to an educational record is the trigger; FERPA-covered material goes to Penn Claude.
-- **Legora.** Contract was expected to be signed the week of Aug 17. Add to the access table once confirmed — do not list it as available before then.
+**Next:** Two office-hours items remain — the Penn-vs-personal Claude comparison (Cowork absent, no education discount, indemnification is the real difference) and a short FERPA block. Add Legora to the access table once the contract is signed.
 
-The stale-check routine continues to surface link rot and outdated tool guidance on its own schedule.
-
-**Open:** `CLAUDE.md` and `AGENTS.md` are now a generated pair. After editing `CLAUDE.md`, regenerate with `~/.claude/scripts/sync-agents-md` rather than hand-editing both — a global "Claude" → "Codex" replace silently breaks real filenames like `claude-skills.html` and the "Advanced Claude" tab label.
+**Open:** The ITS review stamp still reads July 2026; it moves when ITS re-reviews, not on edit. A `.claude-plugin/marketplace.json` in `law-faculty-skills` would give a genuine one-command install, left unshipped because it couldn't be tested end to end. After editing `CLAUDE.md`, regenerate `AGENTS.md` with `~/.claude/scripts/sync-agents-md`.
