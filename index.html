@@ -1177,8 +1177,44 @@
   <!-- ═══ TAB 1: GETTING STARTED ═══ -->
   <section class="tab-pane active" id="getting-started" role="tabpanel" aria-labelledby="tab-btn-getting-started" tabindex="0">
 
+    <style>
+      .router { border: 1px solid var(--border); border-left: 4px solid var(--navy);
+                background: #fff; border-radius: 0 6px 6px 0; padding: 1.35rem 1.5rem;
+                margin: 0 0 2.5rem; }
+      .router h2 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.3rem;
+                   font-weight: 500; color: var(--navy); margin: 0 0 0.2rem; }
+      .router .router-sub { font-size: 13px; color: var(--mid-gray); margin: 0 0 1rem; }
+      .router ul { list-style: none; margin: 0; padding: 0;
+                   display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 2rem; }
+      .router li { border-bottom: 1px solid var(--warm-gray); }
+      .router li:last-child, .router li:nth-last-child(2) { border-bottom: none; }
+      .router a { display: block; padding: 0.5rem 0; font-size: 14.5px;
+                  color: var(--navy); text-decoration: none; line-height: 1.45; }
+      .router a:hover, .router a:focus-visible { text-decoration: underline; }
+      .router a .where { display: block; font-size: 12px; color: var(--mid-gray); }
+      @media (max-width: 640px) {
+        .router ul { grid-template-columns: 1fr; }
+        .router li:nth-last-child(2) { border-bottom: 1px solid var(--warm-gray); }
+      }
+    </style>
+
+    <nav class="router" aria-labelledby="router-heading">
+      <h2 id="router-heading">I want to&hellip;</h2>
+      <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs above.</p>
+      <ul>
+        <li><a href="#better-results">get better answers out of a chatbot<span class="where">Using AI &middot; Getting Better Results</span></a></li>
+        <li><a href="#which-model">work out which tool fits the task<span class="where">Using AI &middot; Which model should I use?</span></a></li>
+        <li><a href="#tools-at-penn">see what Penn licenses and who gets access<span class="where">Getting Started &middot; AI Tools at Penn Law</span></a></li>
+        <li><a href="#data-risk">check whether a tool is cleared for my data<span class="where">Policies &middot; Penn Data Risk Classification</span></a></li>
+        <li><a href="#accuracy">understand what these tools get wrong<span class="where">Policies &middot; Accuracy, Attribution, and Bias</span></a></li>
+        <li><a href="#agentic-ai">hand off a task and walk away<span class="where">Agentic AI</span></a></li>
+        <li><a href="#ai-skills">build a tool of my own<span class="where">Advanced Claude &middot; Cross-Tool AI Skills</span></a></li>
+        <li><a href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">use AI in my teaching or on an exam<span class="where">Pedagogy portal &rarr;</span></a></li>
+      </ul>
+    </nav>
+
     <p class="section-label">Getting Started</p>
-    <h2 class="section-title">AI Tools at Penn Law</h2>
+    <h2 class="section-title" id="tools-at-penn" style="scroll-margin-top:70px;">AI Tools at Penn Law</h2>
     <p class="section-intro">The Penn Law community has access to several AI platforms. Here's what's available for 2026&ndash;27. Click on each tool for more details on access.</p>
 
     <style>
@@ -1686,7 +1722,7 @@
     <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
-        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
+        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
       </div>
       <p style="margin:0 0 0.9rem;">PennChat's model picker is long, but you rarely need to think about it. <strong style="color:var(--navy);">Start with Claude Sonnet 5.</strong> It handles nearly all faculty work well &mdash; and you can pin it in the model picker so it sits at the top every time. Switch models only when a task pushes you toward one of the exceptions below.</p>
       <div class="access-wrap">
@@ -1733,7 +1769,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Use Cases &amp; Tips</p>
-    <h2 class="section-title">Getting Better Results</h2>
+    <h2 class="section-title" id="better-results" style="scroll-margin-top:70px;">Getting Better Results</h2>
 
     <div class="prose-section">
 
@@ -1931,7 +1967,7 @@
 
     <div class="prose-section">
 
-      <h3>The Penn Data Risk Classification</h3>
+      <h3 id="data-risk" style="scroll-margin-top:70px;">The Penn Data Risk Classification</h3>
       <p>Penn classifies data into three tiers &mdash; <strong>Low Risk</strong> (publicly available; no harm if disclosed), <strong>Moderate Risk</strong> (not generally public; mildly adverse if disclosed), and <strong>High Risk</strong> (regulated or sensitive; significantly adverse if disclosed). Most legal teaching, scholarship, and administration touches Low and Moderate Risk data. Personnel matters, student PII, confidential committee deliberations, and similar sit at Moderate or High. The full framework is at <a href="https://isc.upenn.edu/security/penn-data-risk-classification" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">isc.upenn.edu/security/penn-data-risk-classification</a>.</p>
 
       <h3>AI Tools Reviewed by Penn Law ITS (as of July 2026)</h3>
@@ -1974,7 +2010,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Responsible Use</p>
-    <h2 class="section-title">Accuracy, Attribution, and Bias</h2>
+    <h2 class="section-title" id="accuracy" style="scroll-margin-top:70px;">Accuracy, Attribution, and Bias</h2>
 
     <div class="prose-section">
 
