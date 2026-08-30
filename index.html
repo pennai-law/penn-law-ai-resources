@@ -387,6 +387,34 @@
     scrollbar-width: none;
   }
   .tab-nav::-webkit-scrollbar { display: none; }
+  /* Three of six tabs sit off-screen at 375px. The row scrolls, but nothing
+     said so — these fades are the affordance. Toggled by scroll position, so
+     each disappears once you reach that end. */
+  .tab-nav-wrap::before,
+  .tab-nav-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 44px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s;
+    z-index: 2;
+  }
+  .tab-nav-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #fff 25%, rgba(255,255,255,0));
+  }
+  .tab-nav-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #fff 25%, rgba(255,255,255,0));
+  }
+  .tab-nav-wrap.overflow-left::before,
+  .tab-nav-wrap.overflow-right::after { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .tab-nav-wrap::before, .tab-nav-wrap::after { transition: none; }
+  }
   .tab-btn {
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
@@ -2451,6 +2479,25 @@
     if (onLoad) requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
     else el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+  // Tab-row overflow affordance. The row scrolls horizontally on narrow
+  // viewports; show a fade on whichever side still has tabs off-screen.
+  const tabNav = document.querySelector('.tab-nav');
+  const tabNavWrap = document.querySelector('.tab-nav-wrap');
+  function updateTabFades() {
+    if (!tabNav || !tabNavWrap) return;
+    const max = tabNav.scrollWidth - tabNav.clientWidth;
+    tabNavWrap.classList.toggle('overflow-left', tabNav.scrollLeft > 1);
+    tabNavWrap.classList.toggle('overflow-right', tabNav.scrollLeft < max - 1);
+  }
+  if (tabNav) {
+    tabNav.addEventListener('scroll', updateTabFades, { passive: true });
+    window.addEventListener('resize', updateTabFades);
+    updateTabFades();
+    // The row is set in DM Sans. Until that font arrives the labels are measured
+    // in fallback metrics, so the first reading can be wrong in either direction.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateTabFades);
+  }
+
   activateFromHash(true);
   window.addEventListener('hashchange', () => activateFromHash(false));
 
