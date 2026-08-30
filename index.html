@@ -950,74 +950,12 @@
   }
   .hero-feature-tabhint a:hover { color: white; }
 
-  /* ── OVERVIEW MAP ── */
-  .overview-map {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2.5rem 3rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-  }
-  .overview-col {
-    cursor: pointer;
-    padding: 1.1rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: white;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
-  .overview-col:hover {
-    border-color: var(--navy);
-    transform: translateY(-1px);
-  }
-  .overview-col.featured {
-    border-color: var(--red);
-    box-shadow: 0 0 0 1px var(--red);
-  }
-  .overview-col.featured:hover {
-    border-color: var(--navy);
-    box-shadow: 0 0 0 1px var(--navy);
-  }
-  .overview-col.active {
-    background: #DBE4F5;
-    border-color: var(--navy);
-    box-shadow: inset 0 0 0 1px var(--navy);
-  }
-  .overview-col h3 {
-    font-family: 'EB Garamond', serif;
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 0.55rem;
-    padding-bottom: 0.45rem;
-    border-bottom: 2px solid var(--navy);
-    line-height: 1.2;
-  }
-  .overview-col.featured h3 { border-bottom-color: var(--red); }
-  .overview-col ul {
-    list-style: none;
-    padding: 0;
-  }
-  .overview-col ul li {
-    font-size: 12.5px;
-    color: var(--mid-gray);
-    padding: 0.22rem 0;
-    line-height: 1.4;
-  }
-  .overview-col ul li strong {
-    color: var(--dark-gray);
-    font-weight: 500;
-  }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 1000px) {
-    .overview-map { grid-template-columns: repeat(3, 1fr); }
     .hero-feature { padding: 2rem 2rem; }
     .hero-feature-grid { grid-template-columns: 1fr; gap: 1.6rem; }
   }
   @media (max-width: 720px) {
-    .overview-map { grid-template-columns: 1fr; padding: 1.5rem; }
     .hero-feature { margin: 1.5rem 1rem 0; padding: 1.6rem 1.5rem; }
     .hero-feature h2 { font-size: 1.5rem; }
     .hero { padding: 3rem 1.5rem 3rem; }
@@ -1104,59 +1042,46 @@
   </div>
 </section>
 
-<!-- OVERVIEW MAP -->
-<div class="overview-map">
-  <div class="overview-col active" data-nav="getting-started">
-    <h3>Getting Started</h3>
+<!-- TASK ROUTER (replaced the per-tab overview map) -->
+  <style>
+    /* Sits between the hero feature and the tab bar, so it takes the same
+       1100px measure and gutters as those blocks, not page-body's. */
+    .router { max-width: 1100px; margin: 2.5rem auto 0;
+              border: 1px solid var(--border); border-left: 4px solid var(--navy);
+              background: #fff; border-radius: 0 6px 6px 0;
+              padding: 1.5rem 2rem 1.6rem; }
+    @media (max-width: 1160px) { .router { margin-left: 1.5rem; margin-right: 1.5rem; } }
+    .router h2 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.3rem;
+                 font-weight: 500; color: var(--navy); margin: 0 0 0.2rem; }
+    .router .router-sub { font-size: 13px; color: var(--mid-gray); margin: 0 0 1rem; }
+    .router ul { list-style: none; margin: 0; padding: 0;
+                 display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 2rem; }
+    .router li { border-bottom: 1px solid var(--warm-gray); }
+    .router li:last-child, .router li:nth-last-child(2) { border-bottom: none; }
+    .router a { display: block; padding: 0.5rem 0; font-size: 14.5px;
+                color: var(--navy); text-decoration: none; line-height: 1.45; }
+    .router a:hover, .router a:focus-visible { text-decoration: underline; }
+    .router a .where { display: block; font-size: 12px; color: var(--mid-gray); }
+    @media (max-width: 640px) {
+      .router ul { grid-template-columns: 1fr; }
+      .router li:nth-last-child(2) { border-bottom: 1px solid var(--warm-gray); }
+    }
+  </style>
+
+  <nav class="router" aria-labelledby="router-heading">
+    <h2 id="router-heading">I want to&hellip;</h2>
+    <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs above.</p>
     <ul>
-      <li><strong>AI tools at Penn Law</strong> &mdash; the 2026&ndash;27 lineup</li>
-      <li><strong>Who has access</strong> &mdash; faculty, students, staff</li>
-      <li><strong>What AI can do</strong></li>
+      <li><a href="#better-results">get better answers out of a chatbot<span class="where">Using AI &middot; Getting Better Results</span></a></li>
+      <li><a href="#which-model">work out which tool fits the task<span class="where">Using AI &middot; Which model should I use?</span></a></li>
+      <li><a href="#tools-at-penn">see what Penn licenses and who gets access<span class="where">Getting Started &middot; AI Tools at Penn Law</span></a></li>
+      <li><a href="#data-risk">check whether a tool is cleared for my data<span class="where">Policies &middot; Penn Data Risk Classification</span></a></li>
+      <li><a href="#accuracy">understand what these tools get wrong<span class="where">Policies &middot; Accuracy, Attribution, and Bias</span></a></li>
+      <li><a href="#agentic-ai">hand off a task and walk away<span class="where">Agentic AI</span></a></li>
+      <li><a href="#ai-skills">build a tool of my own<span class="where">Advanced Claude &middot; Cross-Tool AI Skills</span></a></li>
+      <li><a href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">use AI in my teaching or on an exam<span class="where">Pedagogy portal &rarr;</span></a></li>
     </ul>
-  </div>
-  <div class="overview-col" data-nav="use-cases">
-    <h3>Using AI</h3>
-    <ul>
-      <li><strong>Best practices</strong> &mdash; match the tool to your task</li>
-      <li><strong>Prompting fundamentals</strong></li>
-      <li><strong>Patterns that work</strong></li>
-    </ul>
-  </div>
-  <div class="overview-col" data-nav="agentic-ai">
-    <h3>Agentic AI</h3>
-    <ul>
-      <li><strong>What&rsquo;s different</strong></li>
-      <li><strong>Tools</strong> &mdash; Claude Code, Codex, Gemini CLI, Claude Cowork</li>
-      <li><strong>Model APIs</strong> &mdash; incl. the Penn LLM Gateway</li>
-      <li><strong>Working safely</strong></li>
-    </ul>
-  </div>
-  <div class="overview-col" data-nav="tools">
-    <h3>Advanced Claude</h3>
-    <ul>
-      <li><strong>Claude Code deep dive</strong> &mdash; CLAUDE.md, skills, MCP</li>
-      <li><strong>Across two computers</strong> &mdash; home &amp; office setup</li>
-      <li><strong>Claude Code skills</strong> &mdash; 6 faculty tools</li>
-    </ul>
-  </div>
-  <div class="overview-col" data-nav="policies">
-    <h3>Policies</h3>
-    <ul>
-      <li><strong>Data &amp; confidentiality</strong></li>
-      <li><strong>Responsible use</strong></li>
-      <li><strong>Penn policies</strong></li>
-    </ul>
-  </div>
-  <div class="overview-col" data-nav="ai-at-penn">
-    <h3>AI at Penn</h3>
-    <ul>
-      <li><strong>Penn Carey Law AI Project</strong></li>
-      <li><strong>What we're building</strong> &mdash; curriculum, partnerships, research</li>
-      <li><strong>Penn AI, Wharton AI, SEAS, Libraries</strong></li>
-      <li><strong>Reading &amp; further learning</strong></li>
-    </ul>
-  </div>
-</div>
+  </nav>
 
 <!-- TAB NAV -->
 <div class="tab-nav-wrap">
@@ -1177,8 +1102,9 @@
   <!-- ═══ TAB 1: GETTING STARTED ═══ -->
   <section class="tab-pane active" id="getting-started" role="tabpanel" aria-labelledby="tab-btn-getting-started" tabindex="0">
 
+
     <p class="section-label">Getting Started</p>
-    <h2 class="section-title">AI Tools at Penn Law</h2>
+    <h2 class="section-title" id="tools-at-penn" style="scroll-margin-top:70px;">AI Tools at Penn Law</h2>
     <p class="section-intro">The Penn Law community has access to several AI platforms. Here's what's available for 2026&ndash;27. Click on each tool for more details on access.</p>
 
     <style>
@@ -1686,7 +1612,7 @@
     <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
-        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
+        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
       </div>
       <p style="margin:0 0 0.9rem;">PennChat's model picker is long, but you rarely need to think about it. <strong style="color:var(--navy);">Start with Claude Sonnet 5.</strong> It handles nearly all faculty work well &mdash; and you can pin it in the model picker so it sits at the top every time. Switch models only when a task pushes you toward one of the exceptions below.</p>
       <div class="access-wrap">
@@ -1733,7 +1659,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Use Cases &amp; Tips</p>
-    <h2 class="section-title">Getting Better Results</h2>
+    <h2 class="section-title" id="better-results" style="scroll-margin-top:70px;">Getting Better Results</h2>
 
     <div class="prose-section">
 
@@ -1931,7 +1857,7 @@
 
     <div class="prose-section">
 
-      <h3>The Penn Data Risk Classification</h3>
+      <h3 id="data-risk" style="scroll-margin-top:70px;">The Penn Data Risk Classification</h3>
       <p>Penn classifies data into three tiers &mdash; <strong>Low Risk</strong> (publicly available; no harm if disclosed), <strong>Moderate Risk</strong> (not generally public; mildly adverse if disclosed), and <strong>High Risk</strong> (regulated or sensitive; significantly adverse if disclosed). Most legal teaching, scholarship, and administration touches Low and Moderate Risk data. Personnel matters, student PII, confidential committee deliberations, and similar sit at Moderate or High. The full framework is at <a href="https://isc.upenn.edu/security/penn-data-risk-classification" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">isc.upenn.edu/security/penn-data-risk-classification</a>.</p>
 
       <h3>AI Tools Reviewed by Penn Law ITS (as of July 2026)</h3>
@@ -1974,7 +1900,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Responsible Use</p>
-    <h2 class="section-title">Accuracy, Attribution, and Bias</h2>
+    <h2 class="section-title" id="accuracy" style="scroll-margin-top:70px;">Accuracy, Attribution, and Bias</h2>
 
     <div class="prose-section">
 
@@ -2489,7 +2415,6 @@
       btn.setAttribute('tabindex', '0');
     }
     pane.classList.add('active');
-    document.querySelectorAll('.overview-col').forEach(c => c.classList.toggle('active', c.dataset.nav === target));
   }
 
   // Switch to a tab and scroll to a specific card (used by the recommended-tool links)
@@ -2525,12 +2450,6 @@
   activateFromHash(true);
   window.addEventListener('hashchange', () => activateFromHash(false));
 
-  document.querySelectorAll('.overview-col').forEach(col => {
-    col.addEventListener('click', () => {
-      activateTab(col.dataset.nav);
-      window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
-    });
-  });
 
   // ── SITE SEARCH ──
   const searchBtn = document.querySelector('.header-search');
