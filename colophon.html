@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colophon — Penn Carey Law AI Resources</title>
+<meta name="description" content="How the Penn Carey Law AI Resources portal is written, hosted, published, and kept current — including how AI was used to build it.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #011F5B;
+    --navy-mid: #0a2f78;
+    --red: #990000;
+    --cream: #FAF8F3;
+    --warm-gray: #F2EFE8;
+    --mid-gray: #6B6863;
+    --dark-gray: #3A3630;
+    --border: #D8D4CC;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  /* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+  *:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .site-header a:focus-visible,
+  .site-footer a:focus-visible {
+    outline-color: white;
+    outline-offset: 3px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark-gray);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── LAB STRIPE (matches index.html) ── */
+  /* ── PENN BAR ──
+     Shared chrome with pennai.law and the portal index: the same 4px navy/red
+     stripe opens every surface. */
+  .penn-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+      var(--navy) 0%, var(--navy) 62%, var(--red) 62%, var(--red) 100%);
+  }
+
+  .lab-stripe {
+    background: #FAF3DD;
+    border-bottom: 1px solid #E8DEB9;
+    padding: 0.9rem 3rem;
+  }
+  .lab-stripe-link {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: var(--dark-gray);
+  }
+  .lab-stripe-text {
+    flex: 1;
+    font-size: 14px;
+    color: var(--dark-gray);
+    line-height: 1.45;
+  }
+  .lab-stripe-text strong { color: var(--navy); font-weight: 600; }
+  .lab-stripe-cta {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #822024;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .lab-stripe-link:hover .lab-stripe-cta { text-decoration: underline; }
+
+  /* ── HEADER (matches index.html) ── */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header .wordmark {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+  }
+  .site-header .wordmark span {
+    color: rgba(255,255,255,0.5);
+    margin: 0 8px;
+  }
+  .header-badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── PAGE BODY (license-specific) ── */
+  .page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 3rem 5rem;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+  .breadcrumb a { color: inherit; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--mid-gray);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+  }
+  p {
+    font-size: 15px;
+    color: var(--dark-gray);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  p strong, p a strong { color: var(--navy); font-weight: 600; }
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+  }
+  blockquote {
+    background: var(--warm-gray);
+    border-left: 3px solid var(--navy);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--dark-gray);
+    border-radius: 4px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+  }
+  .back-link:hover { border-bottom-color: var(--navy); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--dark-gray);
+    color: rgba(255,255,255,0.78);
+    text-align: center;
+    font-size: 12px;
+    padding: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+  .site-footer strong { color: white; font-weight: 500; }
+  .site-footer a { color: rgba(255,255,255,0.85); text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .site-header { padding: 0 1.5rem; }
+    .page-body { padding: 3rem 1.5rem 4rem; }
+    h1 { font-size: 2rem; }
+    .lab-stripe { padding: 0.6rem 1rem; }
+    .lab-stripe-link { gap: 0.75rem; }
+    .lab-stripe-text { font-size: 13px; }
+  }
+
+  /* ── COLOPHON ADDITIONS ── */
+  .page-body ul { margin: 0.5rem 0 1rem 1.25rem; }
+  .page-body li { margin-bottom: 0.4rem; }
+  .page-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em; background: var(--warm-gray);
+    padding: 0.1em 0.35em; border-radius: 3px; color: var(--navy);
+  }
+  .fact-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.5rem; }
+  .fact-table th, .fact-table td {
+    text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0;
+    border-bottom: 1px solid var(--border); font-size: 14.5px;
+  }
+  .fact-table th { width: 34%; font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .prompt-box {
+    background: var(--warm-gray); border-left: 3px solid var(--navy);
+    padding: 1rem 1.25rem; margin: 1rem 0 1.25rem; border-radius: 0 4px 4px 0;
+  }
+  .prompt-box .prompt-label {
+    font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--mid-gray); font-weight: 600; display: block; margin-bottom: 0.4rem;
+  }
+  .prompt-box p { margin: 0; }
+  .prompt-box .verbatim { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; color: var(--dark-gray); }
+  @media (max-width: 560px) {
+    .fact-table th, .fact-table td { display: block; width: auto; padding-right: 0; }
+    .fact-table th { border-bottom: none; padding-bottom: 0.15rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIPE: Penn Carey Law AI Project attribution -->
+<div class="penn-bar" aria-hidden="true"></div>
+
+<div class="lab-stripe">
+  <a class="lab-stripe-link" href="https://pennai.law/" target="_blank" rel="noopener">
+    <span class="lab-stripe-text">A project of the <strong>Penn Carey Law AI Project</strong> &mdash; research, tools, and teaching on AI in legal education and practice.</span>
+    <span class="lab-stripe-cta">Visit pennai.law &rarr;</span>
+  </a>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <a class="wordmark" href="index.html">Penn Carey Law <span>|</span> AI Resources</a>
+  <div class="header-badge"><a href="https://pennai.law/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">Penn Carey Law AI Project</a></div>
+</header>
+
+<main class="page-body">
+
+  <p class="breadcrumb"><a href="index.html">&larr; AI Resources</a></p>
+
+  <h1>Colophon</h1>
+  <p class="lead">How this site is written, hosted, published, and kept current &mdash; and which parts a machine drafted.</p>
+
+  <h2>Written with AI, and saying so</h2>
+  <p>This portal tells faculty that <a href="index.html#policies">transparency is the right default</a>, and that if AI contributed meaningfully to a piece of work you should say so. It would be strange not to apply that here.</p>
+  <p>Most of these pages were drafted in <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a> and then edited, cut, and corrected by hand. The model does not write unsupervised: it works from a standing instruction file in the repository that sets voice and house rules, and from a set of reusable skills. Every name, date, statistic, and citation is checked against a source before it ships &mdash; the tools invent plausible ones otherwise, which is the whole reason the <a href="index.html#policies">Accuracy</a> guidance exists.</p>
+
+  <h2>What that looks like in practice</h2>
+  <p>Colleagues have asked to see the actual prompts rather than a description of them. Here is a real one, and what it produced.</p>
+  <div class="prompt-box">
+    <span class="prompt-label">Prompt</span>
+    <p class="verbatim">what does the ai resources portal have about teaching with AI &rarr; that content belongs on the pedagogy portal, but it is important to cross link</p>
+  </div>
+  <p>That produced an audit of every teaching-related section here, which turned up five skills described in full on <em>both</em> this portal and the pedagogy portal &mdash; same tools, two sets of prose, and display names that had already drifted apart. The fix replaced the duplicated cards with a single handoff, and shipped as a pull request against a public repository. The prompt is unremarkable, and that is rather the point: it names a goal and a constraint, and leaves the method open.</p>
+  <p>The reusable pieces are public. The <a href="claude-skills.html">skill files</a> are plain-English instructions, not code &mdash; reading one is the fastest way to see how these tools are actually steered.</p>
+
+  <h2>Hosting</h2>
+  <table class="fact-table">
+    <tr><th>Served by</th><td>GitHub Pages, built from the <code>main</code> branch at the repository root. HTTPS enforced.</td></tr>
+    <tr><th>Domain</th><td><code>resources.pennai.law</code>, set by a <code>CNAME</code> file in the repository.</td></tr>
+    <tr><th>Shortlink</th><td><code>pennlaw.link/ai-resources</code>, managed on Rebrandly.</td></tr>
+    <tr><th>Former address</th><td>The earlier <code>ai-resources.ai-teaching-lab.org</code> still resolves. A separate redirect repository preserves both the path and the URL fragment, so deep links shared before the 2026 rename still land on the right tab.</td></tr>
+    <tr><th>External dependencies</th><td>One: Google Fonts. No analytics, no trackers, no CDN scripts.</td></tr>
+  </table>
+
+  <h2>Publication pipeline</h2>
+  <p>There is no build step and no framework. The site is hand-written HTML with its CSS and JavaScript inline, which means a page can be opened straight from disk in a browser and looks exactly as it will once published.</p>
+  <ul>
+    <li>Substantive edits go on a branch and through a pull request; <code>main</code> is kept deployable.</li>
+    <li>Merging to <code>main</code> triggers the Pages build. Changes are live in a minute or two.</li>
+    <li>A Jekyll <code>_config.yml</code> exclusion list keeps repository notes &mdash; instructions, status files, working decks &mdash; out of the published tree, so internal scaffolding never ships.</li>
+    <li>No GitHub Actions. The whole pipeline is git plus Pages.</li>
+  </ul>
+
+  <h2>Kept current by a scheduled agent</h2>
+  <p>AI tooling changes faster than anyone can re-read a reference site, so a scheduled Claude Code routine re-checks this one every two weeks: link targets, version claims, pricing, and which tools Penn currently licenses. It opens ordinary commits, which are visible in the repository history alongside everything else.</p>
+  <p>It has one blind spot worth naming. PennChat sits behind Penn's network and a login, so no unattended agent can reach it; those claims are verified by hand.</p>
+
+  <h2>What stays human</h2>
+  <p>The judgment. What belongs on this site and what belongs on the pedagogy portal, which recommendations are worth making to colleagues, what is too uncertain to assert, and everything written in the first person. Errors here are mine.</p>
+
+  <h2>Typography and colour</h2>
+  <p>Headings are set in EB Garamond and body text in DM Sans, both served from Google Fonts. The palette is Penn navy <code>#011F5B</code>, red <code>#990000</code>, cream <code>#FAF8F3</code>, and gold <code>#B8960C</code>. The four-pixel navy-and-red bar at the top of every page is shared with <a href="https://pennai.law/" target="_blank" rel="noopener">pennai.law</a>, so the two sites read as siblings.</p>
+
+  <h2>Source and licence</h2>
+  <p>The repository is public: <a href="https://github.com/pennai-law/penn-law-ai-resources" target="_blank" rel="noopener">github.com/pennai-law/penn-law-ai-resources</a>. Content is CC BY 4.0 and the code is Apache 2.0 &mdash; see the <a href="license.html">licence page</a>.</p>
+
+  <a class="back-link" href="index.html">&larr; Back to AI Resources</a>
+
+</main>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; <a href="https://accessibility.web-resources.upenn.edu/get-help" target="_blank" rel="noopener">Report Accessibility Issues and Get Help</a> &middot; Last updated August 2026
+</footer>
+
+</body>
+</html>
