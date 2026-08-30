@@ -21,12 +21,15 @@ The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools
 ## Structure
 
 - `index.html` — the whole portal: a six-tab layout (Getting Started · Using AI · Agentic AI · Advanced Claude · Policies · AI at Penn) with inline CSS/JS and a Cmd+K site search. Self-contained. Tab display names differ from internal ids kept stable for links: `use-cases` (Using AI), `tools` (Advanced Claude), `policies` (Policies). Any element with an `id` inside a pane is deep-linkable — `activateFromHash` resolves the owning tab via `closest('.tab-pane')`, so a new anchor works in a shared URL with no routing table to update.
+  - **The "I want to…" router sits above the tab bar, outside every pane**, so it shows on all six tabs and is not Getting Started content. It replaced a six-column per-tab overview map that duplicated the tab bar directly beneath it. Because it lives outside `.page-body`, it carries the hero block's 1100px measure and gutters rather than the page body's; without those it runs edge to edge.
+  - The tab bar is the primary navigation now that the overview map is gone, and is styled for that — 15px/600 labels, a 58px band, a navy bottom rule. Its row scrolls horizontally under ~880px, with edge fades toggled by scroll position and re-measured on `document.fonts.ready` (the labels are DM Sans, so a pre-font measurement is wrong).
 - `agentic-ai-security.html` — long-form security guide for faculty use of agentic tools (linked from the portal).
 - `agentic-ai-overview.html` — redirect stub → `index.html#agentic-ai` (kept for old inbound links).
 - `claude-skills.html` — listing of the public AI skills.
-- `ai-office-hours.html` — faculty AI office-hours session screen.
+- `ai-office-hours.html` — faculty AI office-hours session screen. **Deliberately unlinked from the site** since 2026-08-30: it is opened directly and projected during a session, not browsed to. It still builds and serves.
 - `ai-signage.html` — auto-cycling digital signage for the faculty lounge.
 - `license.html` — license page (CC BY 4.0 content + Apache 2.0 code).
+- `colophon.html` — how the site is written, hosted, and published, including an actual verbatim prompt. Built on `license.html`'s chrome. Linked from the footer, not the tab bar, so it adds nothing to navigation. The pedagogy portal has a matching one.
 - `assets/` — favicons, `logos/` (brand-tool icons), the Lab stacked SVG.
 
 ## Design system
@@ -45,6 +48,9 @@ What *is* shared, on purpose, so the two read as siblings:
 - **Branch + PR** for substantive changes; keep `main` deployable.
 - **Don't expose dev scaffolding.** The detailed design history (original design docs, plans, the Eddie content review, signage specs) is archived in Box at `AI Teaching Lab/Lab/website/penn-law-ai-resources-dev-docs/`, intentionally **not** in this public repo. Keep new internal-only notes out of the published tree (add them to `_config.yml`'s `exclude:` if they must live here).
 - **Names / facts:** verify people and claims against authoritative sources; never fabricate. The Lab people registry is `AI Teaching Lab/Lab/team/NAMES.md` in Box.
+- **This portal covers tools, access, and policy. Teaching belongs to the pedagogy portal, and Project projects belong to `pennai.law`.** Both sibling sites already say so in this site's favour, so a duplicate here is this site breaking its own rule. Twice on 2026-08-30 the same failure was found and fixed: five teaching skills described in full on both this site and the pedagogy portal, with display names already drifted apart; and eleven Project cards duplicating `pennai.law/projects/`, which is a complete filterable index. When something reads as teaching guidance or a Project inventory, link it — don't restate it.
+- **Link the Rebrandly shortlinks, not the destination hosts.** The pedagogy portal moved from `polkwagner.github.io` to `pedagogy.pennlawteaching.org` and left seven stale links here. `pennlaw.link/pedagogy` survives the next move; a direct host link does not.
+- **Verify against the deployed site, not the local preview.** The in-app preview serves a `data:` snapshot: scripts run, but `location.hash` assignment is swallowed (so `hashchange` never fires) and programmatic `scrollLeft` sticks while dispatching no `scroll` event. Both made working features look broken on 2026-08-30. Anything driven by a hash or a scroll listener has to be checked against `resources.pennai.law`.
 
 ## History note
 
