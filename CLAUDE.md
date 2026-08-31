@@ -25,10 +25,10 @@ The **Penn Carey Law AI Resources portal** — a faculty-facing hub for AI tools
   - The tab bar is the primary navigation now that the overview map is gone, and is styled for that — 15px/600 labels, a 58px band, a navy bottom rule. Its row scrolls horizontally under ~880px, with edge fades toggled by scroll position and re-measured on `document.fonts.ready` (the labels are DM Sans, so a pre-font measurement is wrong).
 - `agentic-ai-security.html` — long-form security guide for faculty use of agentic tools (linked from the portal).
 - `agentic-ai-overview.html` — redirect stub → `index.html#agentic-ai` (kept for old inbound links).
-- `claude-skills.html` — listing of the public AI skills.
+- `claude-skills.html` — catalog of public faculty document and review skills, with current product eligibility notes. Teaching and assessment skills are handed off to the Pedagogy Resources portal rather than described here.
 - `ai-office-hours.html` — faculty AI office-hours session screen. **Deliberately unlinked from the site** since 2026-08-30: it is opened directly and projected during a session, not browsed to. It still builds and serves.
 - `ai-signage.html` — auto-cycling digital signage for the faculty lounge.
-- `license.html` — license page (CC BY 4.0 content + Apache 2.0 code).
+- `license.html` — license page (CC BY 4.0 content + Apache 2.0 code). The complete terms are in `LICENSE` and `LICENSE-CODE`; `LICENSE-NOTICE` maps the licenses when an HTML file contains both prose and code.
 - `colophon.html` — how the site is written, hosted, and published, including an actual verbatim prompt. Built on `license.html`'s chrome. Linked from the footer, not the tab bar, so it adds nothing to navigation. The pedagogy portal has a matching one.
 - `assets/` — favicons, `logos/` (brand-tool icons), the Lab stacked SVG.
 
