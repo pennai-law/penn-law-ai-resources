@@ -1,0 +1,18 @@
+LICENSING NOTICE
+
+This repository uses two licenses:
+
+1. Original prose, editorial content, graphics created for the site, and visual
+   design are licensed under the Creative Commons Attribution 4.0 International
+   License (CC BY 4.0). The complete terms are in LICENSE.
+
+2. Code portions, including HTML structure and templates, CSS rules, and
+   JavaScript, are licensed under the Apache License, Version 2.0. The complete
+   terms are in LICENSE-CODE.
+
+Many HTML files combine content and code. In those files, each license applies
+only to the corresponding portions described above.
+
+University of Pennsylvania and Penn Carey Law names, logos, and institutional
+marks are excluded from these grants. Third-party names and logos remain the
+property of their respective owners.
