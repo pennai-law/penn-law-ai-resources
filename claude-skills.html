@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Skills for Faculty — Penn Carey Law</title>
-<meta name="description" content="Open-source AI skills for common Penn Carey Law faculty tasks — install and use them in Claude Code, ChatGPT, and other compatible tools.">
+<meta name="description" content="Open-source AI skills for common Penn Carey Law faculty tasks, with current access requirements and links to teaching resources.">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -306,7 +306,7 @@
       Penn Carey Law
       <span>University of Pennsylvania</span>
     </div>
-    <div class="session-title">AI <em>Skills</em> for Faculty</div>
+    <h1 class="session-title">AI <em>Skills</em> for Faculty</h1>
     <div class="session-meta">
       <strong>Faculty Tools</strong>
       Open Source &middot; Cross-Tool
@@ -315,50 +315,26 @@
 
   <!-- INTRO -->
   <div class="intro">
-    These are open-source <strong>AI skills</strong> I've built for common faculty tasks &mdash; reusable tools you invoke by name inside your AI assistant. Each skill is a text file with instructions that the AI follows. Built on the open <a class="repo-link" href="https://agentskills.io/" target="_blank" rel="noopener" style="display:inline; padding:0; font-size:inherit; letter-spacing:inherit;"><strong>Agent Skills</strong></a> standard, they work across tools &mdash; install them in <strong>Claude Code</strong>, <strong>ChatGPT</strong>, <strong>Codex</strong>, <strong>Gemini CLI</strong>, or any compatible agent. Requires a <strong>paid Claude or ChatGPT subscription</strong> (including ChatGPT EDU).<br>
+    These are open-source <strong>AI skills</strong> I've built for common faculty tasks &mdash; reusable tools you invoke by name inside your AI assistant. Each skill is a text file with instructions that the AI follows. Built on the open <a class="repo-link" href="https://agentskills.io/" target="_blank" rel="noopener" style="display:inline; padding:0; font-size:inherit; letter-spacing:inherit;"><strong>Agent Skills</strong></a> standard, they work in compatible tools, including <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Gemini CLI</strong>, and eligible <strong>ChatGPT</strong> workspaces. Access differs by product: Claude Code requires an eligible paid plan or API access; Gemini CLI offers free and paid access; and native ChatGPT Skills are limited to eligible Business, Enterprise, Healthcare, and Edu users, subject to workspace settings. A Plus or Pro subscription alone does not establish ChatGPT Skills eligibility. Check with Penn Law ITS before assuming Skills are enabled in Penn&rsquo;s EDU workspace.<br>
     <span style="display:inline-block; margin-top:0.6rem;">They are also worth reading even if you never install one. A skill file is just prose &mdash; the instructions I give the model, written out in plain English &mdash; so opening any of them on GitHub shows you exactly how these tools get steered, which is harder to learn from advice about prompting than from a working example of it.</span><br>
     <a class="repo-link" href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener">Install from GitHub &rarr; polkwagner/law-faculty-skills</a>
     <a class="repo-link" href="index.html#ai-skills" style="margin-left:1.5vw;">&larr; Back to AI Resources</a>
   </div>
 
   <!-- TWO COLUMNS -->
-  <div class="main">
+  <main class="main">
 
     <!-- LEFT: Teaching & Assessment -->
     <div class="col">
       <div class="col-header">
         <span class="col-num">01</span>
-        <span class="col-title">Teaching &amp; Assessment</span>
+        <h2 class="col-title">Teaching &amp; Assessment</h2>
       </div>
 
       <div class="card">
-        <div class="card-name">MCQ Generator</div>
-        <div class="card-note">Generate multiple-choice exam questions grounded in psychometric research. Distractor validation, cognitive taxonomy tagging, coverage balancing. Supports course presets.</div>
-        <div class="tag">law-mcq-generator</div>
-      </div>
-
-      <div class="card">
-        <div class="card-name">Essay Question Generator</div>
-        <div class="card-note">Generate essay exam questions with SOLO taxonomy layering, construct alignment to course materials, and rubrics designed for AI-assisted grading.</div>
-        <div class="tag">law-essay-generator</div>
-      </div>
-
-      <div class="card">
-        <div class="card-name">Class Prep</div>
-        <div class="card-note">Comprehensive class preparation &mdash; checks slide-to-reading alignment, reviews class problems, and produces a lecture guide document. All three in one pass.</div>
-        <div class="tag">law-class-prep</div>
-      </div>
-
-      <div class="card">
-        <div class="card-name">Class Problems</div>
-        <div class="card-note">Create and revise adversarial in-class hypotheticals for any law course. Enforces problem-to-reading alignment and pedagogical rigor.</div>
-        <div class="tag">law-class-problems</div>
-      </div>
-
-      <div class="card">
-        <div class="card-name">Lecture Slide Reviewer</div>
-        <div class="card-note">Review lecture slides against assigned readings for coverage, pacing, and gaps. Standalone or as part of full class prep.</div>
-        <div class="tag">lecture-slide-reviewer</div>
+        <h3 class="card-name">Teaching skills live on the Pedagogy portal</h3>
+        <div class="card-note">The teaching and assessment skills are described there in the context of the course decisions they support. That portal is the canonical home for teaching guidance; this catalog covers faculty tools, access, and installation.</div>
+        <a class="repo-link" href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">Open Pedagogy Resources &rarr;</a>
       </div>
     </div>
 
@@ -366,57 +342,57 @@
     <div class="col">
       <div class="col-header">
         <span class="col-num">02</span>
-        <span class="col-title">Faculty Tools</span>
+        <h2 class="col-title">Faculty Tools</h2>
       </div>
 
       <div class="card">
-        <div class="card-name">Memo Production</div>
+        <h3 class="card-name">Memo Production</h3>
         <div class="card-note">Produce formatted Word (.docx) memos with Penn Carey Law letterhead &mdash; proper margins, Cambria 12pt, official logo.</div>
         <div class="tag">law-memo</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Document Production</div>
+        <h3 class="card-name">Document Production</h3>
         <div class="card-note">Proposals, reports, briefing docs, white papers &mdash; formatted .docx documents in Penn Carey Law style.</div>
         <div class="tag">law-document</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Email Drafting</div>
+        <h3 class="card-name">Email Drafting</h3>
         <div class="card-note">Draft emails and professional communications in your voice &mdash; replies, declines, invitations, follow-ups. Learns your style.</div>
         <div class="tag">law-email-style</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Materials to Markdown</div>
+        <h3 class="card-name">Materials to Markdown</h3>
         <div class="card-note">Convert PDF, DOCX, PPTX, or HTML into clean markdown an AI tool can actually read &mdash; articles, opinions, decks. Extracts speaker notes from slides.</div>
         <div class="tag">materials-md</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Document Comment Summary</div>
+        <h3 class="card-name">Document Comment Summary</h3>
         <div class="card-note">Extract and summarize all comments from Word (.docx) files into a clean report. Compiles reviewer feedback across multiple documents.</div>
         <div class="tag">docx-comment-summary</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Rex &mdash; Critical Reviewer</div>
+        <h3 class="card-name">Rex &mdash; Critical Reviewer</h3>
         <div class="card-note">A senior engineering critic that reviews code, plans, designs, and documents. Finds problems before they ship &mdash; blunt, specific, actionable.</div>
         <div class="tag">rex</div>
       </div>
 
       <div class="card">
-        <div class="card-name">Eddie &mdash; Senior Editor</div>
+        <h3 class="card-name">Eddie &mdash; Senior Editor</h3>
         <div class="card-note">Editorial review of any document &mdash; checks factual accuracy, citations, internal consistency, institutional sensitivity, voice/style, and AI-specific failure modes. Produces a prioritized revision report.</div>
         <div class="tag">eddie</div>
       </div>
     </div>
 
-  </div>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-left">Penn Carey Law &middot; AI Skills for Faculty &middot; May 2026<br>Open source &mdash; works with Claude Code, ChatGPT, and other Agent Skills-compatible tools.</div>
+    <div class="footer-left">Penn Carey Law &middot; AI Skills for Faculty &middot; August 2026<br>Open source &mdash; works with Claude Code, Codex, Gemini CLI, and eligible ChatGPT workspaces.</div>
     <div class="footer-center">
       GitHub: <a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener">polkwagner/law-faculty-skills</a><br>
       All resources: <a href="https://pennlaw.link/ai-resources" target="_blank" rel="noopener">pennlaw.link/ai-resources</a>
