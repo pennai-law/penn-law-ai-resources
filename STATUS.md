@@ -1,13 +1,11 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-08-31
+**Updated:** 2026-09-03
 
-The portal is deployed and current through the August 31 Eddie review. PR #25 corrected the material factual, policy, access, licensing, and voice issues across the main portal and standalone pages.
+Deployed and current through the August 31 Eddie review; a September 3 model-lineup update is open as PR #26 on `content/fable-5-1`.
 
-PennChat is now described as available without a per-user charge, with daily credits governing model use. Anthropic Enterprise and Legora remain marked pending. Microsoft Copilot Chat is separated from paid Microsoft 365 Copilot, agentic free tiers are acknowledged, and ChatGPT Skills eligibility is limited to supported organizational workspaces. Data guidance now distinguishes a paid personal plan from a Penn-reviewed service cleared for the relevant risk tier.
+Anthropic released Claude Fable 5.1 on September 1, 2026; its docs list Opus 4.8 as legacy, and the current lineup is Fable 5.1, Opus 5, Sonnet 5, and Haiku 4.5. The Using AI tab gained a "Claude.ai & Claude Code" box (`#claude-models`) below the PennChat picker: Sonnet 5 for everyday work, Fable 5.1 when the thinking is the hard part, Opus 5 between. A same-day Eddie review corrected three things: Fable on Pro runs on usage credits and is capped at half of weekly usage on Max; flagged cyber queries fall back to Opus 4.8 and biology to Opus 5, with a notice; and Opus 4.8 is the PennChat Premium pick, not Anthropic's previous top model.
 
-The skills catalog contains faculty document and review tools and hands teaching skills to the Pedagogy Resources portal. Its heading structure is semantic. The two PennChat tutorial copies remain byte-identical. Dual licensing is documented through `LICENSE`, `LICENSE-CODE`, and `LICENSE-NOTICE`.
+The PennChat table keeps its August roster: PennChat answers only on Penn's network or GlobalProtect, and this update was made off both. The Opus 4.8 row is qualified "as of August 2026" and the footnote says which newer model to prefer if offered.
 
-**Where it stands:** PR #25 merged at `8f643a1`; GitHub Pages deployment `33384528734` succeeded. The live portal, skills catalog, license page, and hash routing were verified at `resources.pennai.law`. `main` was clean and level with origin before this status update.
-
-**Next:** Remove the August 31 office-hours row after the session. Add Legora only after Penn Law ITS confirms rollout and data-tier approval. Update the July 2026 ITS review stamp when ITS re-reviews the tools.
+**Next:** Separate PR for two developments ITS's guides confirm: Penn offers Enterprise Claude (Low/Moderate Risk; 1L accounts provisioned; faculty purchasing being finalized), and Legora is live for faculty, adjuncts, staff, and upper-level students at Low/Moderate Risk. Re-check the PennChat picker over GlobalProtect (Opus 5 was absent on August 15). Remove the August 31 office-hours row.
