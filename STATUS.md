@@ -8,4 +8,4 @@ Deployed and current through the August 31 Eddie review. PRs #26 (model lineup) 
 
 **Penn Enterprise Claude and Legora.** From ITS's guides and ISC's Anthropic Enterprise FAQ: Penn offers Enterprise Claude (chat plus Claude Code by request; Cowork not yet; Low/Moderate Risk; 1L accounts provisioned; faculty Standard/Premium licenses through ITS, purchasing being finalized; Fable needs Premium), and Legora is live for faculty, adjuncts, staff, and upper-level students at Low/Moderate Risk. The hero, access table, four cards, Policies list, and security guide now say so.
 
-**Next:** Watch ITS's Claude guide for faculty purchasing details. Remove the August 31 office-hours row.
+**Next:** Watch ITS's Claude guide for faculty purchasing details.
