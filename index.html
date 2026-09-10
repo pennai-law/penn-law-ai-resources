@@ -945,19 +945,32 @@
   <style>
     /* Sits between the hero feature and the tab bar, so it takes the same
        1100px measure and gutters as those blocks, not page-body's. */
-    .router { max-width: 1100px; margin: 2rem auto 0;
+    .whats-new { max-width: 1100px; margin: 2rem auto 0;
+                 background: var(--gold-light); border-left: 4px solid var(--gold);
+                 border-radius: 0 6px 6px 0; padding: 0.9rem 2rem 1rem;
+                 display: grid; grid-template-columns: auto 1fr auto;
+                 gap: 0.4rem 2rem; align-items: baseline; }
+    @media (max-width: 1160px) { .whats-new { margin-left: 1.5rem; margin-right: 1.5rem; } }
+    .whats-new .kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em;
+                 text-transform: uppercase; color: #fff; background: var(--red);
+                 padding: 0.2rem 0.55rem; border-radius: 2px; white-space: nowrap;
+                 justify-self: start; }
+    .whats-new ul { list-style: none; margin: 0; padding: 0;
+                 display: flex; flex-wrap: wrap; gap: 0.3rem 2rem; }
+    .whats-new li { font-size: 13.5px; line-height: 1.45; color: #5A4700; }
+    .whats-new li a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .whats-new li a:hover, .whats-new li a:focus-visible { text-decoration: underline; }
+    .whats-new .more { font-size: 13px; color: #5A4700; white-space: nowrap; }
+    .whats-new .more a { color: inherit; text-decoration: underline; }
+    @media (max-width: 720px) {
+      .whats-new { grid-template-columns: 1fr; padding: 0.9rem 1.25rem 1rem; }
+      .whats-new ul { flex-direction: column; gap: 0.35rem; }
+    }
+    .router { max-width: 1100px; margin: 1rem auto 0;
               border: 1px solid var(--border); border-left: 4px solid var(--navy);
               background: #fff; border-radius: 0 6px 6px 0;
               padding: 1.5rem 2rem 1.6rem; }
     @media (max-width: 1160px) { .router { margin-left: 1.5rem; margin-right: 1.5rem; } }
-    .router-news { font-size: 13.5px; line-height: 1.55; color: var(--navy);
-                   margin: 0 0 1.1rem; padding: 0 0 0.9rem;
-                   border-bottom: 1px solid var(--warm-gray); }
-    .router-news .kicker { display: inline-block; font-size: 10.5px; font-weight: 700;
-                   letter-spacing: 0.09em; text-transform: uppercase; color: #fff;
-                   background: var(--red); padding: 0.18rem 0.5rem; border-radius: 2px;
-                   margin-right: 0.5rem; vertical-align: 1px; }
-    .router-news a { color: var(--navy); text-decoration: underline; }
     .router h2 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.3rem;
                  font-weight: 500; color: var(--navy); margin: 0 0 0.2rem; }
     .router .router-sub { font-size: 13px; color: var(--mid-gray); margin: 0 0 1rem; }
@@ -975,8 +988,17 @@
     }
   </style>
 
+  <aside class="whats-new" aria-label="New for 2026–27">
+    <span class="kicker">New for 2026&ndash;27</span>
+    <ul>
+      <li><a href="#card-pennchat">PennChat</a> &middot; free to eligible Penn users, cleared for most University data</li>
+      <li><a href="#card-claude">Enterprise Claude</a> &middot; approved for Low and Moderate Risk data; 1L accounts live, faculty purchasing being finalized</li>
+      <li><a href="#card-legora">Legora</a> &middot; live for faculty, adjuncts, staff, and upper-level students</li>
+    </ul>
+    <span class="more"><a href="#tools-at-penn">All tools &rarr;</a></span>
+  </aside>
+
   <nav class="router" aria-labelledby="router-heading">
-    <p class="router-news"><span class="kicker">New for 2026&ndash;27</span><strong>PennChat</strong> is free to eligible Penn users and cleared for most University data; <strong>Enterprise Claude</strong> (chat and Claude Code) is approved for Low and Moderate Risk data, with 1L accounts provisioned and faculty and staff purchasing being finalized; <strong>Legora</strong> is live for faculty, adjuncts, staff, and upper-level students. Details under <a href="#tools-at-penn">AI Tools at Penn Law</a>.</p>
     <h2 id="router-heading">I want to&hellip;</h2>
     <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs below.</p>
     <ul>
