@@ -41,7 +41,7 @@ Penn navy (`#011F5B`), red (`#990000`), cream (`#FAF8F3`), gold (`#B8960C`); EB 
 What *is* shared, on purpose, so the two read as siblings:
 
 - **The Penn bar** — the same 4px navy/red stripe opens every page that has site chrome (`index`, `agentic-ai-security`, `claude-skills`, `license`). `ai-office-hours` and `ai-signage` are chrome-less by design; do not add it there.
-- **The W2 lockup**, in the footer only, at `assets/pennai-lockup-white.svg`. It must render **at least 288px wide**: the mark carries `pennai.law` inside it, which drops below 8px and stops being legible under that, and 288px is 75px tall — too heavy for the header or the attribution stripe, which is why it lives in the footer. Below a 400px viewport it is hidden rather than shrunk; the top stripe still carries the attribution as text. Colour version is `assets/pennai-lockup.svg`; regenerate both from `brand/` in the `ai-teaching-lab.org` repo, never by hand.
+- **The official Penn Carey Law logo**, reverse version, in the footer only, at `assets/pcl-logo-reverse.png` (from Communications package PEN-23969, unmodified). It replaced the W2 lockup on 2026-09-10 for brand compliance: units may not build their own lockups or alter the shield (`law.upenn.edu/brand`). Render it at 288px wide; below a 400px viewport it is hidden rather than shrunk, and the top stripe still carries the attribution as text. The tech-shield mark survives only as internal identity (Slack icon, GitHub avatar); do not regenerate it for the site from the `brand/` scripts in the `pennai.law` repo.
 
 ## Conventions
 
