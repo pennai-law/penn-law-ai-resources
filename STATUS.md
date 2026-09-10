@@ -1,11 +1,11 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-09-03
+**Updated:** 2026-09-10
 
-Anthropic released Claude Fable 5.1 on September 1 and now lists Opus 4.8 as legacy, so the Using AI tab gained a "Claude.ai & Claude Code" model box below the PennChat picker: Sonnet 5 for everyday work, Fable 5.1 for hard reasoning, Opus 5 between. A same-day Eddie review corrected the first draft on three points: Fable on Pro runs on usage credits and is capped at half of weekly usage on Max; flagged cyber queries fall back to Opus 4.8 and biology to Opus 5, with a notice; and Opus 4.8 is the PennChat Premium pick, not Anthropic's previous top model. The review also surfaced, from ITS's guides, that Penn now offers Enterprise Claude (chat plus Claude Code by request; Low/Moderate Risk; 1L accounts provisioned; faculty purchasing being finalized) and that Legora is live; the hero, access table, cards, Policies list, and security guide now say so.
+A navigation review of the live portal found three stacked entry points before any content, six tabs on mixed axes, and no URL state for tabs. PR #35 shipped the low-cost fixes. The 2026–27 feature block is gone; its news is a one-line gold callout above the "I want to…" router, each tool name linking to its card. Advanced Claude folded into "Agentic & Advanced" (five tabs; `#tools` still resolves; Reading & Resources moved to AI at Penn). Tab clicks and cross-links push the id onto the URL hash, so shared links and the back button work. Router items read as continuations with a › before each destination. In the access table, Claude.ai and Claude Code are ◆ for full-time faculty (fundable now, per Polk) and Claude Code is ○ for 1Ls. The attribution stripe reads "Part of the Penn Carey Law AI Project" on all chrome pages.
 
-**Where it stands:** PRs #26, #28, #29, and #30 merged and verified live on September 3; `main` is clean and level with origin. The PennChat picker, checked over GlobalProtect, still has no Opus 5 or Fable, so its table stands with a September 3 check date. The August 31 office-hours row is gone.
+**Where it stands:** PR #35 merged and verified live on September 10; `main` is clean and level with origin; AGENTS.md regenerated.
 
-**Next:** Update the Claude.ai card and access-table glyphs when ITS posts faculty purchasing details. Update the July ITS review stamp when ITS re-reviews.
+**Next:** The review's remaining items: orientation before the tool catalog in Getting Started, with the catalog compacted to a table; one canonical card per tool (Claude Code and Cowork each appear three times); a per-tab jump list; a visible search field. Update the Claude staff glyphs when ITS posts purchasing details, and the July ITS review stamp when ITS re-reviews.
 
-**Open:** Eddie suggested a lessons.md calibration on lineup-scoped descriptors; paste it in if it looks right.
+**Open:** At 375px only two tabs fit and the header wordmark wraps to three lines. Unconfirmed cells: Legora for adjuncts (○ or ✓), Westlaw/Lexis for staff (—). Eddie's lessons.md calibration is still to paste.
