@@ -304,6 +304,9 @@
     color: rgba(255,255,255,0.5);
     margin: 0 8px;
   }
+  /* Official Penn shield, small, before the school name (Polk, 2026-09-10). */
+  .site-header .wordmark { display: inline-flex; align-items: center; gap: 9px; }
+  .wordmark-shield { height: 22px; width: auto; display: block; }
   .header-badge {
     font-size: 11px;
     font-weight: 500;
@@ -1033,7 +1036,7 @@
 
 <!-- SITE HEADER -->
 <header class="site-header">
-  <a class="wordmark" href="index.html">Penn Carey Law <span>|</span> AI Resources</a>
+  <a class="wordmark" href="index.html"><img class="wordmark-shield" src="assets/pcl-shield.png" alt="" width="84" height="96">Penn Carey Law <span>|</span> AI Resources</a>
   <div style="display:flex; align-items:center; gap:1rem;">
     <button class="header-search" type="button" aria-label="Search this site (Cmd+K)">
       <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
