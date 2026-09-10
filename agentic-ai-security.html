@@ -23,7 +23,7 @@
     --mid-gray: #6B6863;
     --dark-gray: #3A3630;
     --border: #D8D4CC;
-    --gold: #B8960C;
+    --gold: #756000;
     --gold-light: #F5EFD0;
   }
 
@@ -395,6 +395,9 @@
     .article h2 { font-size: 1.35rem; }
     .help-list strong { display: block; min-width: 0; }
   }
+  .site-footer-legal { font-size: 10.5px; color: rgba(255,255,255,0.66); margin-bottom: 0.6rem; }
+  .site-footer-legal a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+  .site-footer-legal a:hover { border-bottom-color: rgba(255,255,255,0.7); }
 </style>
 </head>
 <body>
@@ -402,7 +405,7 @@
 <!-- LAB STRIPE -->
 <div class="penn-bar" aria-hidden="true"></div>
 
-<div class="lab-stripe">
+<div class="lab-stripe" role="complementary" aria-label="About this site">
   <a class="lab-stripe-link" href="https://pennai.law/" target="_blank" rel="noopener">
     <span class="lab-stripe-text">A project of the <strong>Penn Carey Law AI Project</strong> &mdash; research, tools, and teaching on AI in legal education and practice.</span>
     <span class="lab-stripe-cta">Visit pennai.law &rarr;</span>
@@ -416,7 +419,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" aria-label="Introduction">
   <div class="hero-inner">
     <div class="hero-kicker">Faculty Working Notes</div>
     <h1>Safe Use of <em>Agentic AI</em> Tools</h1>
@@ -560,6 +563,14 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
+  <div class="site-footer-legal">
+    <a href="https://www.upenn.edu" target="_blank" rel="noopener">University of Pennsylvania</a> &middot;
+    <a href="https://www.upenn.edu/about/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot;
+    <a href="https://www.upenn.edu/about/disclaimer" target="_blank" rel="noopener">Disclaimer</a> &middot;
+    <a href="https://www.publicsafety.upenn.edu/contact/" target="_blank" rel="noopener">Emergency Services</a> &middot;
+    <a href="https://www.upenn.edu/about/report-copyright-infringement" target="_blank" rel="noopener">Report Copyright Infringement</a>
+  </div>
+
   &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="colophon.html">Colophon</a> &middot; <a href="index.html">Back to AI Resources</a>
 </footer>
 
