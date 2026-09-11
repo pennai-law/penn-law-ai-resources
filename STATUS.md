@@ -19,7 +19,9 @@ Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorp
   - **Deduplicated Tool Cards**: Canonical technical cards established in *Agentic & Advanced* for Claude Code (`#card-ag-claude-code`) and Claude Cowork (`#card-ag-claude-cowork`), with clean handoff CTAs from compact identity cards in *Getting Started*.
   - **Per-Tab In-Page Jump Lists**: Added `.tab-jump-bar` single-line scrollable pill nav across all five tabs, with intelligent scroll alignment in `activateFromHash` and jump-click interception (`block: 'start'` with `scroll-margin-top: 70px` for headings; `block: 'center'` for cards).
 
-**Where it stands:** Structural and flow improvements complete on `feature/structural-improvements`. All 69 internal anchors, 12 tool cards, canonical cards, and JS syntax verified. Ready for PR and merge.
+- Claude Code access updated across the portal (`feature/1l-claude-code`): 1Ls are provisioned with Claude Code as part of Penn Enterprise Claude. Access table 1Ls column updated to ✓ (matching Claude.ai), `#card-claude-code` badge updated to `◆ Enterprise via ITS · Fundable`, and card/policy descriptions updated.
+
+**Where it stands:** Claude Code 1L provisioning updated and verified. Internal anchors and scripts valid. Ready for PR and merge.
 
 **Next:** Remaining review items: visible search field. Update July ITS review stamp when ITS re-reviews.
 
