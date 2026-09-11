@@ -21,8 +21,14 @@ Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorp
 
 - Claude Code access updated across the portal (`feature/1l-claude-code`): 1Ls are provisioned with Claude Code as part of Penn Enterprise Claude. Access table 1Ls column updated to ✓ (matching Claude.ai), `#card-claude-code` badge updated to `◆ Enterprise via ITS · Fundable`, and card/policy descriptions updated.
 - Hero metadata and footer updated (`fix/hero-meta-date-and-audience`): exact date set to September 11, 2026, and audience note clarified for student- or staff-specific guidance linking to Penn Law ITS.
+- Site scrub for accuracy, consistency, and freshness (`fix/scrub-accuracy-and-freshness`):
+  - Harmonized Claude.ai 1L description to "provisioned for 1Ls" in the Getting Started access table.
+  - Linked PCL ITS Zoom AI Companion Guide to its official ITS documentation page (`index.html`).
+  - Updated PCL ITS school-specific user guides enumeration to include Claude and Legora (`index.html`).
+  - Freshness dates: updated hero meta and footer dates across `agentic-ai-security.html`, `claude-skills.html`, `colophon.html`, and `license.html` to September 2026 / September 11, 2026.
+  - Audited and verified all 96 external URLs, internal anchors, brand guidelines, and faculty voice.
 
-**Where it stands:** Hero metadata and Claude Code 1L provisioning updated and verified. Ready for PR and merge.
+**Where it stands:** Accuracy, consistency, and freshness scrub complete. Ready for PR and merge.
 
 **Next:** Remaining review items: visible search field. Update July ITS review stamp when ITS re-reviews.
 
