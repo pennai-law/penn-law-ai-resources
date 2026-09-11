@@ -12,7 +12,9 @@ Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorp
 - Access table staff glyphs for Claude.ai and Claude Code updated to ◆.
 - Model guidance (`#which-model-claude`) and institutional policy listings updated.
 
-**Where it stands:** Changes implemented on `feature/compact-tool-cards`. Anchor and syntax integrity verified.
+- Claude.ai and ChatGPT aligned on equal footing across access table, cards, and policy/security sections: both offer Enterprise (via ITS with research funds; Low & Mod clearance) or personal subscriptions (Plus/Pro, Pro/Max; Low Risk only) with research funds. Staff licenses for both funded via departmental budgets.
+
+**Where it stands:** PR #36 merged and deployed live. Equal footing alignment committed on `feature/claude-chatgpt-equal-footing`. Anchor and syntax integrity verified.
 
 **Next:** Remaining review items: one canonical card per tool (Claude Code and Cowork each appear on both Getting Started and Agentic & Advanced); per-tab jump list; visible search field. Update July ITS review stamp when ITS re-reviews.
 
