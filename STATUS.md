@@ -20,8 +20,9 @@ Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorp
   - **Per-Tab In-Page Jump Lists**: Added `.tab-jump-bar` single-line scrollable pill nav across all five tabs, with intelligent scroll alignment in `activateFromHash` and jump-click interception (`block: 'start'` with `scroll-margin-top: 70px` for headings; `block: 'center'` for cards).
 
 - Claude Code access updated across the portal (`feature/1l-claude-code`): 1Ls are provisioned with Claude Code as part of Penn Enterprise Claude. Access table 1Ls column updated to ✓ (matching Claude.ai), `#card-claude-code` badge updated to `◆ Enterprise via ITS · Fundable`, and card/policy descriptions updated.
+- Hero metadata and footer updated (`fix/hero-meta-date-and-audience`): exact date set to September 11, 2026, and audience note clarified for student- or staff-specific guidance linking to Penn Law ITS.
 
-**Where it stands:** Claude Code 1L provisioning updated and verified. Internal anchors and scripts valid. Ready for PR and merge.
+**Where it stands:** Hero metadata and Claude Code 1L provisioning updated and verified. Ready for PR and merge.
 
 **Next:** Remaining review items: visible search field. Update July ITS review stamp when ITS re-reviews.
 
