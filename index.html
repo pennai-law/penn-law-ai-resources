@@ -467,7 +467,52 @@
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
 
+  /* ── IN-PAGE JUMP BAR ── */
+  .tab-jump-bar {
+    display: flex;
+    gap: 0.45rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.2rem 0 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-jump-bar::-webkit-scrollbar { display: none; }
+  .tab-jump-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+  }
+  .tab-jump-link:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .tab-jump-link.featured {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+  }
+  .tab-jump-link.featured:hover {
+    background: #00153d;
+  }
+
   /* ── SECTION HEADINGS ── */
+  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills {
+    scroll-margin-top: 70px;
+  }
   .section-label {
     font-size: 11px;
     font-weight: 600;
@@ -1093,9 +1138,55 @@
   <!-- ═══ TAB 1: GETTING STARTED ═══ -->
   <section class="tab-pane active" id="getting-started" role="tabpanel" aria-labelledby="tab-btn-getting-started" tabindex="0">
 
+    <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
+      <a class="tab-jump-link" href="#orientation">Orientation</a>
+      <a class="tab-jump-link featured" href="#tools-at-penn">Tools &amp; Access Table &darr;</a>
+      <a class="tab-jump-link" href="#adjunct-faculty">Adjunct Faculty</a>
+      <a class="tab-jump-link" href="#sec-general-tools">General Tools</a>
+      <a class="tab-jump-link" href="#sec-agentic-tools">Agentic Tools</a>
+      <a class="tab-jump-link" href="#sec-legal-tools">Legal Tools</a>
+      <a class="tab-jump-link" href="#sec-productivity-tools">Productivity</a>
+    </div>
 
-    <p class="section-label">Getting Started</p>
-    <h2 class="section-title" id="tools-at-penn" style="scroll-margin-top:70px;">AI Tools at Penn Law</h2>
+    <p class="section-label">Orientation</p>
+    <h2 class="section-title" id="orientation">What Can AI Actually Do?</h2>
+    <p class="section-intro">Practical fundamentals for faculty: how these tools work, where they save time, and where they fall short.</p>
+
+    <div class="prose-section">
+
+      <h3>The Short Version</h3>
+      <p>The AI tools listed below are all built on <strong>large language models</strong> (LLMs) &mdash; software trained on enormous amounts of text that can generate fluent, often remarkably useful responses to natural-language prompts. You don't need to understand the engineering. The practical takeaway: these tools are very good at working with language, and not so good at everything else.</p>
+
+      <p>Think of it this way: you have a very fast, very well-read research assistant who sometimes makes things up. That's not a knock &mdash; it's how these tools actually work. When you treat the output as a strong first draft that needs your judgment and verification, they can save you real time.</p>
+
+      <h3>Where AI is Genuinely Useful</h3>
+      <p><strong>Drafting and writing.</strong> LLMs are excellent first-draft machines. Emails, memos, syllabi, recommendation letters, committee reports &mdash; give it context and a clear prompt, and you'll get a solid starting point in seconds. I use this daily.</p>
+
+      <p><strong>Brainstorming and outlining.</strong> When you're staring at a blank page, AI is a surprisingly good thought partner. It won't have your ideas, but it will give you a structured framework to react to &mdash; which is often exactly what you need to get moving.</p>
+
+      <p><strong>Summarizing and explaining.</strong> Drop in a long document, article, or set of comments and ask for a summary. Ask it to explain a technical concept in plain language. This works well and can save significant time on reading-heavy tasks.</p>
+
+      <p><strong>Research assistance.</strong> Harvey and the Westlaw/Lexis AI tools are designed specifically for legal research &mdash; finding relevant cases, statutes, and secondary sources. They're not a replacement for careful research, but they can accelerate the early stages significantly.</p>
+
+      <h3>Where AI Falls Short</h3>
+      <p><strong>It makes things up.</strong> This is the big one. LLMs generate plausible-sounding text, and sometimes that text is simply wrong &mdash; fabricated case names, invented statistics, confident but incorrect legal analysis. The field calls this "hallucination." It's not a bug that's getting fixed next quarter; it's a fundamental feature of how these models work. Always verify anything that matters.</p>
+
+      <p><strong>Math and precision.</strong> LLMs are language tools, not calculators. They'll get basic arithmetic right most of the time, but anything involving complex calculations, data analysis, or precise quantitative reasoning should be checked independently.</p>
+
+      <p><strong>Confidentiality.</strong> When you type something into an AI tool, that text goes to a server. I recommend using only paid, enterprise-tier tools for professional work &mdash; and checking your privacy settings. More on this in the <a href="#" onclick="return goToTab('policies');" style="color:var(--navy); text-decoration:underline;">Policies</a> tab.</p>
+
+      <p><strong>It doesn't "understand" anything.</strong> This is worth saying plainly: LLMs don't know what they're saying. They predict the next word based on patterns in training data. The output can be impressive &mdash; even insightful &mdash; but there's no reasoning happening behind the curtain the way there is when you think through a problem. Your judgment is not optional.</p>
+
+      <p style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">A note on agentic AI:</strong> the framing above describes <em>chat</em> AI &mdash; the kind you type at. Increasingly, faculty are also using <em>agentic</em> AI: tools that read files, run commands, and act on your behalf. The dynamics are different, and so is the safety setup. See the dedicated <a href="#" onclick="return goToTab('agentic-ai');" style="color: var(--navy); text-decoration: underline;">Agentic &amp; Advanced tab</a>.</p>
+
+      <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">You don't have to start from scratch:</strong> there are ready-made <em>skills</em> for the tasks faculty repeat &mdash; generating multiple choice and essay exam questions, class prep, lecture-slide review, memo and email drafting, editorial review. Install one and invoke it by name. See <a href="#" onclick="return goToCard('agentic-ai','ai-skills');" style="color: var(--navy); text-decoration: underline;">Cross-Tool AI Skills</a>, or browse the <a href="claude-skills.html" style="color: var(--navy); text-decoration: underline;">full catalog</a>.</p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">The Tools</p>
+    <h2 class="section-title" id="tools-at-penn">AI Tools at Penn Law</h2>
     <p class="section-intro">The Penn Law community has access to several AI platforms. Here's what's available for 2026&ndash;27. Click on each tool for more details on access.</p>
 
     <style>
@@ -1152,7 +1243,7 @@
       <p style="margin:0;"><strong>If you use your own paid subscription instead, keep student material out of it.</strong> A personal Claude, ChatGPT, or Gemini account is fine for your own preparation, but it carries none of Penn&rsquo;s approvals. Student records are FERPA-protected and don&rsquo;t belong in a tool <a href="#" onclick="return goToTab('policies');" style="color:var(--navy); text-decoration:underline;">Penn hasn&rsquo;t reviewed</a>.</p>
     </div>
 
-    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500;">General AI Tools</h3>
+    <h3 id="sec-general-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500;">General AI Tools</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">General-purpose AI assistants &mdash; chat tools for writing, analysis, summarizing, and brainstorming. Each runs on one or more underlying models; PennChat, for instance, fronts Anthropic and OpenAI models in one Penn-secured interface.</p>
 
     <div class="card-grid">
@@ -1240,7 +1331,7 @@
 
     </div>
 
-    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Agentic Tools</h3>
+    <h3 id="sec-agentic-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Agentic Tools</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Agentic AI goes beyond chat &mdash; it reads files, runs commands, and works across multiple steps on your behalf. Here are the two Claude agents; the <a href="#" onclick="return goToTab('agentic-ai');" style="color:var(--navy);">Agentic &amp; Advanced tab</a> has the full lineup, setup, and safe-use guidance.</p>
 
     <div class="card-grid">
@@ -1261,7 +1352,7 @@
         <div class="card-links">
           <a class="card-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
           <a class="card-link" href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork" target="_blank" rel="noopener">Cowork guide</a>
-          <a class="card-link" href="#" onclick="return goToTab('agentic-ai');">Agentic &amp; Advanced setup</a>
+          <a class="card-link" href="#" onclick="return goToCard('agentic-ai', 'card-ag-claude-cowork');">Full setup &amp; safe use guide &rarr;</a>
         </div>
       </div>
 
@@ -1276,17 +1367,17 @@
           <span class="mode-badge mode-building">Building with AI</span>
         </div>
         <p>Anthropic's agentic command-line tool &mdash; works in terminal, IDE, desktop app, or browser. Reads and edits files, runs commands, and orchestrates multi-step workflows. Engine behind the Law Faculty Skills. Included in Penn Enterprise Claude (Standard includes $50/week API allocation; Premium includes $250/week) by request through ITS (<a href="mailto:itshelp@law.upenn.edu" style="color:var(--navy); text-decoration:underline;">itshelp@law.upenn.edu</a>), or usable via personal subscription.</p>
-        <div class="card-spec"><strong>Setup:</strong> See the <a href="#" onclick="return goToTab('agentic-ai');" style="color:var(--navy); text-decoration:underline;">Agentic &amp; Advanced tab</a> for installation and safe working practices.</div>
+        <div class="card-spec"><strong>Setup:</strong> See the <a href="#" onclick="return goToCard('agentic-ai', 'card-ag-claude-code');" style="color:var(--navy); text-decoration:underline;">Agentic &amp; Advanced tab</a> for installation and safe working practices.</div>
         <div class="card-links">
           <a class="card-link" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a>
           <a class="card-link" href="https://code.claude.com/docs" target="_blank" rel="noopener">Documentation</a>
-          <a class="card-link" href="#" onclick="return goToTab('agentic-ai');">Setup &amp; safe use</a>
+          <a class="card-link" href="#" onclick="return goToCard('agentic-ai', 'card-ag-claude-code');">Full setup &amp; safe use guide &rarr;</a>
         </div>
       </div>
 
     </div>
 
-    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Legal-Specific Tools</h3>
+    <h3 id="sec-legal-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Legal-Specific Tools</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Built specifically for legal work &mdash; trained on legal data and designed for legal research and drafting.</p>
 
     <div class="card-grid">
@@ -1359,7 +1450,7 @@
 
     </div>
 
-    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Productivity Tools</h3>
+    <h3 id="sec-productivity-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Productivity Tools</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">AI features embedded in tools you already use &mdash; built into your existing workflow.</p>
 
     <div class="card-grid">
@@ -1401,49 +1492,21 @@
 
     </div>
 
-    <div class="divider"></div>
-
-    <p class="section-label">Orientation</p>
-    <h2 class="section-title">What Can AI Actually Do?</h2>
-
-    <div class="prose-section">
-
-      <h3>The Short Version</h3>
-      <p>The AI tools listed above are all built on <strong>large language models</strong> (LLMs) &mdash; software trained on enormous amounts of text that can generate fluent, often remarkably useful responses to natural-language prompts. You don't need to understand the engineering. The practical takeaway: these tools are very good at working with language, and not so good at everything else.</p>
-
-      <p>Think of it this way: you have a very fast, very well-read research assistant who sometimes makes things up. That's not a knock &mdash; it's how these tools actually work. When you treat the output as a strong first draft that needs your judgment and verification, they can save you real time.</p>
-
-      <h3>Where AI is Genuinely Useful</h3>
-      <p><strong>Drafting and writing.</strong> LLMs are excellent first-draft machines. Emails, memos, syllabi, recommendation letters, committee reports &mdash; give it context and a clear prompt, and you'll get a solid starting point in seconds. I use this daily.</p>
-
-      <p><strong>Brainstorming and outlining.</strong> When you're staring at a blank page, AI is a surprisingly good thought partner. It won't have your ideas, but it will give you a structured framework to react to &mdash; which is often exactly what you need to get moving.</p>
-
-      <p><strong>Summarizing and explaining.</strong> Drop in a long document, article, or set of comments and ask for a summary. Ask it to explain a technical concept in plain language. This works well and can save significant time on reading-heavy tasks.</p>
-
-      <p><strong>Research assistance.</strong> Harvey and the Westlaw/Lexis AI tools are designed specifically for legal research &mdash; finding relevant cases, statutes, and secondary sources. They're not a replacement for careful research, but they can accelerate the early stages significantly.</p>
-
-      <h3>Where AI Falls Short</h3>
-      <p><strong>It makes things up.</strong> This is the big one. LLMs generate plausible-sounding text, and sometimes that text is simply wrong &mdash; fabricated case names, invented statistics, confident but incorrect legal analysis. The field calls this "hallucination." It's not a bug that's getting fixed next quarter; it's a fundamental feature of how these models work. Always verify anything that matters.</p>
-
-      <p><strong>Math and precision.</strong> LLMs are language tools, not calculators. They'll get basic arithmetic right most of the time, but anything involving complex calculations, data analysis, or precise quantitative reasoning should be checked independently.</p>
-
-      <p><strong>Confidentiality.</strong> When you type something into an AI tool, that text goes to a server. I recommend using only paid, enterprise-tier tools for professional work &mdash; and checking your privacy settings. More on this in the <a href="#" onclick="return goToTab('policies');" style="color:var(--navy); text-decoration:underline;">Policies</a> tab.</p>
-
-      <p><strong>It doesn't "understand" anything.</strong> This is worth saying plainly: LLMs don't know what they're saying. They predict the next word based on patterns in training data. The output can be impressive &mdash; even insightful &mdash; but there's no reasoning happening behind the curtain the way there is when you think through a problem. Your judgment is not optional.</p>
-
-      <p style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">A note on agentic AI:</strong> the framing above describes <em>chat</em> AI &mdash; the kind you type at. Increasingly, faculty are also using <em>agentic</em> AI: tools that read files, run commands, and act on your behalf. The dynamics are different, and so is the safety setup. See the dedicated <a href="#" onclick="return goToTab('agentic-ai');" style="color: var(--navy); text-decoration: underline;">Agentic &amp; Advanced tab</a>.</p>
-
-      <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 14.5px; color: var(--mid-gray);"><strong style="color: var(--navy);">You don't have to start from scratch:</strong> there are ready-made <em>skills</em> for the tasks faculty repeat &mdash; generating multiple choice and essay exam questions, class prep, lecture-slide review, memo and email drafting, editorial review. Install one and invoke it by name. See <a href="#" onclick="return goToCard('agentic-ai','ai-skills');" style="color: var(--navy); text-decoration: underline;">Cross-Tool AI Skills</a>, or browse the <a href="claude-skills.html" style="color: var(--navy); text-decoration: underline;">full catalog</a>.</p>
-
-    </div>
-
   </section>
 
   <!-- ═══ TAB 2: AGENTIC & ADVANCED (Agentic AI + former Advanced Claude) ═══ -->
   <section class="tab-pane" id="agentic-ai" role="tabpanel" aria-labelledby="tab-btn-agentic-ai" tabindex="0">
 
+    <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
+      <a class="tab-jump-link" href="#sec-agentic-overview">Overview &amp; Risks</a>
+      <a class="tab-jump-link featured" href="#sec-agentic-tools-list">Available Tools &darr;</a>
+      <a class="tab-jump-link" href="#sec-claude-setup">Claude Code Setup</a>
+      <a class="tab-jump-link" href="#sec-model-apis">Model APIs</a>
+      <a class="tab-jump-link" href="#ai-skills">Faculty Skills</a>
+    </div>
+
     <p class="section-label">What faculty should know</p>
-    <h2 class="section-title"><em>Agentic</em> AI: tools that do, not just describe</h2>
+    <h2 class="section-title" id="sec-agentic-overview"><em>Agentic</em> AI: tools that do, not just describe</h2>
     <p class="section-intro">Most AI tools faculty have used so far are <strong>chat AI</strong> &mdash; you type, they respond. <strong>Agentic AI</strong> is different: you give it a goal and it works toward that goal across many steps, reading files, running commands, searching the web, and modifying documents until the task is done. Claude Code, OpenAI Codex, Gemini CLI, and Claude Cowork are purpose-built for this. The same underlying models power them, but the tools can <em>do</em> things, not just describe them.</p>
 
     <div class="divider"></div>
@@ -1502,7 +1565,7 @@
     <div class="divider"></div>
 
     <p class="section-label">The tools</p>
-    <h2 class="section-title">Agentic Tools Available to Faculty</h2>
+    <h2 class="section-title" id="sec-agentic-tools-list">Agentic Tools Available to Faculty</h2>
     <p class="section-intro">These are the agentic tools most relevant to Penn Law faculty. Some offer free access; others require a subscription or usage-based billing. Paying for a personal account does not give it Penn&rsquo;s institutional data protections. Use only a Penn-reviewed tool cleared for the data involved.</p>
 
     <div class="card-grid">
@@ -1527,7 +1590,7 @@
       </div>
 
       <div class="card">
-        <h3>Claude Cowork</h3>
+        <h3 id="card-ag-claude-cowork">Claude Cowork</h3>
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-working">Working with AI</span><span class="mode-badge mode-building">Building with AI</span></div>
         <p>Anthropic&rsquo;s app-based agentic AI &mdash; a friendlier alternative to the terminal agents above, accessed through a desktop or browser app. Hand it a task (research, drafting, analysis, summarization) and it works in the background. Closer to delegation than command-line interaction. <strong>For now, faculty cannot connect external agentic AI tools to the Law School&rsquo;s O365</strong> (email, calendar, OneDrive, Teams), so use Cowork for self-contained tasks rather than as a productivity-app integrator. Launched in early 2026. Not currently available through Penn Enterprise Claude (under University review); a limited Penn Carey Law staff pilot is under way; otherwise an individual subscription is required.</p>
       </div>
@@ -1544,7 +1607,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Getting Set Up</p>
-    <h2 class="section-title">Claude Code</h2>
+    <h2 class="section-title" id="sec-claude-setup">Claude Code</h2>
 
     <div class="prose-section">
       <p><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Claude Code</a> is Anthropic's AI coding and productivity tool &mdash; it works in your terminal, in VS Code, as a desktop app, or in your browser. Despite the name, it's not just for coding. I use it for writing, research, document production, and administrative tasks. It's the tool behind the Claude Code Skills listed on this page and on the pedagogy portal.</p>
@@ -1561,7 +1624,7 @@
     <div class="divider"></div>
 
     <p class="section-label">For the Technically Curious</p>
-    <h2 class="section-title">Model APIs</h2>
+    <h2 class="section-title" id="sec-model-apis">Model APIs</h2>
 
     <div class="prose-section">
       <p>The agentic tools above are prebuilt. If you'd rather build your own &mdash; automate a repeat task, process a batch of documents, or wire a model into a script &mdash; you can call the models directly through an API. You don't need to be a software engineer: if you can write a basic script (or have an AI write one for you), you can use one.</p>
@@ -1764,8 +1827,17 @@
   <!-- ═══ TAB 3: USE CASES & TIPS ═══ -->
   <section class="tab-pane" id="use-cases" role="tabpanel" aria-labelledby="tab-btn-use-cases" tabindex="0">
 
+    <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
+      <a class="tab-jump-link" href="#sec-working-modes">Working Modes</a>
+      <a class="tab-jump-link" href="#pennchat-no-web">PennChat Limitations</a>
+      <a class="tab-jump-link featured" href="#which-model">Model Picker &darr;</a>
+      <a class="tab-jump-link" href="#claude-models">Which Claude Model</a>
+      <a class="tab-jump-link" href="#pennchat-agents">Custom GPTs</a>
+      <a class="tab-jump-link" href="#better-results">Prompting Tips</a>
+    </div>
+
     <p class="section-label">Best Practices</p>
-    <h2 class="section-title">How do you want to work with AI?</h2>
+    <h2 class="section-title" id="sec-working-modes">How do you want to work with AI?</h2>
     <p class="section-intro">What you&rsquo;re doing with AI shapes which tools fit &mdash; three modes of working, from everyday chat to building your own tools. Most people start with the first and grow into the others. (For teaching-specific tools and guides, see the <a href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pedagogy Resources portal</a>.)</p>
 
     <div style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem;">
@@ -1948,6 +2020,15 @@
   <!-- ═══ TAB 5: POLICIES & GUIDELINES ═══ -->
   <section class="tab-pane" id="policies" role="tabpanel" aria-labelledby="tab-btn-policies" tabindex="0">
 
+    <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
+      <a class="tab-jump-link featured" href="#data-risk">Data Risk Framework &darr;</a>
+      <a class="tab-jump-link" href="#sec-reviewed-tools">Reviewed Tools</a>
+      <a class="tab-jump-link" href="#sec-quick-guidance">Quick Guidance</a>
+      <a class="tab-jump-link" href="#sec-personal-accounts">Personal Accounts</a>
+      <a class="tab-jump-link" href="#accuracy">Attribution &amp; Bias</a>
+      <a class="tab-jump-link" href="#sec-institutional-policies">Institutional Policies</a>
+    </div>
+
     <p class="section-label">Policies &amp; Guidelines</p>
     <h2 class="section-title">Using AI Responsibly</h2>
     <p class="section-intro">Penn classifies data by risk tier and reviews specific AI tools for use with each tier. This section explains the framework and lists the tools Penn Law ITS has reviewed and endorses. It is informational; for authoritative current guidance, see the policy sources linked at the bottom of this section.</p>
@@ -1957,7 +2038,7 @@
       <h3 id="data-risk" style="scroll-margin-top:70px;">The Penn Data Risk Classification</h3>
       <p>Penn classifies data into three tiers &mdash; <strong>Low Risk</strong> (publicly available; no harm if disclosed), <strong>Moderate Risk</strong> (not generally public; mildly adverse if disclosed), and <strong>High Risk</strong> (regulated or sensitive; significantly adverse if disclosed). Most legal teaching, scholarship, and administration touches Low and Moderate Risk data. Personnel matters, student PII, confidential committee deliberations, and similar sit at Moderate or High. The full framework is at <a href="https://isc.upenn.edu/security/penn-data-risk-classification" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">isc.upenn.edu/security/penn-data-risk-classification</a>.</p>
 
-      <h3>AI Tools Reviewed for Penn Law Use</h3>
+      <h3 id="sec-reviewed-tools">AI Tools Reviewed for Penn Law Use</h3>
       <p>This list draws on <a href="https://www.law.upenn.edu/its/docs/ai/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Law ITS&rsquo;s AI guidance</a> and <a href="https://isc.upenn.edu/services/software-licensing-ai-tools/ai-tools" target="_blank" rel="noopener">Penn ISC&rsquo;s service page</a>, checked September 3, 2026. Confirm school-specific access with Penn Law ITS:</p>
       <ul>
         <li><strong>PennChat</strong> &mdash; Penn's secure, University-hosted, chat-based portal for Anthropic's Claude and OpenAI's ChatGPT, free to eligible Penn users. Daily credits allocate model usage; they are not a stated per-user charge. Approved for <strong>Low, Moderate, and most High Risk Data</strong> (excluding SSNs and credit-card data; avoid identifiable PHI) &mdash; the broadest data approval at PCL, alongside Microsoft Copilot Chat. Requires PennNet / AirPennNet or the GlobalProtect VPN. See the <a href="https://isc.upenn.edu/resources/pennchat-pilot-FAQs" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">PennChat FAQ</a>.</li>
@@ -1971,10 +2052,10 @@
       <p>Penn ISC's central list reviews additional tools beyond those above &mdash; <strong>Microsoft 365 Copilot</strong> (the premium tier embedded in Office apps; requires a paid per-user license), <strong>Gemini for Google Workspace</strong>, <strong>Google NotebookLM</strong>, <strong>Grammarly</strong>, and others &mdash; with their own per-tier mappings. Availability for PCL community members varies; the full Penn-wide list is at <a href="https://isc.upenn.edu/ai/tools/penn-generative-ai-tools-resources" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Generative AI Tools &amp; Resources</a>. Westlaw AI and Lexis+ AI are covered separately under Penn Law's existing legal research subscriptions.</p>
       <p>For AI tools beyond those Penn Law ITS or Penn ISC has reviewed, the framework is the same one Penn applies internally: identify the risk tier of any Penn data involved, check the vendor's data-handling terms, and reach out to Penn Law ITS or me with use-case-specific questions.</p>
 
-      <h3>Quick Guidance for Law School Work</h3>
+      <h3 id="sec-quick-guidance">Quick Guidance for Law School Work</h3>
       <p>For teaching prep, scholarship drafting, summarizing public legal materials, and most administrative tasks, the PCL ITS-reviewed tools above work well. <strong>For sensitive Penn data &mdash; student PII, personnel matters, confidential committee deliberations &mdash; PennChat and Microsoft Copilot Chat have the broadest approval among the PCL-reviewed tools (Low, Moderate, and most High Risk); Harvey, ChatGPT EDU, Claude (Penn Enterprise), and Zoom AI Companion are reviewed for Low and Moderate Risk only.</strong> For SSNs, credit card data, or HIPAA-protected information: don't put it into any AI tool, period.</p>
 
-      <h3>Personal-Account Use of Other Tools</h3>
+      <h3 id="sec-personal-accounts">Personal-Account Use of Other Tools</h3>
       <p>If you're using Claude, ChatGPT (consumer version, not EDU), or any other AI tool on a personal account rather than through Penn's institutional access, the Penn approvals above don't apply &mdash; you're operating under that vendor's terms. For regular work with public or Low Risk material, <strong>I recommend a paid tier</strong> for its usage limits. Check training and retention settings on any personal plan; paying does not itself establish stronger privacy protections. Personal-account tools should never see Penn's Moderate or High Risk Data. This comes up most often for <a href="#adjunct-faculty" onclick="return goToCard('getting-started','adjunct-faculty');" style="color:var(--navy); text-decoration:underline;">adjunct faculty</a>, who have no research account and so are likeliest to be working on their own subscription. Student records are FERPA-protected and don&rsquo;t belong there.</p>
 
     </div>
@@ -2018,7 +2099,7 @@
     <div class="divider"></div>
 
     <p class="section-label">Penn Policies</p>
-    <h2 class="section-title">Institutional Guidelines</h2>
+    <h2 class="section-title" id="sec-institutional-policies">Institutional Guidelines</h2>
 
     <div class="prose-section">
 
@@ -2051,8 +2132,16 @@
   <!-- ═══ TAB 6: AI AT PENN ═══ -->
   <section class="tab-pane" id="ai-at-penn" role="tabpanel" aria-labelledby="tab-btn-ai-at-penn" tabindex="0">
 
+    <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
+      <a class="tab-jump-link" href="#sec-office-hours">Office Hours</a>
+      <a class="tab-jump-link" href="#sec-ai-project">The AI Project</a>
+      <a class="tab-jump-link featured" href="#sec-project-tools">Open Tools &darr;</a>
+      <a class="tab-jump-link" href="#sec-announcements">Announcements</a>
+      <a class="tab-jump-link" href="#sec-penn-initiatives">Penn-Wide Initiatives</a>
+    </div>
+
     <p class="section-label">Faculty Support</p>
-    <h2 class="section-title">AI Office Hours</h2>
+    <h2 class="section-title" id="sec-office-hours">AI Office Hours</h2>
     <p class="section-intro">Informal sessions through the fall semester. Bring your questions, plans, use cases, and gripes &mdash; we'll talk it through. All faculty are welcome, and nothing is required in advance. No agenda and no slides.</p>
 
     <style>
@@ -2080,7 +2169,7 @@
     <div class="divider"></div>
 
     <p class="section-label">From the Project</p>
-    <h2 class="section-title">The Penn Carey Law AI Project</h2>
+    <h2 class="section-title" id="sec-ai-project">The Penn Carey Law AI Project</h2>
 
     <div class="callout">
       <h3>The Penn Carey Law AI Project</h3>
@@ -2097,7 +2186,7 @@
       <p style="margin-top:0.75rem;"><a class="card-link" href="https://pennai.law/projects/" target="_blank" rel="noopener">Browse all Project projects &rarr;</a></p>
     </div>
 
-    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.75rem; font-weight:500;">Two you can pick up today</h3>
+    <h3 id="sec-project-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.75rem; font-weight:500;">Two you can pick up today</h3>
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1rem; max-width:640px; line-height:1.65;">Both are open source and installable now, rather than something to request access to.</p>
 
     <div class="card-grid">
@@ -2122,14 +2211,14 @@
     <div class="divider"></div>
 
     <div class="callout-gold callout">
-      <h3>AI Announcements List</h3>
+      <h3 id="sec-announcements">AI Announcements List</h3>
       <p>I maintain a mailing list for news about AI at Penn Law &mdash; new tools, policy updates, workshops, and anything else worth knowing. Low volume, high signal. Contact me at <a href="mailto:pwagner@law.upenn.edu" style="color:#5A4700; text-decoration:underline;">pwagner@law.upenn.edu</a> to join.</p>
     </div>
 
     <div class="divider"></div>
 
     <p class="section-label">AI Across Penn</p>
-    <h2 class="section-title">Penn-Wide AI Initiatives</h2>
+    <h2 class="section-title" id="sec-penn-initiatives">Penn-Wide AI Initiatives</h2>
 
     <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.5rem; max-width:640px; line-height:1.65;">There's a lot happening with AI across Penn. Here are the initiatives and resources most worth knowing about.</p>
 
@@ -2393,10 +2482,31 @@
     const pane = el && el.closest('.tab-pane');
     if (!pane) return;
     activateTab(pane.id);
+    const isCard = el.classList.contains('card') || !!el.closest('.card');
+    const scrollOpts = { block: isCard ? 'center' : 'start' };
     // On load, wait a frame so the newly-shown pane has laid out before scrolling.
-    if (onLoad) requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
-    else el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (onLoad) {
+      requestAnimationFrame(() => el.scrollIntoView(scrollOpts));
+    } else {
+      scrollOpts.behavior = 'smooth';
+      el.scrollIntoView(scrollOpts);
+    }
   }
+
+  // Delegated in-page jump click handler
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('.tab-jump-link');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    const targetId = href.slice(1);
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    e.preventDefault();
+    history.pushState(null, '', href);
+    const isCard = el.classList.contains('card') || !!el.closest('.card');
+    el.scrollIntoView({ behavior: 'smooth', block: isCard ? 'center' : 'start' });
+  });
   // Tab-row overflow affordance. The row scrolls horizontally on narrow
   // viewports; show a fade on whichever side still has tabs off-screen.
   const tabNav = document.querySelector('.tab-nav');

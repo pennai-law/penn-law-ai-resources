@@ -14,9 +14,14 @@ Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorp
 
 - Claude.ai and ChatGPT aligned on equal footing across access table, cards, and policy/security sections: both offer Enterprise (via ITS with research funds; Low & Mod clearance) or personal subscriptions (Plus/Pro, Pro/Max; Low Risk only) with research funds. Staff licenses for both funded via departmental budgets.
 
-**Where it stands:** PR #36 merged and deployed live. Equal footing alignment committed on `feature/claude-chatgpt-equal-footing`. Anchor and syntax integrity verified.
+- Structural and flow improvements implemented on `feature/structural-improvements`:
+  - **Inverted Getting Started**: Orientation prose (*"What Can AI Actually Do?"*) moved to the top of the pane with `#orientation`, followed by the Access Table, Adjunct Faculty notice, and categorized tool catalog.
+  - **Deduplicated Tool Cards**: Canonical technical cards established in *Agentic & Advanced* for Claude Code (`#card-ag-claude-code`) and Claude Cowork (`#card-ag-claude-cowork`), with clean handoff CTAs from compact identity cards in *Getting Started*.
+  - **Per-Tab In-Page Jump Lists**: Added `.tab-jump-bar` single-line scrollable pill nav across all five tabs, with intelligent scroll alignment in `activateFromHash` and jump-click interception (`block: 'start'` with `scroll-margin-top: 70px` for headings; `block: 'center'` for cards).
 
-**Next:** Remaining review items: one canonical card per tool (Claude Code and Cowork each appear on both Getting Started and Agentic & Advanced); per-tab jump list; visible search field. Update July ITS review stamp when ITS re-reviews.
+**Where it stands:** Structural and flow improvements complete on `feature/structural-improvements`. All 69 internal anchors, 12 tool cards, canonical cards, and JS syntax verified. Ready for PR and merge.
+
+**Next:** Remaining review items: visible search field. Update July ITS review stamp when ITS re-reviews.
 
 **Open:** At 375px only two tabs fit and the header wordmark wraps to three lines. Unconfirmed cells: Legora for adjuncts (○ or ✓), Westlaw/Lexis for staff (—). Eddie's lessons.md calibration is still to paste.
 
