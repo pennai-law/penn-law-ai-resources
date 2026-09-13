@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thinking With AI, Not Through AI: Using Penn Claude as a 1L &mdash; Penn Carey Law AI Resources</title>
+<meta name="description" content="A guide for Penn Carey Law 1Ls on using Penn Claude as a study partner: tool access, course rules, the traffic light, study routines, and the learning science behind them.">
+<link rel="icon" type="image/x-icon" href="https://resources.pennai.law/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #011F5B;
+    --navy-mid: #0a2f78;
+    --navy-light: #1a3f8f;
+    --red: #990000;
+    --red-soft: #FFF2F2;
+    --red-border: #E8C5C5;
+    --cream: #FAF8F3;
+    --warm-gray: #F2EFE8;
+    --mid-gray: #6B6863;
+    --dark-gray: #3A3630;
+    --border: #D8D4CC;
+    --gold: #756000;
+    --gold-light: #F5EFD0;
+    --green: #107C41;
+    --green-soft: #F1F8F4;
+    --green-border: #C2E0CE;
+    --yellow: #996A00;
+    --yellow-soft: #FFFDF0;
+    --yellow-border: #F3E5AB;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark-gray);
+    font-size: 15.5px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .site-header a:focus-visible,
+  .site-footer a:focus-visible {
+    outline-color: white;
+    outline-offset: 3px;
+  }
+
+  /* ── PENN BAR ── */
+  .penn-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+      var(--navy) 0%, var(--navy) 62%, var(--red) 62%, var(--red) 100%);
+  }
+
+  /* ── LAB STRIPE ── */
+  .lab-stripe {
+    background: #FAF3DD;
+    border-bottom: 1px solid #E8DEB9;
+    padding: 0.55rem 3rem;
+  }
+  .lab-stripe-link {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: var(--dark-gray);
+  }
+  .lab-stripe-text {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  .lab-stripe-text strong { color: var(--navy); font-weight: 600; }
+  .lab-stripe-cta {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #822024;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lab-stripe-link:hover .lab-stripe-cta { text-decoration: underline; }
+
+  /* ── SITE HEADER ── */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    padding: 0.85rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .wordmark span {
+    color: rgba(255,255,255,0.55);
+    margin: 0 0.35rem;
+    font-weight: 400;
+  }
+  .wordmark-shield {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .back-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 3px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .back-link:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.45);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--warm-gray);
+    border-bottom: 1px solid var(--border);
+    padding: 1.8rem 3rem 1.5rem;
+  }
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .hero-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.45rem;
+  }
+  .hero h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: clamp(2.1rem, 4.2vw, 3rem);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+  }
+  .hero h1 em { color: var(--red); font-style: italic; }
+  .hero-sub {
+    font-size: 17.5px;
+    line-height: 1.55;
+    color: var(--dark-gray);
+    margin-bottom: 0;
+    max-width: 680px;
+  }
+  .hero-meta {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── ARTICLE CONTENT ── */
+  .article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  .article h2 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .article h2:first-of-type { margin-top: 0.5rem; }
+  .article h2 .roman {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    padding: 2px 8px;
+    background: var(--gold-light);
+    border-radius: 2px;
+    position: relative;
+    top: -2px;
+  }
+  .article h3 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--navy-mid);
+    margin: 1.8rem 0 0.5rem;
+    line-height: 1.3;
+  }
+  .article p {
+    margin-bottom: 1.15rem;
+    color: var(--dark-gray);
+  }
+  .article strong { color: var(--navy); font-weight: 600; }
+  .article em { font-style: italic; }
+  .article a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .article a:hover { color: var(--red); }
+  .article code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--warm-gray);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--navy);
+    border: 1px solid var(--border);
+  }
+  .article ol, .article ul {
+    margin: 0.5rem 0 1.2rem 1.6rem;
+    padding: 0;
+  }
+  .article li {
+    margin-bottom: 0.6rem;
+    padding-left: 0.35rem;
+  }
+  .article ol li::marker { color: var(--red); font-weight: 600; }
+  .article ul li::marker { color: var(--gold); }
+
+  /* ── CALLOUT BOXES ── */
+  .disclaimer {
+    margin: 0 0 2.2rem 0;
+    padding: 1rem 1.2rem;
+    background: var(--warm-gray);
+    border-left: 3px solid var(--mid-gray);
+    border-radius: 2px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mid-gray);
+    line-height: 1.6;
+  }
+  .disclaimer strong { font-style: normal; color: var(--navy); font-weight: 600; }
+
+  .callout-key {
+    margin: 2rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    border-left: 5px solid var(--gold);
+    border-radius: 2px;
+    font-size: 15px;
+    color: var(--dark-gray);
+    box-shadow: 0 1px 3px rgba(184, 150, 12, 0.08);
+  }
+  .callout-key-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.55rem;
+    letter-spacing: -0.01em;
+  }
+
+  .callout-warn {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.4rem;
+    background: var(--red-soft);
+    border-left: 4px solid var(--red);
+    border-radius: 2px;
+  }
+  .callout-warn-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.45rem;
+  }
+
+  /* ── COMPARISON SPLIT ── */
+  .split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 680px) {
+    .split-container { grid-template-columns: 1fr; }
+  }
+  .split-card {
+    border-radius: 3px;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--border);
+  }
+  .split-substitute {
+    background: var(--red-soft);
+    border-left: 4px solid var(--red);
+  }
+  .split-support {
+    background: white;
+    border-left: 4px solid var(--navy);
+  }
+  .split-heading {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .split-substitute .split-heading { color: var(--red); }
+  .split-support .split-heading { color: var(--navy); }
+  .split-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .split-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .split-substitute .split-list li::before {
+    content: "\2715";
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .split-support .split-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  .split-list li.punch { padding-left: 0; margin-top: 1rem; margin-bottom: 0; font-family: 'EB Garamond', Georgia, serif; font-size: 16.5px; }
+  .split-substitute .split-list li.punch { color: var(--red); }
+  .split-support .split-list li.punch { color: var(--navy); }
+  .split-list li.punch::before { content: none; }
+
+  /* ── TRAFFIC LIGHT MATRIX ── */
+  .traffic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.8rem 0;
+  }
+  .traffic-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1.3rem 1.5rem;
+  }
+  .traffic-green { background: #DCEFE2; border-color: #8FC5A3; border-left: 6px solid var(--green); }
+  .traffic-yellow { background: #FBEFC2; border-color: #E2C766; border-left: 6px solid var(--yellow); }
+  .traffic-red { background: #F6D9D9; border-color: #D99A9A; border-left: 6px solid var(--red); }
+  .traffic-green .traffic-title { color: var(--green); }
+  .traffic-yellow .traffic-title { color: var(--yellow); }
+  .traffic-red .traffic-title { color: var(--red); }
+  .traffic-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  .traffic-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .badge-green { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-yellow { background: var(--yellow-soft); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-red { background: var(--red-soft); color: var(--red); border: 1px solid var(--red-border); }
+  .traffic-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .traffic-card ul {
+    margin: 0.4rem 0 0 1.4rem;
+    padding: 0;
+    font-size: 14.5px;
+  }
+  .traffic-card li { margin-bottom: 0.4rem; }
+
+  /* ── RULES CARDS ── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.8rem 0;
+  }
+  @media (max-width: 680px) {
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+  .rule-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    border-radius: 2px;
+    padding: 1.3rem 1.4rem;
+  }
+  .rule-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .rule-name {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+  }
+  .rule-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: var(--dark-gray);
+  }
+
+  /* ── PROMPT CARDS ── */
+  .prompt-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin: 1.6rem 0;
+    overflow: hidden;
+  }
+  .prompt-header {
+    background: var(--warm-gray);
+    border-bottom: 1px solid var(--border);
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .prompt-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .copy-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .copy-btn:hover {
+    background: var(--cream);
+    border-color: var(--mid-gray);
+  }
+  .copy-btn.copied {
+    background: var(--green-soft);
+    color: var(--green);
+    border-color: var(--green-border);
+  }
+  .prompt-body {
+    padding: 1.2rem;
+    background: #FCFBF9;
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+
+  /* ── TOOLS GRID ── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.8rem 0;
+  }
+  @media (max-width: 680px) {
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+  .tool-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    border-radius: 2px;
+    padding: 1.3rem 1.4rem;
+  }
+  .tool-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.35rem;
+  }
+  .tool-name {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .tool-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 2.2rem 3rem;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .site-footer a { color: white; text-decoration: underline; }
+  .site-footer-line { margin: 0 auto 0.35rem; max-width: 720px; }
+  .site-footer-line:last-child { margin-bottom: 0; }
+  .site-footer-legal {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 0.75rem;
+  }
+  .site-footer-legal a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+  .site-footer-legal a:hover { border-bottom-color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 720px) {
+    .lab-stripe, .site-header, .hero, .article, .site-footer { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .hero { padding-top: 1.4rem; padding-bottom: 1.2rem; }
+    .article { padding-top: 2rem; padding-bottom: 3rem; }
+    .article h2 { font-size: 1.4rem; }
+  }
+
+  /* ── SECTION NAV (sticky jump bar) ── */
+  .section-nav {
+    position: sticky;
+    top: var(--header-h, 56px);
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 0 rgba(1,31,91,0.04);
+  }
+  .section-nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0.45rem 1.25rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.3rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-nav-inner::-webkit-scrollbar { display: none; }
+  .section-link {
+    flex: 0 0 auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 0.22rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: white;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .section-link:hover { border-color: var(--navy); }
+  .section-link.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .article h2 { scroll-margin-top: calc(var(--header-h, 56px) + 3.2rem); }
+  @media (max-width: 640px) {
+    .section-nav-inner { padding: 0.5rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PENN BAR -->
+<div class="penn-bar" aria-hidden="true"></div>
+
+<!-- LAB STRIPE -->
+<div class="lab-stripe" role="complementary" aria-label="About this site">
+  <a class="lab-stripe-link" href="https://pennai.law/" target="_blank" rel="noopener">
+    <span class="lab-stripe-text">Part of the <strong>Penn Carey Law AI Project</strong> &mdash; research, tools, and policy for AI in legal education and practice.</span>
+    <span class="lab-stripe-cta">Visit pennai.law &rarr;</span>
+  </a>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <span class="wordmark">
+      <img class="wordmark-shield" src="data:image/png;base64,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" alt="Penn Carey Law Shield" width="22" height="25">
+      Penn Carey Law <span>|</span> AI Resources
+    </span>
+    <a class="back-link" href="https://pennai.law/" target="_blank" rel="noopener">&larr; Penn Carey Law AI Project</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-inner">
+    <div class="hero-kicker">1L Resource &middot; Fall 2026</div>
+    <h1>Thinking <em>With</em> AI, Not Through AI</h1>
+    <p class="hero-sub">Using Penn Claude as a 1L Study Partner</p>
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<nav class="section-nav" aria-label="Page sections">
+  <div class="section-nav-inner">
+    <a class="section-link" href="#access">Tools</a>
+    <a class="section-link" href="#course-rules">Course Rules</a>
+    <a class="section-link" href="#who-does-the-work">The Key</a>
+    <a class="section-link" href="#traffic-light">Traffic Light</a>
+    <a class="section-link" href="#routines">Routines</a>
+    <a class="section-link" href="#habits">Habits</a>
+    <a class="section-link" href="#toolkit">Toolkit</a>
+    <a class="section-link" href="#why">The Science</a>
+  </div>
+</nav>
+
+<!-- ARTICLE CONTENT -->
+<main class="article">
+
+  <div class="callout-key">
+    <div class="callout-key-title">&#x1F6A8; Before anything else: this is optional &#x1F6A8;</div>
+    <p>You can build strong legal foundations this year without using AI as a study partner. For some students, waiting is the right call, and nobody will think less of you for it.</p>
+    <p style="margin-bottom:0;">Fluency with these tools will matter by the time you graduate. The 1L question is when and how to start, not whether. This guide is for students who want to start now.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p style="margin:0 0 0.5rem 0;"><strong>Companion to the 1L talk.</strong> The <a href="https://pennai.law/slides/1l-ai-study-partner/" target="_blank" rel="noopener">slides</a> cover the essentials in fifteen minutes. This page keeps the same traffic light and study routines, adds more prompts, explains how to extend Claude, and, for those who want it, lays out the learning science behind the advice. It will keep growing; check back.</p>
+    <p style="margin:0;"><strong>Course rules come first.</strong> Nothing here overrides a syllabus or an assignment instruction; see section II.</p>
+  </div>
+
+  <h2 id="access"><span class="roman">I</span>Your AI Tool Access</h2>
+  <p>Every 1L has a Penn Claude seat. Penn also runs its own portal, PennChat, which is useful as a second opinion.</p>
+
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-badge">Your primary tool</div>
+      <div class="tool-name">Penn Claude</div>
+      <p>The seat includes the Claude chatbot, Claude Code, and API credits. Sign in at <a href="https://claude.ai/" target="_blank" rel="noopener">claude.ai</a> with your <code>PennKey@upenn.edu</code> address, not your law school address, and complete the short required training before first use. Under Penn&rsquo;s enterprise agreement, Anthropic does not train its models on Penn data. Setup details are on the <a href="https://www.law.upenn.edu/its/docs/ai/claude/" target="_blank" rel="noopener">Penn Law ITS Penn Claude page</a>.</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-badge">A second opinion</div>
+      <div class="tool-name">PennChat</div>
+      <p>Go to <a href="https://pennchat.upenn.edu/" target="_blank" rel="noopener">pennchat.upenn.edu</a> on PennNet, or on the GlobalProtect VPN off campus, and sign in with your PennKey. It offers both OpenAI and Anthropic models inside Penn&rsquo;s own environment. Its main use for studying is a second read: ask a different model the same question and compare.</p>
+    </div>
+  </div>
+
+  <div class="callout-warn">
+    <div class="callout-warn-title">Data</div>
+    <p>Penn Claude is cleared for low- and moderate-risk data; PennChat for low, moderate, and most high-risk data. For studying, the rule is simple: never put Social Security numbers, credit-card numbers, passwords, health information, or another person&rsquo;s private information into any AI tool. Your own notes and outlines are yours to use. Whether you may upload a professor&rsquo;s materials depends on that professor&rsquo;s rules. Fuller guidance: <a href="https://www.law.upenn.edu/its/docs/ai/" target="_blank" rel="noopener">Penn Law ITS AI Guidance</a>.</p>
+  </div>
+
+  <h2 id="course-rules"><span class="roman">II</span>Course Rules Come First</h2>
+  <ul>
+    <li>Rules are set course-by-course, and they can differ by assignment within a course.</li>
+    <li>Read the syllabus and the assignment instructions.</li>
+    <li>Permission in one course says nothing about another.</li>
+    <li>Permission to use AI as a study partner never implies permission to use it on graded work, writing projects, or exams.</li>
+    <li>If anything is unclear, ask before you use the tool.</li>
+  </ul>
+
+  <h2 id="who-does-the-work"><span class="roman">III</span>The Key to Learning with AI: Who Does the Work?</h2>
+  <p>Think of the gym. If someone lifts the barbell for you, the barbell moves and nothing happens to you. A trainer does the opposite: hands you the weight, watches your form, and adds resistance when it gets easy.</p>
+  <p>Claude can play either role. Ask it to summarize a case before you read it and it will, and you will have learned nothing. Ask it to quiz you after you read the case and it becomes a patient study partner that is available at 2 a.m. and willing to push back. Same tool. The only question that matters is <strong>who is doing the work</strong>.</p>
+  <p>The question bites harder in law school, because the documents you produce have no value of their own. Nobody will ever pay you for a 1L Contracts outline or a brief of <em>Pennoyer v. Neff</em>. Those documents matter only because of what producing them does to you. If the tool produces them, the point is gone.</p>
+
+  <div class="split-container">
+    <div class="split-card split-substitute">
+      <div class="split-heading">A trainer who lifts for you</div>
+      <ul class="split-list">
+        <li>Summarizes the case before you read it.</li>
+        <li>Writes your outline.</li>
+        <li>Drafts your practice answer.</li>
+        <li>Hands you the &ldquo;right answer&rdquo; to a doctrinal ambiguity.</li>
+        <li class="punch"><em>The barbell moves. Your muscles don&rsquo;t.</em></li>
+      </ul>
+    </div>
+    <div class="split-card split-support">
+      <div class="split-heading">A trainer who makes you lift</div>
+      <ul class="split-list">
+        <li>Quizzes you after you read.</li>
+        <li>Pokes holes in your rule statement.</li>
+        <li>Grades the answer you wrote.</li>
+        <li>Argues the other side against you.</li>
+        <li class="punch"><em>You do the reps. The resistance builds muscle.</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="traffic-light"><span class="roman">IV</span>The Traffic Light for 1L Study</h2>
+  <p>The test is simple: did you do the thinking first?</p>
+
+  <div class="traffic-grid">
+    <div class="traffic-card traffic-green">
+      <div class="traffic-header">
+        <span class="traffic-title">You did the work first. The tool adds resistance.</span>
+      </div>
+      <ul>
+        <li><strong>Quiz me on what I read.</strong> After you have read and briefed the case, have Claude question you on the holding and how the facts drove it.</li>
+        <li><strong>Poke holes in my analysis.</strong> Write your own rule statement or argument, then ask where it is imprecise, overbroad, or open to attack.</li>
+        <li><strong>Give me a new hypo to work out.</strong> A fresh fact pattern on a doctrine you have already studied, with no answer until you commit to one.</li>
+        <li><strong>Argue the other side against me.</strong> Take a position, then have Claude play opposing counsel.</li>
+        <li><strong>Critique the answer I already wrote.</strong> Write a practice answer under timed conditions, then ask for feedback. If your professor has released a model answer and allows you to upload it, ask Claude to grade against that.</li>
+      </ul>
+    </div>
+
+    <div class="traffic-card traffic-yellow">
+      <div class="traffic-header">
+        <span class="traffic-title">Only after your own attempt, and verify whatever it hands you.</span>
+      </div>
+      <ul>
+        <li><strong>Audit my brief, after I read the case.</strong> Compare Claude&rsquo;s read against your brief only once you have read the opinion and written your own.</li>
+        <li><strong>Explain it, after my own try.</strong> Asking for an explanation is fine once you have tried to explain the doctrine yourself and got stuck. Treat the answer as a hint to check against the casebook, not as the rule.</li>
+        <li><strong>Compare my outline to the syllabus.</strong> Look for omissions and inconsistencies in a structure you built yourself.</li>
+        <li><strong>Untangle the procedural posture.</strong> Multi-party appeals and jurisdictional maneuvers, after you have made your own attempt.</li>
+        <li><strong>Any case, quote, or citation it names: verify it</strong> before it goes anywhere.</li>
+      </ul>
+    </div>
+
+    <div class="traffic-card traffic-red">
+      <div class="traffic-header">
+        <span class="traffic-title">The tool does your learning for you, or the rules say no.</span>
+      </div>
+      <ul>
+        <li><strong>Summarize the case before I read it.</strong> This removes the struggle that teaches you to read a case.</li>
+        <li><strong>Build my outline for me.</strong> Synthesizing forty cases into one framework is the hardest and most valuable work of 1L. Outsource it and you arrive at the exam with someone else&rsquo;s map.</li>
+        <li><strong>Draft my practice answer.</strong> Your first attempt at any practice problem is your only honest measure of what you know.</li>
+        <li><strong>Cite anything it gives me without checking.</strong> Cases, statutes, Restatement sections, quotations.</li>
+        <li><strong>Anything the course rules bar.</strong> And anything that puts sensitive data into the tool.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="routines"><span class="roman">V</span>Study Routines to Start With</h2>
+  <p>Copy these into Penn Claude and adapt the bracketed parts. Every one starts with your own work on the page, and every one carries a boundary line: &ldquo;Do not summarize it,&rdquo; &ldquo;Do not rewrite it,&rdquo; &ldquo;Use only those cases.&rdquo; That last one matters. Without it, Claude will import doctrine from cases your professor never assigned, and you will not know the difference yet. Three routines you actually use beat thirty you don&rsquo;t.</p>
+
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Quiz me</span>
+      <button class="copy-btn" onclick="copyPrompt('p1', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p1">I just read [case]. Do not summarize it. Ask me one question at a time about the holding and how the facts drove it. Push back when my answer is thin.</pre>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Check my rule</span>
+      <button class="copy-btn" onclick="copyPrompt('p2', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p2">Here is my three-sentence statement of [doctrine], based on [cases]: [paste]. Where is it imprecise, overbroad, or open to counterargument? Use only those cases.</pre>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Audit my notes or outline</span>
+      <button class="copy-btn" onclick="copyPrompt('p3', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p3">Here is my section on [topic]: [paste]. Do not rewrite it. Point out gaps, contradictions, and missed exceptions, using only the assigned cases.</pre>
+  </div>
+
+  <h3>More routines</h3>
+  <p>Once the three above are habits, these extend them.</p>
+
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Work a new hypo</span>
+      <button class="copy-btn" onclick="copyPrompt('p4', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p4">I am a 1L studying [course]. We are covering [doctrine]. Do not explain the doctrine or summarize it. Act as a demanding law professor: give me a two-paragraph fact pattern that tests the edge of this doctrine and ask me to take a position. Wait for my answer. Then critique it, name any element I missed, and add a factual twist that makes it harder.</pre>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Debrief my practice answer</span>
+      <button class="copy-btn" onclick="copyPrompt('p5', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p5">I wrote this practice answer for [course] under timed conditions, without help.
+
+The question: [paste]
+My answer: [paste]
+[Optional: the professor's model answer or rubric: [paste]]
+
+Grade it the way a law school exam grader would. Did I spot the major issues and the secondary ones? Did I organize around clear rule statements and counterarguments, or jump to conclusions? Where did I fail to use specific facts from the question?</pre>
+  </div>
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">Argue the other side</span>
+      <button class="copy-btn" onclick="copyPrompt('p6', this)">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="p6">I am preparing an argument on [topic] for [course]. My position and supporting cases: [paste].
+
+Act as opposing counsel. What is the most vulnerable premise in my theory? Which of the assigned cases cut against me, and how would you distinguish mine? Give me the strongest policy argument against the rule I am advocating. Use only the assigned materials.</pre>
+  </div>
+
+  <h2 id="habits"><span class="roman">VI</span>Four Habits That Keep You in the Green</h2>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div class="rule-name">Attempt first, prompt second</div>
+      <p>Never start from a blank screen. If you have not put your own analysis in words, you have nothing for the tool to work on. Write the holding, the rule statement, or the exam paragraph first, then ask Claude to test it.</p>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div class="rule-name">Ask for questions, not answers</div>
+      <p>Make Claude the demanding professor. Questions, hypotheticals, and critique, not summaries. If you catch yourself reading an explanation and nodding, stop and try to reproduce it without looking.</p>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-name">Verify every case and cite</div>
+      <p>Anything it names, you confirm in the casebook, on Westlaw, or on Lexis before relying on it. The Legal Practice Skills program will teach you the research tools built for this later in the term.</p>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div class="rule-name">Maintain AI-free zones</div>
+      <p>Some things stay fully human: your first read of every case, class itself, and your practice exams. Those are where you find out what you actually know.</p>
+    </div>
+  </div>
+
+  <h2 id="toolkit"><span class="roman">VII</span>Your Toolkit: Apps, Projects, Skills, and More</h2>
+  <p>The chat window at claude.ai is the starting point, not the limit. Everything below is optional, and everything below still follows the traffic light: you do the work first, then the tool tests it.</p>
+
+  <h3>1. The apps</h3>
+  <p>Your Penn Claude seat works everywhere Claude does: the web at <a href="https://claude.ai/" target="_blank" rel="noopener">claude.ai</a>, desktop apps for Mac and Windows, and mobile apps for iPhone and Android, all from <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a>. Sign in with the same <code>PennKey@upenn.edu</code> address and your chats and projects follow you across devices. The desktop app is the one to use for long study sessions; the phone app is fine for a quick quiz on the train.</p>
+
+  <h3>2. Models</h3>
+  <p>Penn Claude offers more than one model. Sonnet 5 is fast and the everyday choice; Opus 5 is slower and stronger on hard reasoning. For quizzing and rule-checking, Sonnet is plenty. Switch to Opus when you want a serious critique of an argument or a practice answer. The model picker is at the top of every chat.</p>
+
+  <h3>3. A Project per course</h3>
+  <p><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Projects</a> group chats together with a standing instruction and a shared set of files, so you stop re-explaining yourself every session. Set up one per course. Give it a short tutor instruction, something like: <em>&ldquo;You are my study partner for Civil Procedure. Ask questions rather than give answers. Require my attempt before you respond to any substantive question. Flag uncertainty. Rely only on the materials in this project and on the cases I name.&rdquo;</em> Then add your own notes, briefs, and outline as project knowledge as the semester goes. Your own notes and outlines are yours to upload. Whether you may upload a professor&rsquo;s materials depends on that professor&rsquo;s rules.</p>
+
+  <h3>4. Skills</h3>
+  <p>A <a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" target="_blank" rel="noopener">skill</a> is a packaged set of instructions Claude loads when a task calls for it, so a routine you use often becomes a single command instead of a pasted prompt. Skills live under <strong>Customize &rarr; Skills</strong> in settings, but Penn has not yet turned them on for the Penn Claude organization, so you will not see that menu for now. When it appears, you will be able to package your own: the three study routines above, written up as a skill, become &ldquo;quiz me on Palsgraf&rdquo; with no setup each time. The faculty portal&rsquo;s <a href="claude-skills.html">skills catalog</a> is written for faculty, but it shows what a finished skill looks like. I&rsquo;m planning a student study-skill set for this guide.</p>
+
+  <h3>5. Claude Code</h3>
+  <p>Your seat includes Claude Code, a command-line version of Claude that works directly with files on your computer. For students comfortable with a terminal, it is a good way to search a semester of notes, check cross-references, compare two versions of an outline, or build a local study workspace. It is not required, and this is not a coding tutorial. If the chat window does what you need, stay there.</p>
+
+  <h3>6. PennChat, for a second read</h3>
+  <p>When Claude critiques your rule statement, ask a different model in PennChat the same question and compare. Where they disagree is usually where you should look harder. Access details are in section I.</p>
+
+  <h3>7. Connectors, and what to expect</h3>
+  <p>Connectors let Claude read from an outside source rather than from memory. <strong>Penn Claude does not currently allow you to add connectors</strong>, so none of this is available to you yet. A legal-source connector (CourtListener, which holds full-text opinions) would be the natural first one; Westlaw and Lexis connections may follow, with no date. When one arrives it will change what the tool can look up, not what you have to verify. Case name, citation, court, date, and whether the opinion is still good law remain your job.</p>
+
+  <h3>8. More guides and training</h3>
+  <p>Where to go next, grouped by who wrote it.</p>
+  <ul>
+    <li><strong>Anthropic.</strong> <a href="https://academy.claude.com/" target="_blank" rel="noopener">Claude Academy</a>, free courses; start with &ldquo;AI Fluency: Framework &amp; Foundations,&rdquo; about four hours. Help-center articles on <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Projects</a> and <a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" target="_blank" rel="noopener">Skills</a>, and the <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">Claude Code quickstart</a>.</li>
+    <li><strong>Penn Carey Law ITS.</strong> The <a href="https://www.law.upenn.edu/its/docs/ai/claude/" target="_blank" rel="noopener">Penn Claude setup guide</a> and the school&rsquo;s <a href="https://www.law.upenn.edu/its/docs/ai/" target="_blank" rel="noopener">AI guidance index</a>, including data rules.</li>
+    <li><strong>Penn ISC.</strong> The <a href="https://isc.upenn.edu/ai/anthropic-enterprise-faq" target="_blank" rel="noopener">Anthropic Enterprise FAQ</a>, the <a href="https://isc.upenn.edu/resources/pennchat-pilot-FAQs" target="_blank" rel="noopener">PennChat FAQ</a>, <a href="https://isc.upenn.edu/ai/tools/penn-generative-ai-tools-resources" target="_blank" rel="noopener">Penn Generative AI Tools &amp; Resources</a>, and the <a href="https://isc.upenn.edu/security/penn-data-risk-classification" target="_blank" rel="noopener">data risk classification</a> the tool clearances refer to.</li>
+    <li><strong>Penn Libraries.</strong> <a href="https://guides.library.upenn.edu/ai" target="_blank" rel="noopener">AI Tools and Best Practices</a>, a research guide with a good section on evaluating AI output.</li>
+    <li><strong>Penn Carey Law AI Project.</strong> The <a href="https://pennai.law/toolkit/prompt-guide/" target="_blank" rel="noopener">Prompt Guide &amp; Scenarios</a>, with worked examples for class prep and practice questions; the earlier <a href="https://pennai.law/toolkit/guidance-1l/" target="_blank" rel="noopener">1L Guidance on AI Use</a>, which covers how the models work and the human-AI-human workflow (you draft, the tool responds, you check); and the <a href="https://pennai.law/toolkit/legal-ai-tool-guide/" target="_blank" rel="noopener">Legal AI Tool Guide</a> for when you meet Westlaw&rsquo;s and Lexis&rsquo;s AI features in Legal Practice Skills.</li>
+    <li><strong>The faculty portal.</strong> <a href="https://resources.pennai.law/" target="_blank" rel="noopener">AI Resources</a> is written for faculty, but its tool catalog, model notes, and policy pages apply to you too.</li>
+  </ul>
+
+  <h2 id="why"><span class="roman">VIII</span>The Science</h2>
+  <p>You do not need this section to use the traffic light. It is here for students who want to know why the advice runs the way it does.</p>
+
+  <h3>The illusion of competence</h3>
+  <p>When Claude explains personal jurisdiction or promissory estoppel, the explanation is clear and easy to follow. You nod along and feel that you understand. Cognitive psychologists call this the illusion of competence: recognizing a clear explanation is not the same as being able to generate, apply, and defend the analysis under pressure. On a cold call or a timed exam the tool is gone, and if you never struggled to build the understanding yourself, the understanding is not there either.</p>
+
+  <h3>Desirable difficulties</h3>
+  <p>Research on learning, including Robert and Elizabeth Bjork&rsquo;s work on &ldquo;desirable difficulties,&rdquo; indicates that durable retention and flexible understanding depend on effortful work: retrieving from memory before checking, and resolving contradictions before seeing the answer. When you read a nineteenth-century opinion, the confusion is where the learning happens. Separating holding from dicta and reconstructing the procedural posture is what builds the understanding you will actually use. A summary removes the struggle, and much of the retention with it.</p>
+
+  <h3>The validation tether</h3>
+  <p>In practice, lawyers will work with AI, and the work will only be as reliable as the lawyer checking it. Nolan Lovett, in &ldquo;The Tragedy of the Cognitive Commons&rdquo; (<em>Human Resource Development Review</em>, 2026), distinguishes <strong>internalized mastery</strong> (deep knowledge built through sustained, unassisted practice) from <strong>distributed mastery</strong> (the skill of directing AI systems). His point is that the second depends on the first, and he calls that dependence the validation tether: your ability to check the machine is tied to what you know yourself. Anyone can check whether an AI memo is well formatted and confident in tone. Only someone who knows the law can see that it cited an overruled case, missed a statutory exception, or conceded a dispositive procedural point. Use AI to skip the foundations now and you will be an operator who cannot evaluate what the tool produces. That dependence is why the foundational work happens in 1L.</p>
+
+  <div class="callout-key">
+    <div class="callout-key-title">Judgment stays human</div>
+    <p style="margin-bottom:0;">Law is judgment under uncertainty. Used well, AI can quiz, critique, search, and suggest. It does not decide. Attempt first. Verify everything. Follow each professor&rsquo;s rules.</p>
+  </div>
+
+  <p style="margin-top:2rem; color: var(--mid-gray);">Questions or suggestions for this guide: Polk Wagner, <a href="mailto:pwagner@law.upenn.edu">pwagner@law.upenn.edu</a>.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-legal">
+    <a href="https://www.upenn.edu" target="_blank" rel="noopener">University of Pennsylvania</a> &middot;
+    <a href="https://www.upenn.edu/about/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot;
+    <a href="https://www.upenn.edu/about/disclaimer" target="_blank" rel="noopener">Disclaimer</a> &middot;
+    <a href="https://www.publicsafety.upenn.edu/contact/" target="_blank" rel="noopener">Emergency Services</a> &middot;
+    <a href="https://www.upenn.edu/about/report-copyright-infringement" target="_blank" rel="noopener">Report Copyright Infringement</a>
+  </div>
+  <p class="site-footer-line">&copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+  <p class="site-footer-line">Part of the <a href="https://pennai.law/" target="_blank" rel="noopener">Penn Carey Law AI Project</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; Last updated September 13, 2026</p>
+</footer>
+
+<script>
+function copyPrompt(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const originalText = btn.innerText;
+    btn.innerText = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(err => {
+    console.error('Copy failed:', err);
+  });
+}
+</script>
+
+
+<script>
+(function () {
+  const links = Array.from(document.querySelectorAll('.section-link'));
+  const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if (!targets.length) return;
+  const header = document.querySelector('.site-header');
+  function setHeaderH() { if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px'); }
+  setHeaderH(); window.addEventListener('resize', setHeaderH);
+  function setActive(id) {
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  }
+  function onScroll() {
+    const line = window.scrollY + (header ? header.offsetHeight : 56) + 60;
+    let current = targets[0].id;
+    for (const t of targets) { if (t.offsetTop <= line) current = t.id; }
+    setActive(current);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
