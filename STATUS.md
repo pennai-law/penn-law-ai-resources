@@ -1,6 +1,8 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-09-11
+**Updated:** 2026-09-13
+
+1L guide published (`feature/1l-guide`): `1L-guide.html`, served at `/1L-guide`, the student-facing companion to Polk's 1L talk (deck at pennai.law/slides/1l-ai-study-partner/). Practical-first: access, course rules, the trainer test, the traffic light, six study routines, four habits, a toolkit section (apps, models, Projects, Skills, Claude Code, PennChat, connectors, further guides), then the learning science. Not linked from `index.html`; reached by QR and URL. Skills and connectors are described as not yet enabled in Penn Claude (Polk, 2026-09-13).
 
 Tool catalog compacted in Getting Started (`feature/compact-tool-cards`): all 12 cards now use a horizontal title + logo lockup and a unified badge row displaying explicit Data Risk badges (matching Penn ISC data classification: High, Mod, Low, or Personal) alongside access and mode tags.
 
