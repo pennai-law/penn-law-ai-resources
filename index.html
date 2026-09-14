@@ -510,7 +510,7 @@
   }
 
   /* ── SECTION HEADINGS ── */
-  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills {
+  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #which-pennchat-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills {
     scroll-margin-top: 70px;
   }
   .section-label {
@@ -1159,7 +1159,7 @@
     <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs below.</p>
     <ul>
       <li><a href="#better-results">&hellip;get better answers out of a chatbot.<span class="where">Using AI &middot; Getting Better Results</span></a></li>
-      <li><a href="#which-model">&hellip;work out which tool fits the task.<span class="where">Using AI &middot; Which model should I use?</span></a></li>
+      <li><a href="#which-model">&hellip;work out which tool fits the task.<span class="where">Using AI &middot; Find the right tool for the task</span></a></li>
       <li><a href="#tools-at-penn">&hellip;see what Penn licenses and who gets access.<span class="where">Getting Started &middot; AI Tools at Penn Law</span></a></li>
       <li><a href="#data-risk">&hellip;check whether a tool is cleared for my data.<span class="where">Policies &middot; Penn Data Risk Classification</span></a></li>
       <li><a href="#accuracy">&hellip;understand what these tools get wrong.<span class="where">Policies &middot; Accuracy, Attribution, and Bias</span></a></li>
@@ -1905,7 +1905,7 @@
     <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
       <a class="tab-jump-link" href="#sec-working-modes">Working Modes</a>
       <a class="tab-jump-link" href="#pennchat-no-web">PennChat Limitations</a>
-      <a class="tab-jump-link featured" href="#which-model">Model Picker &darr;</a>
+      <a class="tab-jump-link featured" href="#which-model">Tool Finder &darr;</a>
       <a class="tab-jump-link" href="#claude-models">Which Claude Model</a>
       <a class="tab-jump-link" href="#pennchat-agents">Custom GPTs</a>
       <a class="tab-jump-link" href="#better-results">Prompting Tips</a>
@@ -1984,7 +1984,7 @@
     <div class="finder" id="tool-finder">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Using AI</span>
-        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Find the right tool for the task</h3>
+        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Find the right tool for the task</h3>
       </div>
       <p class="finder-sub">Across PennChat, Claude.ai, the legal-specific tools, and the agentic tools &mdash; not just which PennChat model to pick (that&rsquo;s below).</p>
 
@@ -2053,7 +2053,7 @@
     <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
-        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
+        <h3 id="which-pennchat-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
       </div>
       <p style="margin:0 0 0.9rem;">PennChat's model picker is long, but you rarely need to think about it. <strong style="color:var(--navy);">Start with Claude Sonnet 5.</strong> It handles nearly all faculty work well &mdash; and you can pin it in the model picker so it sits at the top every time. Switch models only when a task pushes you toward one of the exceptions below.</p>
       <div class="access-wrap">
