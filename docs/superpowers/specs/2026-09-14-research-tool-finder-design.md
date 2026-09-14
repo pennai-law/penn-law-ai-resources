@@ -121,6 +121,26 @@ Tool Finder's `FINDER_TOOLS` data object changes:
 - **CourtListener — no risk tier assigned, by design** (see Decisions above), not an
   oversight to fix.
 
+## Post-ship revision: Yes/No sensitivity toggle (Task 6)
+
+**Requested by Polk after PR #45 was open and reviewed clean.** The Low/Moderate/High
+selector above never did three-way work — every `FINDER_TOOLS` entry was tagged either
+`['low','moderate']` or `['low','moderate','high']`; nothing ever distinguished Low
+from Moderate on its own. Replaced with a single Yes/No "highly sensitive Penn data
+involved?" toggle backed by a boolean `sensitiveOk` field, defaulting to "No" (the
+common case, vs. the old default of "Moderate"). "No" shows the full roster for a task
+regardless of the flag — a tool cleared for sensitive data is obviously fine for
+non-sensitive data too; "Yes" filters to `sensitiveOk: true` tools only.
+
+The assumptions above still hold, just relabeled: every tool the original design
+tagged with `'high'` in its array is now `sensitiveOk: true` (PennChat, Westlaw,
+Lexis+, CourtListener); everything tagged only `['low','moderate']` is now
+`sensitiveOk: false` (Claude.ai, Harvey, Legora, Claude Code, the Penn LLM Gateway).
+The interpretive calls — Westlaw/Lexis+'s "Legal Research Terms" badge mapped to
+"always cleared," Claude Code/LLM Gateway's assumed tier, CourtListener's deliberate
+non-participation in Penn's risk framework — are unchanged in substance, just
+expressed as `true` instead of an array containing `'high'`.
+
 ## Out of scope
 
 - No change to any existing tool card's content, only the one intro-sentence edit
