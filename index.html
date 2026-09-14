@@ -879,7 +879,7 @@
   .verb-row { display: grid; grid-template-columns: 180px 1fr; gap: 0 1.6rem; padding: 1.05rem 0; border-top: 1px solid var(--warm-gray); }
   .verb-row:first-of-type { border-top: 1px solid var(--border); }
   @media (max-width: 640px) { .verb-row { grid-template-columns: 1fr; gap: 0.35rem 0; } }
-  .verb-label { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--navy); font-weight: 500; }
+  .verb-label { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--navy); font-weight: 500; margin: 0; }
   .verb-label small { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--mid-gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
   .verb-detail p { margin: 0 0 0.5rem; font-size: 13.5px; }
   .verb-detail p:last-child { margin-bottom: 0; }
@@ -2002,28 +2002,28 @@
       <p style="font-size:13.5px; color:var(--mid-gray); max-width:640px; margin:0 0 1.4rem;">Same tools as above, organized by the shape of a research task rather than by vendor &mdash; for the work that doesn&rsquo;t fit neatly into &ldquo;draft&rdquo; or &ldquo;review.&rdquo;</p>
 
       <div class="verb-row">
-        <div class="verb-label">Find it<small>Case law &amp; precedent</small></div>
+        <p class="verb-label">Find it<small>Case law &amp; precedent</small></p>
         <div class="verb-detail">
           <p>Natural-language search across cases, statutes, and dockets, with authority retrieval built for legal citation rather than general web search.</p>
           <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a> &mdash; for public dockets and opinions specifically, CourtListener&rsquo;s API is worth adding to the roster below.</p>
         </div>
       </div>
       <div class="verb-row">
-        <div class="verb-label">Verify it<small>Citations &amp; sourcing</small></div>
+        <p class="verb-label">Verify it<small>Citations &amp; sourcing</small></p>
         <div class="verb-detail">
           <p>Confirm a citation is real, still good law, and says what a draft claims it says &mdash; the step every AI-assisted draft needs before it leaves your desk.</p>
           <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a>&rsquo;s direct case verification, or <a href="#" onclick="return goToCard('getting-started','card-harvey');">Harvey</a> for citation checking inside a longer document.</p>
         </div>
       </div>
       <div class="verb-row">
-        <div class="verb-label">Synthesize it<small>Literature &amp; sources</small></div>
+        <p class="verb-label">Synthesize it<small>Literature &amp; sources</small></p>
         <div class="verb-detail">
           <p>Pull a body of scholarship or case law into a coherent research memo &mdash; the task &ldquo;chat, draft, summarize&rdquo; undersells once the source pile gets past a dozen documents.</p>
           <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-claude');">Claude.ai</a> (bring your own documents) or <a href="#" onclick="return goToCard('getting-started','card-legora');">Legora</a> for a legal-specific workflow.</p>
         </div>
       </div>
       <div class="verb-row">
-        <div class="verb-label">Analyze it<small>Empirical &amp; data-driven</small></div>
+        <p class="verb-label">Analyze it<small>Empirical &amp; data-driven</small></p>
         <div class="verb-detail">
           <p>Docket-level or patent-data pulls, coding a dataset, running the numbers behind an empirical claim &mdash; closer to a data-analysis workflow than a chatbot conversation.</p>
           <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('agentic-ai','card-ag-claude-code');">Claude Code</a> or the <a href="#" onclick="return goToCard('agentic-ai','ai-skills');">Penn LLM Gateway</a> for programmatic access; not a fit for PennChat&rsquo;s chat interface alone.</p>
