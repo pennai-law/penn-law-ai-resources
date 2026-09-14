@@ -510,7 +510,7 @@
   }
 
   /* ── SECTION HEADINGS ── */
-  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #which-pennchat-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills {
+  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #which-pennchat-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills, #penn-llm-gateway {
     scroll-margin-top: 70px;
   }
   .section-label {
@@ -642,6 +642,7 @@
   .badge-access-penn { background: #EBF1FB; color: #011F5B; border: 1px solid #CADAF0; font-weight: 700; }
   .badge-access-fundable { background: var(--gold-light); color: #5A4700; border: 1px solid #DFD398; }
   .badge-access-request { background: #EDEAE4; color: #4A4640; border: 1px solid #D4CFC6; }
+  .badge-access-free { background: #EDEAE4; color: #4A4640; border: 1px solid #D4CFC6; font-weight: 700; }
 
   .card-spec {
     font-size: 12px;
@@ -870,6 +871,10 @@
   .finder-result {
     display: grid; grid-template-columns: auto 1fr auto; gap: 0 1.1rem; align-items: start;
     background: var(--warm-gray); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem;
+  }
+  @media (max-width: 480px) {
+    .finder-result { grid-template-columns: auto 1fr; }
+    .finder-go { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
   }
   .finder-rank { font-family: 'EB Garamond', serif; font-size: 1.4rem; color: var(--gold); font-weight: 500; width: 1.3rem; text-align: center; line-height: 1.3; }
   .finder-name { font-weight: 600; color: var(--navy); font-size: 14.5px; }
@@ -1513,7 +1518,7 @@
           <h3 id="card-courtlistener">CourtListener</h3>
         </div>
         <div class="card-badges">
-          <span class="card-badge" style="background:var(--warm-gray); color:var(--dark-gray); border:1px solid var(--border);">Free &amp; Public</span>
+          <span class="card-badge badge-access-free">Free &amp; Public</span>
         </div>
         <p>Free legal research from the Free Law Project, a 501(c)(3) nonprofit &mdash; case law, judges, oral argument audio, and RECAP (crowdsourced federal court dockets). No Penn license or login needed to search; a free account raises API rate limits for programmatic use.</p>
         <div class="card-spec"><strong>Not Penn-provided:</strong> nothing to request through ITS &mdash; and no Penn data-risk review applies, since it&rsquo;s a public-records search tool rather than a place you send Penn material.</div>
@@ -1708,7 +1713,7 @@
       <p>The conversational tools are great for one-off tasks. But if you find yourself doing the same thing over and over &mdash; processing a batch of documents, grading with a rubric, extracting data from a set of files &mdash; an API lets you automate it. You write a script once, and it runs the same prompt across hundreds of inputs without you copy-pasting anything.</p>
       <p>APIs also give you more control: you can choose the model, adjust parameters like temperature (how creative vs. deterministic the output is), and build multi-step workflows where the output of one call feeds into the next.</p>
 
-      <h3>The Penn LLM Gateway</h3>
+      <h3 id="penn-llm-gateway" style="scroll-margin-top:70px;">The Penn LLM Gateway</h3>
       <p>Penn runs a secure <a href="https://www.truefoundry.com/docs/ai-gateway/intro-to-llm-gateway" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">LLM Gateway</a> that provides programmatic API access to a range of models from inside Penn's environment &mdash; built for research and tool-building. <strong>Penn Carey Law is part of the pilot program.</strong> It's the Penn-sanctioned path to API access, as opposed to a personal vendor account, which makes it the right starting point for work that touches Penn data or is funded by Penn. Email me to get connected.</p>
 
       <h3>Anthropic (Claude) API</h3>
@@ -1906,6 +1911,8 @@
       <a class="tab-jump-link" href="#sec-working-modes">Working Modes</a>
       <a class="tab-jump-link" href="#pennchat-no-web">PennChat Limitations</a>
       <a class="tab-jump-link featured" href="#which-model">Tool Finder &darr;</a>
+      <a class="tab-jump-link" href="#ai-for-research">AI for Research</a>
+      <a class="tab-jump-link" href="#which-pennchat-model">Model Picker</a>
       <a class="tab-jump-link" href="#claude-models">Which Claude Model</a>
       <a class="tab-jump-link" href="#pennchat-agents">Custom GPTs</a>
       <a class="tab-jump-link" href="#better-results">Prompting Tips</a>
@@ -1986,7 +1993,7 @@
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Using AI</span>
         <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Find the right tool for the task</h3>
       </div>
-      <p class="finder-sub">The Tool Finder covers PennChat, Claude.ai, the legal-specific tools, and the agentic tools &mdash; not just which PennChat model to pick (that&rsquo;s below).</p>
+      <p class="finder-sub">The Tool Finder covers PennChat, Claude.ai, the legal research tools, and the agentic tools &mdash; not just which PennChat model to pick (that&rsquo;s below).</p>
 
       <div class="finder-controls">
         <fieldset>
@@ -2013,10 +2020,10 @@
         <h4>Recommended</h4>
         <span class="finder-count" id="finder-count"></span>
       </div>
-      <div class="finder-results" id="finder-results"></div>
+      <div class="finder-results" id="finder-results" aria-live="polite"></div>
     </div>
 
-    <div style="margin-bottom: 2rem;">
+    <div id="ai-for-research" style="margin-bottom: 2rem; scroll-margin-top:70px;">
       <h3 style="font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500; margin-bottom:0.3rem;">AI for Research</h3>
       <p style="font-size:13.5px; color:var(--mid-gray); max-width:640px; margin:0 0 1.4rem;">Same tools as above, organized by the shape of a research task rather than by vendor &mdash; for the work that doesn&rsquo;t fit neatly into &ldquo;draft&rdquo; or &ldquo;review.&rdquo;</p>
 
@@ -2024,7 +2031,7 @@
         <p class="verb-label">Find it<small>Case law &amp; precedent</small></p>
         <div class="verb-detail">
           <p>Natural-language search across cases, statutes, and dockets, with authority retrieval built for legal citation rather than general web search.</p>
-          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a> &mdash; or <a href="#" onclick="return goToCard('getting-started','card-courtlistener');">CourtListener</a> for public dockets and opinions specifically, free and with no Penn license needed.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a>, or <a href="#" onclick="return goToCard('getting-started','card-harvey');">Harvey</a> &mdash; or <a href="#" onclick="return goToCard('getting-started','card-courtlistener');">CourtListener</a> for public dockets and opinions specifically, free and with no Penn license needed.</p>
         </div>
       </div>
       <div class="verb-row">
@@ -2045,7 +2052,7 @@
         <p class="verb-label">Analyze it<small>Empirical &amp; data-driven</small></p>
         <div class="verb-detail">
           <p>Docket-level or patent-data pulls, coding a dataset, running the numbers behind an empirical claim &mdash; closer to a data-analysis workflow than a chatbot conversation.</p>
-          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('agentic-ai','card-ag-claude-code');">Claude Code</a> or the <a href="#" onclick="return goToCard('agentic-ai','ai-skills');">Penn LLM Gateway</a> for programmatic access; not a fit for PennChat&rsquo;s chat interface alone.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('agentic-ai','card-ag-claude-code');">Claude Code</a> or the <a href="#" onclick="return goToCard('agentic-ai','penn-llm-gateway');">Penn LLM Gateway</a> for programmatic access; not a fit for PennChat&rsquo;s chat interface alone.</p>
         </div>
       </div>
     </div>
@@ -2626,7 +2633,7 @@
       { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-westlaw') },
       { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
       { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
-      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; not a Penn-licensed tool, so nothing to request.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-courtlistener') },
+      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; you&rsquo;re searching public records, not sending Penn material anywhere.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-courtlistener') },
     ],
     citecheck: [
       { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
@@ -2639,7 +2646,7 @@
     ],
     automate: [
       { name: 'Claude Code', why: 'Multi-step and agentic &mdash; hands off a task across files rather than one chat turn at a time.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','card-ag-claude-code') },
-      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','ai-skills') },
+      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','penn-llm-gateway') },
     ],
   };
 
@@ -2652,7 +2659,9 @@
     const count = document.getElementById('finder-count');
     count.textContent = rows.length ? rows.length + (rows.length === 1 ? ' match' : ' matches') : '';
     if (!rows.length) {
-      results.innerHTML = '<p class="finder-empty">Nothing cleared for that combination yet &mdash; check the full access table above.</p>';
+      results.innerHTML = riskEl.value === 'high'
+        ? '<p class="finder-empty">For High Risk material, <a href="#" onclick="return goToCard(\'getting-started\',\'card-pennchat\');">PennChat</a> is the only approved option on this page &mdash; see the <a href="#" onclick="return goToCard(\'policies\',\'data-risk\');">data-risk classification</a>.</p>'
+        : '<p class="finder-empty">Nothing cleared for that combination yet &mdash; check the full access table under Getting Started.</p>';
       return;
     }
     results.innerHTML = rows.map((t, i) => (
