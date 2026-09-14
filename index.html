@@ -1434,7 +1434,7 @@
     </div>
 
     <h3 id="sec-legal-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Legal-Specific Tools</h3>
-    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Built specifically for legal work &mdash; trained on legal data and designed for legal research and drafting.</p>
+    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Built specifically for legal work &mdash; AI-powered drafting and analysis tools, plus core legal research infrastructure like case law and docket databases.</p>
 
     <div class="card-grid">
 
@@ -1501,6 +1501,22 @@
         <div class="card-spec"><strong>Access:</strong> Sign in with your individual Lexis+ law school credentials.</div>
         <div class="card-links">
           <a class="card-link" href="https://plus.lexis.com" target="_blank" rel="noopener">Open Lexis+</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title-wrap">
+          <div class="card-icon" style="background:var(--navy); color:#fff;">CL</div>
+          <h3 id="card-courtlistener">CourtListener</h3>
+        </div>
+        <div class="card-badges">
+          <span class="card-badge" style="background:var(--warm-gray); color:var(--dark-gray); border:1px solid var(--border);">Free &amp; Public</span>
+        </div>
+        <p>Free legal research from the Free Law Project, a 501(c)(3) nonprofit &mdash; case law, judges, oral argument audio, and RECAP (crowdsourced federal court dockets). No Penn license or login needed to search; a free account raises API rate limits for programmatic use.</p>
+        <div class="card-spec"><strong>Not Penn-provided:</strong> nothing to request through ITS &mdash; and no Penn data-risk review applies, since it&rsquo;s a public-records search tool rather than a place you send Penn material.</div>
+        <div class="card-links">
+          <a class="card-link" href="https://www.courtlistener.com" target="_blank" rel="noopener">Open CourtListener</a>
+          <a class="card-link" href="https://www.courtlistener.com/help/api/rest/" target="_blank" rel="noopener">REST API docs</a>
         </div>
       </div>
 
@@ -2005,7 +2021,7 @@
         <p class="verb-label">Find it<small>Case law &amp; precedent</small></p>
         <div class="verb-detail">
           <p>Natural-language search across cases, statutes, and dockets, with authority retrieval built for legal citation rather than general web search.</p>
-          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a> &mdash; for public dockets and opinions specifically, CourtListener&rsquo;s API is worth adding to the roster below.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a> &mdash; or <a href="#" onclick="return goToCard('getting-started','card-courtlistener');">CourtListener</a> for public dockets and opinions specifically, free and with no Penn license needed.</p>
         </div>
       </div>
       <div class="verb-row">
@@ -2607,6 +2623,7 @@
       { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-westlaw') },
       { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
       { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
+      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; not a Penn-licensed tool, so nothing to request.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-courtlistener') },
     ],
     citecheck: [
       { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
