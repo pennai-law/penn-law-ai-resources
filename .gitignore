@@ -2,3 +2,4 @@
 .claude/
 # Extracted source bundles (the .zip is the authoritative source)
 docs/files/
+.worktrees/
