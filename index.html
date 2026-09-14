@@ -2007,11 +2007,10 @@
           </div>
         </fieldset>
         <fieldset>
-          <legend>How sensitive is the material?</legend>
-          <div class="chip-row" id="finder-risk-chips">
-            <label class="chip"><input type="radio" name="finder-risk" value="low"> Low</label>
-            <label class="chip chip-active"><input type="radio" name="finder-risk" value="moderate" checked> Moderate</label>
-            <label class="chip"><input type="radio" name="finder-risk" value="high"> High</label>
+          <legend>Highly sensitive Penn data involved?</legend>
+          <div class="chip-row" id="finder-sensitive-chips">
+            <label class="chip chip-active"><input type="radio" name="finder-sensitive" value="no" checked> No</label>
+            <label class="chip"><input type="radio" name="finder-sensitive" value="yes"> Yes</label>
           </div>
         </fieldset>
       </div>
@@ -2626,41 +2625,41 @@
   // direct badge read.
   const FINDER_TOOLS = {
     draft: [
-      { name: 'PennChat', why: 'Free with your PennKey, no setup &mdash; the safe default for everyday drafting.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-pennchat') },
-      { name: 'Claude.ai', why: 'Same models, direct access &mdash; better for iterating on a longer draft across a session.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-claude') },
+      { name: 'PennChat', why: 'Free with your PennKey, no setup &mdash; the safe default for everyday drafting.', sensitiveOk: true, go: () => goToCard('getting-started','card-pennchat') },
+      { name: 'Claude.ai', why: 'Same models, direct access &mdash; better for iterating on a longer draft across a session.', sensitiveOk: false, go: () => goToCard('getting-started','card-claude') },
     ],
     research: [
-      { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-westlaw') },
-      { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
-      { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
-      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; you&rsquo;re searching public records, not sending Penn material anywhere.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-courtlistener') },
+      { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', sensitiveOk: true, go: () => goToCard('getting-started','card-westlaw') },
+      { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', sensitiveOk: true, go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
+      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; you&rsquo;re searching public records, not sending Penn material anywhere.', sensitiveOk: true, go: () => goToCard('getting-started','card-courtlistener') },
     ],
     citecheck: [
-      { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
-      { name: 'Harvey', why: 'Cite-checking works inside a full document, not just a pasted excerpt.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
+      { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', sensitiveOk: true, go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Cite-checking works inside a full document, not just a pasted excerpt.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
     ],
     review: [
-      { name: 'Harvey', why: 'Built for exactly this &mdash; long-document legal review under a Penn enterprise agreement.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
-      { name: 'Legora', why: 'Comparable document-analysis workflow; six-month retention on inactive projects.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-legora') },
-      { name: 'Claude.ai', why: 'Bring your own document for a single close read outside a legal-specific tool.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-claude') },
+      { name: 'Harvey', why: 'Built for exactly this &mdash; long-document legal review under a Penn enterprise agreement.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
+      { name: 'Legora', why: 'Comparable document-analysis workflow; six-month retention on inactive projects.', sensitiveOk: false, go: () => goToCard('getting-started','card-legora') },
+      { name: 'Claude.ai', why: 'Bring your own document for a single close read outside a legal-specific tool.', sensitiveOk: false, go: () => goToCard('getting-started','card-claude') },
     ],
     automate: [
-      { name: 'Claude Code', why: 'Multi-step and agentic &mdash; hands off a task across files rather than one chat turn at a time.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','card-ag-claude-code') },
-      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','penn-llm-gateway') },
+      { name: 'Claude Code', why: 'Multi-step and agentic &mdash; hands off a task across files rather than one chat turn at a time.', sensitiveOk: false, go: () => goToCard('agentic-ai','card-ag-claude-code') },
+      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', sensitiveOk: false, go: () => goToCard('agentic-ai','penn-llm-gateway') },
     ],
   };
 
   function renderFinder() {
     const taskEl = document.querySelector('input[name="finder-task"]:checked');
-    const riskEl = document.querySelector('input[name="finder-risk"]:checked');
-    if (!taskEl || !riskEl) return;
-    const rows = (FINDER_TOOLS[taskEl.value] || []).filter(t => t.risk.includes(riskEl.value));
+    const sensitiveEl = document.querySelector('input[name="finder-sensitive"]:checked');
+    if (!taskEl || !sensitiveEl) return;
+    const rows = (FINDER_TOOLS[taskEl.value] || []).filter(t => sensitiveEl.value === 'no' || t.sensitiveOk);
     const results = document.getElementById('finder-results');
     const count = document.getElementById('finder-count');
     count.textContent = rows.length ? rows.length + (rows.length === 1 ? ' match' : ' matches') : '';
     if (!rows.length) {
-      results.innerHTML = riskEl.value === 'high'
-        ? '<p class="finder-empty">For High Risk material, <a href="#" onclick="return goToCard(\'getting-started\',\'card-pennchat\');">PennChat</a> is the only approved option on this page &mdash; see the <a href="#" onclick="return goToCard(\'policies\',\'data-risk\');">data-risk classification</a>.</p>'
+      results.innerHTML = sensitiveEl.value === 'yes'
+        ? '<p class="finder-empty">For highly sensitive Penn data, <a href="#" onclick="return goToCard(\'getting-started\',\'card-pennchat\');">PennChat</a> is the only approved option on this page &mdash; see the <a href="#" onclick="return goToCard(\'policies\',\'data-risk\');">data-risk classification</a>.</p>'
         : '<p class="finder-empty">Nothing cleared for that combination yet &mdash; check the full access table under Getting Started.</p>';
       return;
     }
@@ -2675,7 +2674,7 @@
     });
   }
 
-  document.querySelectorAll('input[name="finder-task"], input[name="finder-risk"]').forEach(el => {
+  document.querySelectorAll('input[name="finder-task"], input[name="finder-sensitive"]').forEach(el => {
     el.addEventListener('change', () => {
       el.closest('.chip-row').querySelectorAll('.chip').forEach(c => c.classList.remove('chip-active'));
       el.closest('.chip').classList.add('chip-active');
