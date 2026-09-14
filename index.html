@@ -840,6 +840,52 @@
     font-weight: 600;
   }
 
+  /* ── TOOL FINDER ── */
+  .finder {
+    background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--navy);
+    border-radius: 0 10px 10px 0; padding: 1.4rem 1.75rem 1.6rem; margin-bottom: 1.4rem;
+  }
+  .finder-sub { font-size: 14px; color: var(--dark-gray); max-width: 640px; margin: 0 0 1.2rem; }
+  .finder-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 2rem; margin-bottom: 1.3rem; }
+  @media (max-width: 720px) { .finder-controls { grid-template-columns: 1fr; } }
+  .finder fieldset { border: 0; padding: 0; margin: 0; }
+  .finder legend { font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.55rem; padding: 0; border: 0; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    position: relative; font-family: 'DM Sans', sans-serif; font-size: 13.5px;
+    background: var(--warm-gray); border: 1px solid var(--border); color: var(--dark-gray);
+    border-radius: 999px; padding: 0.4rem 0.85rem; cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .chip input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; }
+  .chip input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  .chip.chip-active { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 500; }
+  .finder-results-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 0 0 0.7rem; padding-top: 1.2rem; border-top: 1px solid var(--warm-gray); }
+  .finder-results-head h4 { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--navy); font-weight: 500; margin: 0; }
+  .finder-count { font-size: 12.5px; color: var(--mid-gray); font-variant-numeric: tabular-nums; }
+  .finder-results { display: flex; flex-direction: column; gap: 0.65rem; }
+  .finder-result {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 0 1.1rem; align-items: start;
+    background: var(--warm-gray); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem;
+  }
+  .finder-rank { font-family: 'EB Garamond', serif; font-size: 1.4rem; color: var(--gold); font-weight: 500; width: 1.3rem; text-align: center; line-height: 1.3; }
+  .finder-name { font-weight: 600; color: var(--navy); font-size: 14.5px; }
+  .finder-why { font-size: 13px; color: var(--dark-gray); margin-top: 0.15rem; }
+  .finder-go { align-self: center; font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none; white-space: nowrap; border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 6px; }
+  .finder-go:hover { background: #fff; }
+  .finder-empty { font-size: 13.5px; color: var(--mid-gray); font-style: italic; padding: 0.4rem 0; margin: 0; }
+
+  /* ── AI FOR RESEARCH ── */
+  .verb-row { display: grid; grid-template-columns: 180px 1fr; gap: 0 1.6rem; padding: 1.05rem 0; border-top: 1px solid var(--warm-gray); }
+  .verb-row:first-of-type { border-top: 1px solid var(--border); }
+  @media (max-width: 640px) { .verb-row { grid-template-columns: 1fr; gap: 0.35rem 0; } }
+  .verb-label { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--navy); font-weight: 500; }
+  .verb-label small { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--mid-gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .verb-detail p { margin: 0 0 0.5rem; font-size: 13.5px; }
+  .verb-detail p:last-child { margin-bottom: 0; }
+  .verb-tools { font-size: 12.5px; color: var(--mid-gray); }
+  .verb-tools a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--navy); }
+
   /* ── STYLED TIPS LIST ── */
   .tips-list {
     max-width: 740px;
@@ -1916,6 +1962,41 @@
       </ul>
     </div>
 
+    <div class="finder" id="tool-finder">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Using AI</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Find the right tool for the task</h3>
+      </div>
+      <p class="finder-sub">Across PennChat, Claude.ai, the legal-specific tools, and the agentic tools &mdash; not just which PennChat model to pick (that&rsquo;s below).</p>
+
+      <div class="finder-controls">
+        <fieldset>
+          <legend>What are you doing?</legend>
+          <div class="chip-row" id="finder-task-chips">
+            <label class="chip"><input type="radio" name="finder-task" value="draft"> Draft or summarize</label>
+            <label class="chip chip-active"><input type="radio" name="finder-task" value="research" checked> Case-law / doctrinal research</label>
+            <label class="chip"><input type="radio" name="finder-task" value="citecheck"> Cite-check or verify sources</label>
+            <label class="chip"><input type="radio" name="finder-task" value="review"> Long document / contract review</label>
+            <label class="chip"><input type="radio" name="finder-task" value="automate"> Automate a repeatable task</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>How sensitive is the material?</legend>
+          <div class="chip-row" id="finder-risk-chips">
+            <label class="chip"><input type="radio" name="finder-risk" value="low"> Low</label>
+            <label class="chip chip-active"><input type="radio" name="finder-risk" value="moderate" checked> Moderate</label>
+            <label class="chip"><input type="radio" name="finder-risk" value="high"> High</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="finder-results-head">
+        <h4>Recommended</h4>
+        <span class="finder-count" id="finder-count"></span>
+      </div>
+      <div class="finder-results" id="finder-results"></div>
+    </div>
+
     <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
@@ -2477,6 +2558,68 @@
     window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
     return false;
   }
+
+  // ── TOOL FINDER (Using AI tab) ──
+  // Risk-tier assignments are read off each tool's existing card-badge; see
+  // docs/superpowers/specs/2026-09-14-research-tool-finder-design.md, "Assumptions
+  // to verify before publishing," for which ones are interpretive rather than a
+  // direct badge read.
+  const FINDER_TOOLS = {
+    draft: [
+      { name: 'PennChat', why: 'Free with your PennKey, no setup &mdash; the safe default for everyday drafting.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-pennchat') },
+      { name: 'Claude.ai', why: 'Same models, direct access &mdash; better for iterating on a longer draft across a session.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-claude') },
+    ],
+    research: [
+      { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-westlaw') },
+      { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
+    ],
+    citecheck: [
+      { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', risk: ['low','moderate','high'], go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Cite-checking works inside a full document, not just a pasted excerpt.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
+    ],
+    review: [
+      { name: 'Harvey', why: 'Built for exactly this &mdash; long-document legal review under a Penn enterprise agreement.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-harvey') },
+      { name: 'Legora', why: 'Comparable document-analysis workflow; six-month retention on inactive projects.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-legora') },
+      { name: 'Claude.ai', why: 'Bring your own document for a single close read outside a legal-specific tool.', risk: ['low','moderate'], go: () => goToCard('getting-started','card-claude') },
+    ],
+    automate: [
+      { name: 'Claude Code', why: 'Multi-step and agentic &mdash; hands off a task across files rather than one chat turn at a time.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','card-ag-claude-code') },
+      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', risk: ['low','moderate'], go: () => goToCard('agentic-ai','ai-skills') },
+    ],
+  };
+
+  function renderFinder() {
+    const taskEl = document.querySelector('input[name="finder-task"]:checked');
+    const riskEl = document.querySelector('input[name="finder-risk"]:checked');
+    if (!taskEl || !riskEl) return;
+    const rows = (FINDER_TOOLS[taskEl.value] || []).filter(t => t.risk.includes(riskEl.value));
+    const results = document.getElementById('finder-results');
+    const count = document.getElementById('finder-count');
+    count.textContent = rows.length ? rows.length + (rows.length === 1 ? ' match' : ' matches') : '';
+    if (!rows.length) {
+      results.innerHTML = '<p class="finder-empty">Nothing cleared for that combination yet &mdash; check the full access table above.</p>';
+      return;
+    }
+    results.innerHTML = rows.map((t, i) => (
+      '<div class="finder-result"><div class="finder-rank">' + (i + 1) + '</div><div>' +
+      '<div class="finder-name">' + t.name + '</div>' +
+      '<div class="finder-why">' + t.why + '</div></div>' +
+      '<a class="finder-go" href="#" data-idx="' + i + '">See tool &rsaquo;</a></div>'
+    )).join('');
+    results.querySelectorAll('.finder-go').forEach((a, i) => {
+      a.addEventListener('click', (e) => { e.preventDefault(); rows[i].go(); });
+    });
+  }
+
+  document.querySelectorAll('input[name="finder-task"], input[name="finder-risk"]').forEach(el => {
+    el.addEventListener('change', () => {
+      el.closest('.chip-row').querySelectorAll('.chip').forEach(c => c.classList.remove('chip-active'));
+      el.closest('.chip').classList.add('chip-active');
+      renderFinder();
+    });
+  });
+  renderFinder();
 
   tabs.forEach(btn => {
     btn.addEventListener('click', () => goToTab(btn.dataset.tab));
