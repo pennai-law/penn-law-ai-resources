@@ -1,11 +1,38 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-09-10
+**Updated:** 2026-09-13
 
-A navigation review of the live portal found three stacked entry points before any content, six tabs on mixed axes, and no URL state for tabs. PR #35 shipped the low-cost fixes. The 2026–27 feature block is gone; its news is a one-line gold callout above the "I want to…" router, each tool name linking to its card. Advanced Claude folded into "Agentic & Advanced" (five tabs; `#tools` still resolves; Reading & Resources moved to AI at Penn). Tab clicks and cross-links push the id onto the URL hash, so shared links and the back button work. Router items read as continuations with a › before each destination. In the access table, Claude.ai and Claude Code are ◆ for full-time faculty (fundable now, per Polk) and Claude Code is ○ for 1Ls. The attribution stripe reads "Part of the Penn Carey Law AI Project" on all chrome pages.
+1L guide published (`feature/1l-guide`): `1L-guide.html`, served at `/1L-guide`, the student-facing companion to Polk's 1L talk (deck at pennai.law/slides/1l-ai-study-partner/). Practical-first: access, course rules, the trainer test, the traffic light, six study routines, four habits, a toolkit section (apps, models, Projects, Skills, Claude Code, PennChat, connectors, further guides), then the learning science. Not linked from `index.html`; reached by QR and URL. Skills and connectors are described as not yet enabled in Penn Claude (Polk, 2026-09-13).
 
-**Where it stands:** PR #35 merged and verified live on September 10; `main` is clean and level with origin; AGENTS.md regenerated.
+Tool catalog compacted in Getting Started (`feature/compact-tool-cards`): all 12 cards now use a horizontal title + logo lockup and a unified badge row displaying explicit Data Risk badges (matching Penn ISC data classification: High, Mod, Low, or Personal) alongside access and mode tags.
 
-**Next:** The review's remaining items: orientation before the tool catalog in Getting Started, with the catalog compacted to a table; one canonical card per tool (Claude Code and Cowork each appear three times); a per-tab jump list; a visible search field. Update the Claude staff glyphs when ITS posts purchasing details, and the July ITS review stamp when ITS re-reviews.
+Penn Law ITS announced purchasing details for Penn Enterprise Claude, now incorporated across `index.html` and `agentic-ai-security.html`:
+- Standard ($16/mo): 112 msgs/5h rolling, $50/wk API allocation.
+- Premium ($50/mo): 225 msgs/5h rolling, $250/wk API allocation, includes Fable 5.
+- Both tiers require a fiscal-year commitment; Standard can upgrade to Premium during the year. Faculty purchase via research funds; staff via departmental funds (`itshelp@law.upenn.edu`).
+- Claude Cowork is not currently available through Enterprise (under University review; staff pilot continues).
+- Access table staff glyphs for Claude.ai and Claude Code updated to ◆.
+- Model guidance (`#which-model-claude`) and institutional policy listings updated.
+
+- Claude.ai and ChatGPT aligned on equal footing across access table, cards, and policy/security sections: both offer Enterprise (via ITS with research funds; Low & Mod clearance) or personal subscriptions (Plus/Pro, Pro/Max; Low Risk only) with research funds. Staff licenses for both funded via departmental budgets.
+
+- Structural and flow improvements implemented on `feature/structural-improvements`:
+  - **Inverted Getting Started**: Orientation prose (*"What Can AI Actually Do?"*) moved to the top of the pane with `#orientation`, followed by the Access Table, Adjunct Faculty notice, and categorized tool catalog.
+  - **Deduplicated Tool Cards**: Canonical technical cards established in *Agentic & Advanced* for Claude Code (`#card-ag-claude-code`) and Claude Cowork (`#card-ag-claude-cowork`), with clean handoff CTAs from compact identity cards in *Getting Started*.
+  - **Per-Tab In-Page Jump Lists**: Added `.tab-jump-bar` single-line scrollable pill nav across all five tabs, with intelligent scroll alignment in `activateFromHash` and jump-click interception (`block: 'start'` with `scroll-margin-top: 70px` for headings; `block: 'center'` for cards).
+
+- Claude Code access updated across the portal (`feature/1l-claude-code`): 1Ls are provisioned with Claude Code as part of Penn Enterprise Claude. Access table 1Ls column updated to ✓ (matching Claude.ai), `#card-claude-code` badge updated to `◆ Enterprise via ITS · Fundable`, and card/policy descriptions updated.
+- Hero metadata and footer updated (`fix/hero-meta-date-and-audience`): exact date set to September 11, 2026, and audience note clarified for student- or staff-specific guidance linking to Penn Law ITS.
+- Site scrub for accuracy, consistency, and freshness (`fix/scrub-accuracy-and-freshness`):
+  - Harmonized Claude.ai 1L description to "provisioned for 1Ls" in the Getting Started access table.
+  - Linked PCL ITS Zoom AI Companion Guide to its official ITS documentation page (`index.html`).
+  - Updated PCL ITS school-specific user guides enumeration to include Claude and Legora (`index.html`).
+  - Freshness dates: updated hero meta and footer dates across `agentic-ai-security.html`, `claude-skills.html`, `colophon.html`, and `license.html` to September 2026 / September 11, 2026.
+  - Audited and verified all 96 external URLs, internal anchors, brand guidelines, and faculty voice.
+
+**Where it stands:** Accuracy, consistency, and freshness scrub complete. Ready for PR and merge.
+
+**Next:** Remaining review items: visible search field. Update July ITS review stamp when ITS re-reviews.
 
 **Open:** At 375px only two tabs fit and the header wordmark wraps to three lines. Unconfirmed cells: Legora for adjuncts (○ or ✓), Westlaw/Lexis for staff (—). Eddie's lessons.md calibration is still to paste.
+
