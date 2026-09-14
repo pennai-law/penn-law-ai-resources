@@ -2604,7 +2604,7 @@
     results.innerHTML = rows.map((t, i) => (
       '<div class="finder-result"><div class="finder-rank">' + (i + 1) + '</div><div>' +
       '<div class="finder-name">' + t.name + '</div>' +
-      '<div class="finder-why">' + t.why + '</div></div>' +
+      '<p class="finder-why">' + t.why + '</p></div>' +
       '<a class="finder-go" href="#" data-idx="' + i + '">See tool &rsaquo;</a></div>'
     )).join('');
     results.querySelectorAll('.finder-go').forEach((a, i) => {
