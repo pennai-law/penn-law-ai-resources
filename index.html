@@ -510,7 +510,7 @@
   }
 
   /* ── SECTION HEADINGS ── */
-  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills {
+  .section-title, [id^="sec-"], #orientation, #tools-at-penn, #adjunct-faculty, #data-risk, #better-results, #which-model, #which-pennchat-model, #claude-models, #pennchat-models, #pennchat-agents, #ai-skills, #penn-llm-gateway {
     scroll-margin-top: 70px;
   }
   .section-label {
@@ -609,6 +609,9 @@
   .card-title-wrap .card-icon-logo {
     margin-bottom: 0;
   }
+  .card-title-wrap .card-icon {
+    margin-bottom: 0;
+  }
   .card-title-wrap h3 {
     margin-bottom: 0;
     font-size: 1.25rem;
@@ -639,6 +642,7 @@
   .badge-access-penn { background: #EBF1FB; color: #011F5B; border: 1px solid #CADAF0; font-weight: 700; }
   .badge-access-fundable { background: var(--gold-light); color: #5A4700; border: 1px solid #DFD398; }
   .badge-access-request { background: #EDEAE4; color: #4A4640; border: 1px solid #D4CFC6; }
+  .badge-access-free { background: #EDEAE4; color: #4A4640; border: 1px solid #D4CFC6; font-weight: 700; }
 
   .card-spec {
     font-size: 12px;
@@ -839,6 +843,56 @@
     color: var(--gold);
     font-weight: 600;
   }
+
+  /* ── TOOL FINDER ── */
+  .finder {
+    background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--navy);
+    border-radius: 0 10px 10px 0; padding: 1.4rem 1.75rem 1.6rem; margin-bottom: 1.4rem;
+  }
+  .finder-sub { font-size: 14px; color: var(--dark-gray); max-width: 640px; margin: 0 0 1.2rem; }
+  .finder-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 2rem; margin-bottom: 1.3rem; }
+  @media (max-width: 720px) { .finder-controls { grid-template-columns: 1fr; } }
+  .finder fieldset { border: 0; padding: 0; margin: 0; }
+  .finder legend { font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.55rem; padding: 0; border: 0; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    position: relative; font-family: 'DM Sans', sans-serif; font-size: 13.5px;
+    background: var(--warm-gray); border: 1px solid var(--border); color: var(--dark-gray);
+    border-radius: 999px; padding: 0.4rem 0.85rem; cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .chip input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; }
+  .chip input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  .chip.chip-active { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 500; }
+  .finder-results-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 0 0 0.7rem; padding-top: 1.2rem; border-top: 1px solid var(--warm-gray); }
+  .finder-results-head h4 { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--navy); font-weight: 500; margin: 0; }
+  .finder-count { font-size: 12.5px; color: var(--mid-gray); font-variant-numeric: tabular-nums; }
+  .finder-results { display: flex; flex-direction: column; gap: 0.65rem; }
+  .finder-result {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 0 1.1rem; align-items: start;
+    background: var(--warm-gray); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem;
+  }
+  @media (max-width: 480px) {
+    .finder-result { grid-template-columns: auto 1fr; }
+    .finder-go { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
+  }
+  .finder-rank { font-family: 'EB Garamond', serif; font-size: 1.4rem; color: var(--gold); font-weight: 500; width: 1.3rem; text-align: center; line-height: 1.3; }
+  .finder-name { font-weight: 600; color: var(--navy); font-size: 14.5px; }
+  .finder-why { font-size: 13px; color: var(--dark-gray); margin-top: 0.15rem; }
+  .finder-go { align-self: center; font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none; white-space: nowrap; border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 6px; }
+  .finder-go:hover { background: #fff; }
+  .finder-empty { font-size: 13.5px; color: var(--mid-gray); font-style: italic; padding: 0.4rem 0; margin: 0; }
+
+  /* ── AI FOR RESEARCH ── */
+  .verb-row { display: grid; grid-template-columns: 180px 1fr; gap: 0 1.6rem; padding: 1.05rem 0; border-top: 1px solid var(--warm-gray); }
+  .verb-row:first-of-type { border-top: 1px solid var(--border); }
+  @media (max-width: 640px) { .verb-row { grid-template-columns: 1fr; gap: 0.35rem 0; } }
+  .verb-label { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--navy); font-weight: 500; margin: 0; }
+  .verb-label small { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--mid-gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .verb-detail p { margin: 0 0 0.5rem; font-size: 13.5px; }
+  .verb-detail p:last-child { margin-bottom: 0; }
+  .verb-tools { font-size: 12.5px; color: var(--mid-gray); }
+  .verb-tools a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--navy); }
 
   /* ── STYLED TIPS LIST ── */
   .tips-list {
@@ -1110,7 +1164,7 @@
     <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs below.</p>
     <ul>
       <li><a href="#better-results">&hellip;get better answers out of a chatbot.<span class="where">Using AI &middot; Getting Better Results</span></a></li>
-      <li><a href="#which-model">&hellip;work out which tool fits the task.<span class="where">Using AI &middot; Which model should I use?</span></a></li>
+      <li><a href="#which-model">&hellip;work out which tool fits the task.<span class="where">Using AI &middot; Find the right tool for the task</span></a></li>
       <li><a href="#tools-at-penn">&hellip;see what Penn licenses and who gets access.<span class="where">Getting Started &middot; AI Tools at Penn Law</span></a></li>
       <li><a href="#data-risk">&hellip;check whether a tool is cleared for my data.<span class="where">Policies &middot; Penn Data Risk Classification</span></a></li>
       <li><a href="#accuracy">&hellip;understand what these tools get wrong.<span class="where">Policies &middot; Accuracy, Attribution, and Bias</span></a></li>
@@ -1388,7 +1442,7 @@
     </div>
 
     <h3 id="sec-legal-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2rem;">Legal-Specific Tools</h3>
-    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Built specifically for legal work &mdash; trained on legal data and designed for legal research and drafting.</p>
+    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">Built specifically for legal work &mdash; AI-powered drafting and analysis tools, plus core legal research infrastructure like case law and docket databases.</p>
 
     <div class="card-grid">
 
@@ -1455,6 +1509,22 @@
         <div class="card-spec"><strong>Access:</strong> Sign in with your individual Lexis+ law school credentials.</div>
         <div class="card-links">
           <a class="card-link" href="https://plus.lexis.com" target="_blank" rel="noopener">Open Lexis+</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title-wrap">
+          <div class="card-icon" style="background:var(--navy); color:#fff;">CL</div>
+          <h3 id="card-courtlistener">CourtListener</h3>
+        </div>
+        <div class="card-badges">
+          <span class="card-badge badge-access-free">Free &amp; Public</span>
+        </div>
+        <p>Free legal research from the Free Law Project, a 501(c)(3) nonprofit &mdash; case law, judges, oral argument audio, and RECAP (crowdsourced federal court dockets). No Penn license or login needed to search; a free account raises API rate limits for programmatic use.</p>
+        <div class="card-spec"><strong>Not Penn-provided:</strong> nothing to request through ITS &mdash; and no Penn data-risk review applies, since it&rsquo;s a public-records search tool rather than a place you send Penn material.</div>
+        <div class="card-links">
+          <a class="card-link" href="https://www.courtlistener.com" target="_blank" rel="noopener">Open CourtListener</a>
+          <a class="card-link" href="https://www.courtlistener.com/help/api/rest/" target="_blank" rel="noopener">REST API docs</a>
         </div>
       </div>
 
@@ -1643,7 +1713,7 @@
       <p>The conversational tools are great for one-off tasks. But if you find yourself doing the same thing over and over &mdash; processing a batch of documents, grading with a rubric, extracting data from a set of files &mdash; an API lets you automate it. You write a script once, and it runs the same prompt across hundreds of inputs without you copy-pasting anything.</p>
       <p>APIs also give you more control: you can choose the model, adjust parameters like temperature (how creative vs. deterministic the output is), and build multi-step workflows where the output of one call feeds into the next.</p>
 
-      <h3>The Penn LLM Gateway</h3>
+      <h3 id="penn-llm-gateway" style="scroll-margin-top:70px;">The Penn LLM Gateway</h3>
       <p>Penn runs a secure <a href="https://www.truefoundry.com/docs/ai-gateway/intro-to-llm-gateway" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">LLM Gateway</a> that provides programmatic API access to a range of models from inside Penn's environment &mdash; built for research and tool-building. <strong>Penn Carey Law is part of the pilot program.</strong> It's the Penn-sanctioned path to API access, as opposed to a personal vendor account, which makes it the right starting point for work that touches Penn data or is funded by Penn. Email me to get connected.</p>
 
       <h3>Anthropic (Claude) API</h3>
@@ -1840,7 +1910,9 @@
     <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
       <a class="tab-jump-link" href="#sec-working-modes">Working Modes</a>
       <a class="tab-jump-link" href="#pennchat-no-web">PennChat Limitations</a>
-      <a class="tab-jump-link featured" href="#which-model">Model Picker &darr;</a>
+      <a class="tab-jump-link featured" href="#which-model">Tool Finder &darr;</a>
+      <a class="tab-jump-link" href="#ai-for-research">AI for Research</a>
+      <a class="tab-jump-link" href="#which-pennchat-model">Model Picker</a>
       <a class="tab-jump-link" href="#claude-models">Which Claude Model</a>
       <a class="tab-jump-link" href="#pennchat-agents">Custom GPTs</a>
       <a class="tab-jump-link" href="#better-results">Prompting Tips</a>
@@ -1916,10 +1988,78 @@
       </ul>
     </div>
 
+    <div class="finder" id="tool-finder">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Using AI</span>
+        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Find the right tool for the task</h3>
+      </div>
+      <p class="finder-sub">The Tool Finder covers PennChat, Claude.ai, the legal research tools, and the agentic tools &mdash; not just which PennChat model to pick (that&rsquo;s below).</p>
+
+      <div class="finder-controls">
+        <fieldset>
+          <legend>What are you doing?</legend>
+          <div class="chip-row" id="finder-task-chips">
+            <label class="chip"><input type="radio" name="finder-task" value="draft"> Draft or summarize</label>
+            <label class="chip chip-active"><input type="radio" name="finder-task" value="research" checked> Case-law / doctrinal research</label>
+            <label class="chip"><input type="radio" name="finder-task" value="citecheck"> Cite-check or verify sources</label>
+            <label class="chip"><input type="radio" name="finder-task" value="review"> Long document / contract review</label>
+            <label class="chip"><input type="radio" name="finder-task" value="automate"> Automate a repeatable task</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Highly sensitive Penn data involved?</legend>
+          <div class="chip-row" id="finder-sensitive-chips">
+            <label class="chip chip-active"><input type="radio" name="finder-sensitive" value="no" checked> No</label>
+            <label class="chip"><input type="radio" name="finder-sensitive" value="yes"> Yes</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="finder-results-head">
+        <h4>Recommended</h4>
+        <span class="finder-count" id="finder-count"></span>
+      </div>
+      <div class="finder-results" id="finder-results" aria-live="polite"></div>
+    </div>
+
+    <div id="ai-for-research" style="margin-bottom: 2rem; scroll-margin-top:70px;">
+      <h3 style="font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500; margin-bottom:0.3rem;">AI for Research</h3>
+      <p style="font-size:13.5px; color:var(--mid-gray); max-width:640px; margin:0 0 1.4rem;">Same tools as above, organized by the shape of a research task rather than by vendor &mdash; for the work that doesn&rsquo;t fit neatly into &ldquo;draft&rdquo; or &ldquo;review.&rdquo;</p>
+
+      <div class="verb-row">
+        <p class="verb-label">Find it<small>Case law &amp; precedent</small></p>
+        <div class="verb-detail">
+          <p>Natural-language search across cases, statutes, and dockets, with authority retrieval built for legal citation rather than general web search.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-westlaw');">Westlaw AI-Assisted Research</a>, <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a>, or <a href="#" onclick="return goToCard('getting-started','card-harvey');">Harvey</a> &mdash; or <a href="#" onclick="return goToCard('getting-started','card-courtlistener');">CourtListener</a> for public dockets and opinions specifically, free and with no Penn license needed.</p>
+        </div>
+      </div>
+      <div class="verb-row">
+        <p class="verb-label">Verify it<small>Citations &amp; sourcing</small></p>
+        <div class="verb-detail">
+          <p>Confirm a citation is real, still good law, and says what a draft claims it says &mdash; the step every AI-assisted draft needs before it leaves your desk.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-lexis');">Lexis+ AI</a>&rsquo;s direct case verification, or <a href="#" onclick="return goToCard('getting-started','card-harvey');">Harvey</a> for citation checking inside a longer document.</p>
+        </div>
+      </div>
+      <div class="verb-row">
+        <p class="verb-label">Synthesize it<small>Literature &amp; sources</small></p>
+        <div class="verb-detail">
+          <p>Pull a body of scholarship or case law into a coherent research memo &mdash; the task &ldquo;chat, draft, summarize&rdquo; undersells once the source pile gets past a dozen documents.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('getting-started','card-claude');">Claude.ai</a> (bring your own documents) or <a href="#" onclick="return goToCard('getting-started','card-legora');">Legora</a> for a legal-specific workflow.</p>
+        </div>
+      </div>
+      <div class="verb-row">
+        <p class="verb-label">Analyze it<small>Empirical &amp; data-driven</small></p>
+        <div class="verb-detail">
+          <p>Docket-level or patent-data pulls, coding a dataset, running the numbers behind an empirical claim &mdash; closer to a data-analysis workflow than a chatbot conversation.</p>
+          <p class="verb-tools">Start with: <a href="#" onclick="return goToCard('agentic-ai','card-ag-claude-code');">Claude Code</a> or the <a href="#" onclick="return goToCard('agentic-ai','penn-llm-gateway');">Penn LLM Gateway</a> for programmatic access; not a fit for PennChat&rsquo;s chat interface alone.</p>
+        </div>
+      </div>
+    </div>
+
     <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
-        <h3 id="which-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
+        <h3 id="which-pennchat-model" style="margin:0; scroll-margin-top:70px; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
       </div>
       <p style="margin:0 0 0.9rem;">PennChat's model picker is long, but you rarely need to think about it. <strong style="color:var(--navy);">Start with Claude Sonnet 5.</strong> It handles nearly all faculty work well &mdash; and you can pin it in the model picker so it sits at the top every time. Switch models only when a task pushes you toward one of the exceptions below.</p>
       <div class="access-wrap">
@@ -2477,6 +2617,71 @@
     window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
     return false;
   }
+
+  // ── TOOL FINDER (Using AI tab) ──
+  // Risk-tier assignments are read off each tool's existing card-badge; see
+  // docs/superpowers/specs/2026-09-14-research-tool-finder-design.md, "Assumptions
+  // to verify before publishing," for which ones are interpretive rather than a
+  // direct badge read.
+  const FINDER_TOOLS = {
+    draft: [
+      { name: 'PennChat', why: 'Free with your PennKey, no setup &mdash; the safe default for everyday drafting.', sensitiveOk: true, go: () => goToCard('getting-started','card-pennchat') },
+      { name: 'Claude.ai', why: 'Same models, direct access &mdash; better for iterating on a longer draft across a session.', sensitiveOk: false, go: () => goToCard('getting-started','card-claude') },
+    ],
+    research: [
+      { name: 'Westlaw AI-Assisted Research', why: 'Natural-language search and conversational authority retrieval, under your existing subscription.', sensitiveOk: true, go: () => goToCard('getting-started','card-westlaw') },
+      { name: 'Lexis+ AI', why: 'Conversational search with direct case verification built in.', sensitiveOk: true, go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Penn Law&rsquo;s enterprise legal-research tool; your data isn&rsquo;t used for training.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
+      { name: 'CourtListener', why: 'Free public case law, dockets, and oral arguments &mdash; you&rsquo;re searching public records, not sending Penn material anywhere.', sensitiveOk: true, go: () => goToCard('getting-started','card-courtlistener') },
+    ],
+    citecheck: [
+      { name: 'Lexis+ AI', why: 'Direct case verification is a named feature, not a side effect of chat.', sensitiveOk: true, go: () => goToCard('getting-started','card-lexis') },
+      { name: 'Harvey', why: 'Cite-checking works inside a full document, not just a pasted excerpt.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
+    ],
+    review: [
+      { name: 'Harvey', why: 'Built for exactly this &mdash; long-document legal review under a Penn enterprise agreement.', sensitiveOk: false, go: () => goToCard('getting-started','card-harvey') },
+      { name: 'Legora', why: 'Comparable document-analysis workflow; six-month retention on inactive projects.', sensitiveOk: false, go: () => goToCard('getting-started','card-legora') },
+      { name: 'Claude.ai', why: 'Bring your own document for a single close read outside a legal-specific tool.', sensitiveOk: false, go: () => goToCard('getting-started','card-claude') },
+    ],
+    automate: [
+      { name: 'Claude Code', why: 'Multi-step and agentic &mdash; hands off a task across files rather than one chat turn at a time.', sensitiveOk: false, go: () => goToCard('agentic-ai','card-ag-claude-code') },
+      { name: 'The Penn LLM Gateway', why: 'Programmatic API access when the task is really a script, not a conversation.', sensitiveOk: false, go: () => goToCard('agentic-ai','penn-llm-gateway') },
+    ],
+  };
+
+  function renderFinder() {
+    const taskEl = document.querySelector('input[name="finder-task"]:checked');
+    const sensitiveEl = document.querySelector('input[name="finder-sensitive"]:checked');
+    if (!taskEl || !sensitiveEl) return;
+    const rows = (FINDER_TOOLS[taskEl.value] || []).filter(t => sensitiveEl.value === 'no' || t.sensitiveOk);
+    const results = document.getElementById('finder-results');
+    const count = document.getElementById('finder-count');
+    count.textContent = rows.length ? rows.length + (rows.length === 1 ? ' match' : ' matches') : '';
+    if (!rows.length) {
+      results.innerHTML = sensitiveEl.value === 'yes'
+        ? '<p class="finder-empty">For highly sensitive Penn data, <a href="#" onclick="return goToCard(\'getting-started\',\'card-pennchat\');">PennChat</a> is the only approved option on this page &mdash; see the <a href="#" onclick="return goToCard(\'policies\',\'data-risk\');">data-risk classification</a>.</p>'
+        : '<p class="finder-empty">Nothing cleared for that combination yet &mdash; check the full access table under Getting Started.</p>';
+      return;
+    }
+    results.innerHTML = rows.map((t, i) => (
+      '<div class="finder-result"><div class="finder-rank">' + (i + 1) + '</div><div>' +
+      '<div class="finder-name">' + t.name + '</div>' +
+      '<p class="finder-why">' + t.why + '</p></div>' +
+      '<a class="finder-go" href="#" data-idx="' + i + '">See tool &rsaquo;</a></div>'
+    )).join('');
+    results.querySelectorAll('.finder-go').forEach((a, i) => {
+      a.addEventListener('click', (e) => { e.preventDefault(); rows[i].go(); });
+    });
+  }
+
+  document.querySelectorAll('input[name="finder-task"], input[name="finder-sensitive"]').forEach(el => {
+    el.addEventListener('change', () => {
+      el.closest('.chip-row').querySelectorAll('.chip').forEach(c => c.classList.remove('chip-active'));
+      el.closest('.chip').classList.add('chip-active');
+      renderFinder();
+    });
+  });
+  renderFinder();
 
   tabs.forEach(btn => {
     btn.addEventListener('click', () => goToTab(btn.dataset.tab));
