@@ -1,6 +1,8 @@
 # Penn Carey Law AI Resources — Status
 
-**Updated:** 2026-09-13
+**Updated:** 2026-09-27
+
+Opus 5.5 lineup screen (`fix/opus-5-5-lineup`, 2026-09-27): Opus 5.5 (released 2026-09-22) replaces Opus 5 across `#which-model-claude`, the Claude card, the Getting Started recommendation, the PennChat note, and the 1L guide. Opus 5.5 is now the hard-reasoning pick and Fable 5.1 is reserved for the heaviest jobs, following Anthropic's "performs at the level of Claude Fable 5.1 on most work." New effort-level paragraph from the help article "Change the model, effort, and thinking settings." Not rechecked: PennChat picker (still dated 2026-09-03; needs Penn network), and whether Penn Enterprise exposes Opus 5.5 or has updated the Premium tier's "Fable 5" wording. Watch for Sonnet 5.5 / Haiku 5.5 ("in the coming weeks").
 
 1L guide published (`feature/1l-guide`): `1L-guide.html`, served at `/1L-guide`, the student-facing companion to Polk's 1L talk (deck at pennai.law/slides/1l-ai-study-partner/). Practical-first: access, course rules, the trainer test, the traffic light, six study routines, four habits, a toolkit section (apps, models, Projects, Skills, Claude Code, PennChat, connectors, further guides), then the learning science. Linked from `index.html` (hero audience note, a `#for-1ls` callout on Getting Started with a jump-bar entry) and from pennai.law (home hero button, Training Materials project page, Toolkit 1L page). Skills and connectors are described as not yet enabled in Penn Claude (Polk, 2026-09-13).
 
