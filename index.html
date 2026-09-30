@@ -1107,13 +1107,14 @@
 
   <nav class="router" aria-labelledby="router-heading">
     <h2 id="router-heading">I want to&hellip;</h2>
-    <p class="router-sub">Eight things faculty ask for most. Everything else is under the tabs below.</p>
+    <p class="router-sub">Nine things faculty ask for most. Everything else is under the tabs below.</p>
     <ul>
       <li><a href="#better-results">&hellip;get better answers out of a chatbot.<span class="where">Using AI &middot; Getting Better Results</span></a></li>
       <li><a href="#which-model">&hellip;work out which tool fits the task.<span class="where">Using AI &middot; Which model should I use?</span></a></li>
       <li><a href="#tools-at-penn">&hellip;see what Penn licenses and who gets access.<span class="where">Getting Started &middot; AI Tools at Penn Law</span></a></li>
       <li><a href="#data-risk">&hellip;check whether a tool is cleared for my data.<span class="where">Policies &middot; Penn Data Risk Classification</span></a></li>
       <li><a href="#accuracy">&hellip;understand what these tools get wrong.<span class="where">Policies &middot; Accuracy, Attribution, and Bias</span></a></li>
+      <li><a href="#sec-ai-detectors">&hellip;evaluate AI detectors like Pangram or check student writing.<span class="where">Policies &middot; AI Detectors</span></a></li>
       <li><a href="#agentic-ai">&hellip;hand off a task and walk away.<span class="where">Agentic &amp; Advanced</span></a></li>
       <li><a href="#ai-skills">&hellip;build a tool of my own.<span class="where">Agentic &amp; Advanced &middot; Cross-Tool AI Skills</span></a></li>
       <li><a href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">&hellip;use AI in my teaching or on an exam.<span class="where">Pedagogy portal &rarr;</span></a></li>
@@ -1141,6 +1142,7 @@
     <div class="tab-jump-bar" role="navigation" aria-label="Page sections">
       <a class="tab-jump-link" href="#orientation">Orientation</a>
       <a class="tab-jump-link featured" href="#tools-at-penn">Tools &amp; Access Table &darr;</a>
+      <a class="tab-jump-link" href="#ai-detectors-callout">AI Detectors</a>
       <a class="tab-jump-link" href="#adjunct-faculty">Adjunct Faculty</a>
       <a class="tab-jump-link" href="#for-1ls">1L Guide</a>
       <a class="tab-jump-link" href="#sec-general-tools">General Tools</a>
@@ -1251,6 +1253,15 @@
         <li><strong>Legora is available to adjunct faculty.</strong> Email <a href="mailto:itshelp@law.upenn.edu" style="color:var(--navy); text-decoration:underline;">itshelp@law.upenn.edu</a> before your first login so ITS can confirm your account, then sign in at app.us.legora.com with your LawKey.</li>
       </ul>
       <p style="margin:0;"><strong>If you use your own paid subscription instead, keep student material out of it.</strong> A personal Claude, ChatGPT, or Gemini account is fine for your own preparation, but it carries none of Penn&rsquo;s approvals. Student records are FERPA-protected and don&rsquo;t belong in a tool <a href="#" onclick="return goToTab('policies');" style="color:var(--navy); text-decoration:underline;">Penn hasn&rsquo;t reviewed</a>.</p>
+    </div>
+
+    <div id="ai-detectors-callout" style="border-left:4px solid var(--red); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin:0 0 2rem; scroll-margin-top:70px;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--red); padding:0.22rem 0.65rem; border-radius:999px;">Evidence &amp; Integrity</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Can you detect AI writing? What the research shows</h3>
+      </div>
+      <p style="margin:0 0 0.9rem;">Faculty frequently ask whether commercial detection tools like Pangram Labs, GPTZero, or Turnitin can catch machine-generated student papers. The empirical answer is unambiguous: <strong>an AI detector score cannot serve as proof of academic misconduct.</strong> While modern classifiers achieve high accuracy on raw, unedited AI text under clean lab conditions, real-world submissions break their assumptions &mdash; suffering a 61.3% false-positive rate on authentic non-native English writing (Stanford), over 96% evasion by simple commercial humanizers, and unstable flag rates on hybrid work. Furthermore, recent research confirms that experienced faculty readers spot synthetic polish and structural uniformity far more reliably than software classifiers.</p>
+      <p style="margin:0; font-size:14px; color:var(--mid-gray);"><a href="#sec-ai-detectors" onclick="return goToCard('policies','sec-ai-detectors');" style="color:var(--navy); text-decoration:underline; font-weight:600;">Read the full empirical breakdown &amp; faculty guidance &rarr;</a></p>
     </div>
 
     <h3 id="sec-general-tools" style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500;">General AI Tools</h3>
@@ -2037,7 +2048,7 @@
       <a class="tab-jump-link" href="#sec-quick-guidance">Quick Guidance</a>
       <a class="tab-jump-link" href="#sec-personal-accounts">Personal Accounts</a>
       <a class="tab-jump-link" href="#accuracy">Attribution &amp; Bias</a>
-      <a class="tab-jump-link" href="#sec-ai-detectors">AI Detectors</a>
+      <a class="tab-jump-link featured" href="#sec-ai-detectors">AI Detectors &darr;</a>
       <a class="tab-jump-link" href="#sec-institutional-policies">Institutional Policies</a>
     </div>
 
