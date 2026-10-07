@@ -575,6 +575,24 @@
   }
 
   /* ── FOOTER ── */
+  /* AI disclosure: the same pill the slide decks carry, linking to the
+     colophon, which says how the site is written. Wording is a fixed
+     vocabulary (AI-assisted | AI-drafted, author-reviewed | author-verified);
+     use the pair that is true. */
+  .site-footer .ai-disclosure { margin: 1rem 0 0; }
+  .site-footer .ai-disclosure a,
+  .site-footer .ai-disclosure span {
+    display: inline-block;
+    padding: 0.28rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.78);
+  }
+  .site-footer .ai-disclosure a:hover { border-color: rgba(255,255,255,0.8); color: white; }
   .site-footer {
     background: var(--navy);
     color: rgba(255,255,255,0.85);
@@ -963,6 +981,7 @@ Act as opposing counsel. What is the most vulnerable premise in my theory? Which
   </div>
   <p class="site-footer-line">&copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
   <p class="site-footer-line">Part of the <a href="https://pennai.law/" target="_blank" rel="noopener">Penn Carey Law AI Project</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; Last updated September 27, 2026</p>
+  <p class="ai-disclosure"><a href="colophon.html">AI-drafted &middot; author-reviewed</a></p>
 </footer>
 
 <script>
