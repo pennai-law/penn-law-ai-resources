@@ -376,6 +376,24 @@
   .companion-body { font-size: 14.5px; color: var(--dark-gray); }
 
   /* ── FOOTER ── */
+  /* AI disclosure: the same pill the slide decks carry, linking to the
+     colophon, which says how the site is written. Wording is a fixed
+     vocabulary (AI-assisted | AI-drafted, author-reviewed | author-verified);
+     use the pair that is true. */
+  .site-footer .ai-disclosure { margin: 1rem 0 0; }
+  .site-footer .ai-disclosure a,
+  .site-footer .ai-disclosure span {
+    display: inline-block;
+    padding: 0.28rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.78);
+  }
+  .site-footer .ai-disclosure a:hover { border-color: rgba(255,255,255,0.8); color: white; }
   .site-footer {
     background: var(--navy);
     color: rgba(255,255,255,0.85);
@@ -572,6 +590,7 @@
   </div>
 
   &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="colophon.html">Colophon</a> &middot; <a href="index.html">Back to AI Resources</a>
+  <p class="ai-disclosure"><a href="colophon.html">AI-drafted &middot; author-reviewed</a></p>
 </footer>
 
 </body>
