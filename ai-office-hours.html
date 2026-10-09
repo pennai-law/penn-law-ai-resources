@@ -35,9 +35,9 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    padding: 2.2vh 2.8vw;
-    gap: 1.8vh;
+    grid-template-rows: auto 1fr auto;
+    padding: 2.6vh 3vw;
+    gap: 2.6vh;
   }
 
   /* TOP BAR */
@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 1.4vh;
+    padding-bottom: 1.6vh;
     border-bottom: 2.5px solid var(--navy);
   }
 
@@ -55,7 +55,6 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--navy);
     line-height: 1.3;
   }
 
@@ -69,9 +68,8 @@
 
   .session-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+    font-size: clamp(1.6rem, 3.4vw, 3.2rem);
     font-weight: 400;
-    color: var(--navy);
     letter-spacing: -0.01em;
   }
 
@@ -79,9 +77,8 @@
 
   .session-meta {
     text-align: right;
-    font-size: clamp(11px, 0.9vw, 13px);
+    font-size: clamp(11px, 0.95vw, 15px);
     color: var(--muted);
-    font-weight: 300;
     line-height: 1.6;
   }
 
@@ -89,7 +86,7 @@
     display: block;
     font-weight: 500;
     color: var(--red);
-    font-size: clamp(11px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 15px);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
@@ -97,116 +94,81 @@
   /* MAIN GRID */
   .main {
     display: grid;
-    grid-template-columns: 1.1fr 1.3fr 0.9fr;
-    gap: 1.6vw;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 3vw;
     min-height: 0;
   }
 
   .col {
     display: flex;
     flex-direction: column;
-    gap: 1.2vh;
+    gap: 2.2vh;
     min-height: 0;
   }
 
-  /* COLUMN HEADERS */
   .col-header {
     display: flex;
     align-items: baseline;
-    gap: 0.7rem;
-    padding-bottom: 0.6vh;
+    gap: 0.8rem;
+    padding-bottom: 0.9vh;
     border-bottom: 1.5px solid var(--navy);
   }
 
   .col-num {
-    font-size: clamp(9px, 0.7vw, 11px);
+    font-size: clamp(10px, 0.8vw, 13px);
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     color: var(--gold);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .col-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    font-size: clamp(1.3rem, 2.1vw, 2.1rem);
     font-weight: 600;
-    color: var(--navy);
     line-height: 1.1;
   }
 
-  /* CARDS */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: clamp(8px, 1vh, 14px) clamp(10px, 1vw, 14px);
-    flex-shrink: 0;
+  /* TOOL ROWS */
+  .tool {
+    border-left: 3px solid var(--rule);
+    padding-left: 1.1vw;
   }
 
-  .card-name {
-    font-size: clamp(12px, 1vw, 14px);
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 1px;
-  }
+  .tool.lead { border-left-color: var(--red); }
 
-  .card-maker {
-    font-size: clamp(9px, 0.7vw, 11px);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 0.3vh;
-  }
-
-  .card-note {
-    font-size: clamp(12px, 0.82vw, 13px);
-    color: #2a2a2a;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-
-  .tag {
-    display: inline-block;
-    margin-top: 0.4vh;
-    font-size: clamp(9px, 0.6vw, 10px);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 2px;
-    background: #E8EBF3;
-    color: var(--navy);
-    font-weight: 500;
-  }
-
-  .tag.red { background: #F5E5E5; color: var(--red); }
-
-  /* BODY TEXT */
-  .body-text {
-    font-size: clamp(12px, 0.92vw, 14px);
-    line-height: 1.65;
-    color: #2a2a2a;
-    font-weight: 400;
-  }
-
-  .body-text strong { font-weight: 500; color: var(--navy); }
-
-  /* CALLOUT */
-  .callout {
-    border-left: 3px solid var(--red);
-    padding: 0.7vh 1rem;
-    background: #fff;
-    flex-shrink: 0;
-  }
-
-  .callout p {
+  .tool-name {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(12px, 1.05vw, 15.5px);
-    font-style: italic;
-    color: var(--navy);
-    line-height: 1.5;
+    font-size: clamp(1.25rem, 2.05vw, 2.45rem);
+    font-weight: 600;
+    line-height: 1.15;
   }
 
-  /* SHIFT TABLE */
+  .tool-note {
+    font-size: clamp(13px, 1.32vw, 25px);
+    color: #2a2a2a;
+    line-height: 1.4;
+    margin-top: 0.3vh;
+  }
+
+  .rule-bar {
+    margin-top: auto;
+    background: var(--red);
+    color: #fff;
+    border-radius: 3px;
+    padding: 1.4vh 1.1vw;
+    font-size: clamp(13px, 1.32vw, 25px);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  /* SHIFT */
+  .lead-line {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.25rem, 2.05vw, 2.45rem);
+    font-style: italic;
+    line-height: 1.25;
+  }
+
   .shift-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -215,140 +177,135 @@
     border: 1px solid var(--rule);
     border-radius: 3px;
     overflow: hidden;
-    flex-shrink: 0;
   }
 
-  .shift-col { background: var(--card); padding: 0.8vh 0.9vw; }
+  .shift-col { background: var(--card); padding: 1.4vh 1vw; }
   .shift-col.now { background: #EBF0FA; }
 
   .shift-lbl {
-    font-size: clamp(8px, 0.62vw, 10px);
+    font-size: clamp(10px, 0.75vw, 13px);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 0.3vh;
+    font-weight: 600;
     color: var(--muted);
   }
 
-  .shift-col.now .shift-lbl { color: var(--navy); }
+  .shift-col.now .shift-lbl { color: var(--red); }
 
   .shift-head {
-    font-size: clamp(12px, 0.95vw, 14px);
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.3vh;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.25rem, 2.05vw, 2.45rem);
+    font-weight: 600;
+    margin-bottom: 0.5vh;
   }
 
   .shift-items {
     list-style: none;
-    font-size: clamp(11px, 0.78vw, 12.5px);
+    font-size: clamp(13px, 1.25vw, 24px);
     color: #2a2a2a;
-    line-height: 1.65;
-    font-weight: 400;
+    line-height: 1.5;
   }
 
-  .shift-items li::before { content: "– "; opacity: 0.35; }
-
-  /* RESOURCES */
-  .resource-list { list-style: none; }
-
-  .resource-list li { border-bottom: 1px solid var(--rule); }
-  .resource-list li:first-child { border-top: 1px solid var(--rule); }
-
-  .resource-list a {
+  /* PORTALS + QR */
+  .portal {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.55vh 0;
+    gap: 1.3vw;
     text-decoration: none;
     color: var(--navy);
-    font-size: clamp(11px, 0.88vw, 13.5px);
-    transition: opacity 0.15s;
   }
 
-  .resource-list a:hover { opacity: 0.65; }
-
-  .res-desc {
-    display: block;
-    font-size: clamp(11px, 0.68vw, 11.5px);
-    color: var(--muted);
-    font-weight: 400;
-    margin-top: 1px;
+  .portal svg {
+    width: clamp(110px, 21vh, 240px);
+    height: clamp(110px, 21vh, 240px);
+    flex-shrink: 0;
   }
 
-  .res-url {
+  .portal-name {
     display: block;
-    font-size: clamp(11px, 0.82vw, 13px);
-    font-family: 'Source Sans 3', monospace;
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.25rem, 2.05vw, 2.45rem);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  .portal-url {
+    display: block;
+    font-size: clamp(13px, 1.25vw, 24px);
+    white-space: nowrap;
+    font-weight: 600;
     color: var(--red);
-    margin-top: 2px;
-    letter-spacing: 0.01em;
+    margin: 0.4vh 0;
   }
 
-  .arrow { color: var(--red); font-size: 13px; flex-shrink: 0; margin-left: 0.5rem; }
+  .portal-note {
+    display: block;
+    font-size: clamp(12px, 1.15vw, 22px);
+    color: var(--muted);
+  }
+
+  /* COMING UP */
+  .upcoming-head {
+    font-size: clamp(10px, 0.8vw, 13px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    padding-top: 1.4vh;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+  }
+
+  .upcoming-head span { color: var(--muted); font-weight: 400; margin-left: 0.6rem; }
+
+  .upcoming-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 0.8vh 1vw;
+    font-size: clamp(13px, 1.32vw, 25px);
+    align-items: baseline;
+  }
+
+  .up-date { font-weight: 600; color: var(--red); white-space: nowrap; }
+  .up-name { font-weight: 500; }
 
   /* FOOTER */
   .footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.2vh;
-    border-top: 1px solid var(--rule);
+    gap: 3vw;
+    padding-top: 1.6vh;
+    border-top: 2px solid var(--red);
   }
 
-  .footer-left {
-    font-size: clamp(10px, 0.72vw, 12px);
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.5;
+  .footer-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 1.6vw, 1.65rem);
+    font-style: italic;
+    line-height: 1.3;
   }
 
   .footer-sig {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(12px, 1vw, 15px);
-    color: var(--navy);
+    font-size: clamp(13px, 1.1vw, 18px);
     text-align: right;
     line-height: 1.4;
+    white-space: nowrap;
   }
 
   .footer-sig span {
     display: block;
     font-style: italic;
-    font-size: clamp(10px, 0.72vw, 12px);
+    font-size: clamp(11px, 0.8vw, 14px);
     color: var(--muted);
-  }
-
-  .footer-qr {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .footer-qr svg {
-    width: clamp(80px, 9vh, 120px);
-    height: clamp(80px, 9vh, 120px);
-  }
-
-  .footer-qr-label {
-    font-size: clamp(10px, 0.72vw, 12px);
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.4;
-  }
-
-  .footer-qr-label strong {
-    display: block;
-    font-weight: 500;
-    color: var(--navy);
-    font-size: clamp(11px, 0.82vw, 13px);
   }
 </style>
 </head>
 <body>
 <div class="screen">
 
-  <!-- TOP BAR -->
   <header class="topbar">
     <div class="wordmark">
       Penn Carey Law
@@ -357,46 +314,40 @@
     <div class="session-title">AI Office Hours: <em>What's Worth Knowing</em></div>
     <div class="session-meta">
       <strong>Faculty Session</strong>
-      August 31, 2026
+      October 7, 2026
     </div>
   </header>
 
-  <!-- THREE COLUMNS -->
   <div class="main">
 
-    <!-- COL 1: Models -->
+    <!-- COL 1: Tools -->
     <div class="col">
       <div class="col-header">
         <span class="col-num">01</span>
-        <span class="col-title">Which Model Fits Your Work</span>
+        <span class="col-title">Where to Start</span>
       </div>
 
-      <p class="body-text">Three serious players. All genuinely capable. Which one fits you is partly workflow, partly taste. Paid plans generally add stronger models and higher limits; Penn-reviewed services add the institutional protections that matter for Penn data.</p>
-
-      <div class="card" style="border-left: 3px solid var(--navy);">
-        <div class="card-name">Claude (Sonnet / Opus / Fable) — <em style="font-style:italic; font-weight:300; color:var(--muted);">what I use ~90% of the time</em></div>
-        <div class="card-maker">Anthropic</div>
-        <div class="card-note">My daily driver. Best instruction-following and task completion of any model. Most business-oriented feature set &mdash; and extremely extensible and customizable through Claude Code, skills, and MCP.</div>
+      <div class="tool lead">
+        <div class="tool-name">PennChat</div>
+        <div class="tool-note">Free with your PennKey. The safe default.</div>
       </div>
 
-      <div class="card">
-        <div class="card-name">ChatGPT</div>
-        <div class="card-maker">OpenAI</div>
-        <div class="card-note">Widest adoption; strong all-rounder. Penn licenses ChatGPT EDU with data protections — use that, not a personal account.</div>
-        <div class="tag red">Penn licensed</div>
+      <div class="tool">
+        <div class="tool-name">Claude</div>
+        <div class="tool-note">Enterprise through ITS. What I use ~90% of the time.</div>
       </div>
 
-      <div class="card">
-        <div class="card-name">Gemini</div>
-        <div class="card-maker">Google</div>
-        <div class="card-note">Well-integrated with Google Search. Best and easiest image generation of any model &mdash; try &ldquo;nano banana.&rdquo;</div>
+      <div class="tool">
+        <div class="tool-name">ChatGPT</div>
+        <div class="tool-note">ChatGPT EDU through ITS. Strong all-rounder.</div>
       </div>
 
-      <div style="background: var(--red); border-radius: 3px; padding: clamp(8px, 1vh, 14px) clamp(10px, 1vw, 14px);">
-        <div style="color: #fff; font-size: clamp(12px, 1vw, 15px); font-weight: 500; letter-spacing: 0.02em; margin-bottom: 0.4vh;">USE A PENN-REVIEWED TOOL CLEARED FOR THE DATA TIER.</div>
-        <div style="color: #FFCCCC; font-size: clamp(11px, 0.82vw, 13px); line-height: 1.55; font-weight: 300;">Personal plans vary in model access, usage limits, training, retention, and privacy settings. <span style="color:#fff; font-weight:500;">Paying for a personal plan does not give it Penn&rsquo;s institutional protections.</span> For protected Penn data, use a Penn-reviewed service cleared for the data tier involved. For public or Low Risk work, choose the tool and plan that fit the task and check its current settings.</div>
+      <div class="tool">
+        <div class="tool-name">Harvey &amp; Legora</div>
+        <div class="tool-note">Legal-specific AI. Sign in with your LawKey.</div>
       </div>
 
+      <div class="rule-bar">Use a Penn-reviewed tool cleared for the data involved. A paid personal plan doesn&rsquo;t carry Penn&rsquo;s protections.</div>
     </div>
 
     <!-- COL 2: Agentic -->
@@ -406,7 +357,7 @@
         <span class="col-title">From Talking to Doing</span>
       </div>
 
-      <p class="body-text">The first wave was conversational — ask, receive, copy-paste. That era is ending. The more consequential shift: <strong>AI that does work, not just talks about it.</strong></p>
+      <p class="lead-line">The bigger shift: AI that does work, not just talks about it.</p>
 
       <div class="shift-table">
         <div class="shift-col">
@@ -414,152 +365,70 @@
           <div class="shift-head">Chatbot</div>
           <ul class="shift-items">
             <li>You prompt, it responds</li>
-            <li>You copy output manually</li>
+            <li>You copy the output</li>
             <li>One exchange at a time</li>
-            <li>Passive — you do the work</li>
           </ul>
         </div>
         <div class="shift-col now">
           <div class="shift-lbl">Now</div>
           <div class="shift-head">Agent</div>
           <ul class="shift-items">
-            <li>Reads your files, writes new ones</li>
-            <li>Runs code, checks its own work</li>
-            <li>Works in the background while you don't</li>
-            <li>Chains steps toward a goal autonomously</li>
+            <li>Reads and writes your files</li>
+            <li>Checks its own work</li>
+            <li>Chains steps toward a goal</li>
           </ul>
         </div>
       </div>
 
-      <p class="body-text">Two tools that make this concrete — both available now:</p>
-
-      <div class="card" style="border-left: 3px solid var(--navy);">
-        <div class="card-name">Claude Code</div>
-        <div class="card-maker">Anthropic · Terminal agent</div>
-        <div class="card-note">A separate tool that runs in your terminal. Reads your files, writes and edits code, runs tests, and iterates — all with your approval at each step. Built this page, and the AI Resources portal.</div>
+      <div class="tool">
+        <div class="tool-name">Claude Code</div>
+        <div class="tool-note">Works in your files, with your approval at each step. In Enterprise Claude through ITS.</div>
       </div>
 
-      <div class="card" style="border-left: 3px solid var(--gold);">
-        <div class="card-name">Claude Cowork</div>
-        <div class="card-maker">Anthropic · Background agent</div>
-        <div class="card-note">Available in the Claude app (claude.ai). Hand Claude a task — research, draft, analysis — and walk away. It works in the background and comes back with results. Delegation, not conversation.</div>
-      </div>
-
-      <div class="callout">
-        <p>Think of these current AI tools as an extremely smart, very capable assistant who is also extremely literal. These tools are not search engines — they are collaborators who need very clear direction. The more you use them, the easier it gets to get them to do what you want.</p>
+      <div class="tool">
+        <div class="tool-name">Claude Cowork</div>
+        <div class="tool-note">Hand it a task and walk away. Personal plan, Low Risk data only.</div>
       </div>
     </div>
 
-    <!-- COL 3: Resources -->
+    <!-- COL 3: Portals -->
     <div class="col">
       <div class="col-header">
         <span class="col-num">03</span>
-        <span class="col-title">Faculty Resources</span>
+        <span class="col-title">Everything Else</span>
       </div>
 
-      <p class="body-text">Running guides and tools for PCL faculty &mdash; updated as tools and access change.</p>
+      <a class="portal" href="https://pennlaw.link/ai-resources" target="_blank" rel="noopener">
+        <svg role="img" aria-label="QR code: pennlaw.link/ai-resources" viewBox="0 0 33 33" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#011f5b" d="M2 2.5h7m2 0h1m3 0h1m2 0h4m2 0h7m-29 1h1m5 0h1m2 0h2m1 0h4m1 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m5 0h2m2 0h2m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h1m1 0h3m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h2m1 0h3m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h7m3 0h2m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h1m2 0h4m-21 1h1m2 0h1m1 0h2m1 0h5m2 0h2m2 0h1m1 0h1m1 0h1m-22 1h1m2 0h1m1 0h1m3 0h1m2 0h2m1 0h2m2 0h2m2 0h1m2 0h1m-29 1h1m1 0h3m1 0h4m2 0h1m4 0h3m1 0h2m2 0h3m-27 1h3m3 0h1m1 0h4m1 0h2m4 0h2m1 0h2m1 0h2m-27 1h2m1 0h1m1 0h1m4 0h1m4 0h2m1 0h4m2 0h1m1 0h2m-29 1h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h3m1 0h3m-22 1h1m5 0h3m3 0h1m4 0h1m4 0h2m1 0h4m-26 1h3m1 0h1m3 0h4m2 0h2m1 0h1m3 0h2m1 0h1m-27 1h1m1 0h1m2 0h1m2 0h1m3 0h2m1 0h2m2 0h2m5 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m1 0h1m4 0h1m1 0h1m3 0h2m1 0h1m2 0h1m-29 1h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h2m3 0h2m2 0h4m2 0h2m-27 1h4m1 0h1m4 0h2m1 0h1m1 0h2m8 0h2m-29 1h1m1 0h7m5 0h1m1 0h1m2 0h6m1 0h1m-19 1h1m1 0h1m1 0h2m2 0h1m2 0h2m3 0h1m1 0h3m-29 1h7m2 0h1m3 0h2m1 0h2m2 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m5 0h1m1 0h1m2 0h1m1 0h1m4 0h1m1 0h1m3 0h3m-27 1h1m1 0h3m1 0h1m7 0h1m1 0h2m2 0h5m3 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h1m2 0h2m2 0h7m-28 1h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h2m3 0h3m1 0h1m-29 1h1m5 0h1m5 0h1m4 0h4m1 0h2m3 0h1m-28 1h7m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m1 0h1m2 0h1"/></svg>
+        <div>
+          <span class="portal-name">AI Resources Portal</span>
+          <span class="portal-url">pennlaw.link/ai-resources</span>
+          <span class="portal-note">Tools, access, and policy</span>
+        </div>
+      </a>
 
-      <ul class="resource-list">
-        <li>
-          <a href="pennchat-tutorial.html">
-            <div>
-              <span>PennChat: Overview &amp; Tutorial</span>
-              <span class="res-desc">Slides from Session #1</span>
-              <span class="res-url">resources.pennai.law/pennchat-tutorial</span>
-            </div>
-            <span class="arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://pennlaw.link/ai-resources" target="_blank" rel="noopener">
-            <div>
-              <span>AI at Penn Law</span>
-              <span class="res-desc">Guides, tool recs, and policy updates</span>
-              <span class="res-url">pennlaw.link/ai-resources</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">
-            <div>
-              <span>Faculty Pedagogy Resources</span>
-              <span class="res-desc">Teaching-specific AI guides and tools</span>
-              <span class="res-url">pennlaw.link/pedagogy</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="claude-skills.html" target="_blank" rel="noopener">
-            <div>
-              <span>Custom Faculty AI Skills</span>
-              <span class="res-desc">Open-source tools I built &mdash; exams, class prep, memos, email, review. Work with Claude Code and other compatible agents; native ChatGPT Skills require an eligible workspace.</span>
-            </div>
-            <span class="arrow">&rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener">
-            <div>
-              <span>Claude 101 — Free Introductory Course</span>
-              <span class="res-desc">Anthropic's official overview — prompting, capabilities, use cases</span>
-              <span class="res-url">anthropic.skilljar.com/claude-101</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://academy.openai.com/" target="_blank" rel="noopener">
-            <div>
-              <span>OpenAI Academy — Free Courses</span>
-              <span class="res-desc">OpenAI's learning platform — ChatGPT basics, prompting, use cases</span>
-              <span class="res-url">academy.openai.com</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://app.harvey.ai" target="_blank" rel="noopener">
-            <div>
-              <span>Harvey at Penn Carey Law</span>
-              <span class="res-desc">Log in with your LawKey username</span>
-              <span class="res-url">app.harvey.ai</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the" target="_blank" rel="noopener">
-            <div>
-              <span>Mollick: &ldquo;Which AI to Use in the Agentic Era&rdquo;</span>
-              <span class="res-desc">Recommended reading &mdash; models, apps, and harnesses</span>
-              <span class="res-url">oneusefulthing.org</span>
-            </div>
-            <span class="arrow">&rarr;</span>
-          </a>
-        </li>
+      <a class="portal" href="https://pennlaw.link/pedagogy" target="_blank" rel="noopener">
+        <svg role="img" aria-label="QR code: pennlaw.link/pedagogy" viewBox="0 0 33 33" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#011f5b" d="M2 2.5h7m4 0h2m3 0h3m3 0h7m-29 1h1m5 0h1m5 0h1m3 0h2m1 0h1m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h3m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m3 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h3m3 0h1m1 0h2m1 0h1m-20 1h1m2 0h1m1 0h1m1 0h1m1 0h2m4 0h2m1 0h3m1 0h2m1 0h1m-27 1h1m1 0h2m3 0h1m7 0h3m4 0h4m1 0h2m-28 1h1m3 0h7m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m-29 1h1m2 0h2m4 0h1m5 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h2m-24 1h3m3 0h1m2 0h1m2 0h1m1 0h2m2 0h1m1 0h1m2 0h1m-29 1h1m1 0h1m1 0h1m3 0h1m1 0h1m4 0h1m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1m-26 1h2m1 0h2m2 0h1m5 0h2m4 0h1m1 0h1m3 0h1m-29 1h1m1 0h2m3 0h1m1 0h2m1 0h1m2 0h1m1 0h2m3 0h2m1 0h1m1 0h2m-24 1h2m3 0h1m2 0h1m2 0h1m1 0h4m1 0h1m3 0h2m-29 1h1m2 0h3m1 0h1m2 0h2m5 0h2m3 0h3m3 0h1m-25 1h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m3 0h1m1 0h1m1 0h1m-27 1h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h4m6 0h2m2 0h1m-29 1h2m1 0h1m1 0h2m2 0h2m2 0h1m3 0h1m1 0h7m1 0h2m-21 1h6m1 0h1m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m-29 1h7m3 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m2 0h2m2 0h2m2 0h1m1 0h2m3 0h2m1 0h1m-28 1h1m1 0h3m1 0h1m1 0h2m2 0h1m5 0h7m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h3m3 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-28 1h1m1 0h3m1 0h1m4 0h1m2 0h1m1 0h2m1 0h3m3 0h4m-29 1h1m5 0h1m1 0h5m4 0h2m1 0h1m1 0h2m3 0h2m-29 1h7m2 0h1m3 0h1m1 0h3m2 0h1m3 0h2m1 0h1"/></svg>
+        <div>
+          <span class="portal-name">Pedagogy Portal</span>
+          <span class="portal-url">pennlaw.link/pedagogy</span>
+          <span class="portal-note">Teaching with AI</span>
+        </div>
+      </a>
+
+      <div class="upcoming-head">Coming Up <span>Wednesdays at noon &middot; Faculty Lounge</span></div>
+      <ul class="upcoming-list">
+        <li style="display:contents"><span class="up-date">Oct 14</span><span class="up-name">Pedagogy Session</span></li>
+        <li style="display:contents"><span class="up-date">Nov 4</span><span class="up-name">AI Office Hours</span></li>
+        <li style="display:contents"><span class="up-date">Nov 11</span><span class="up-name">Pedagogy Session</span></li>
+        <li style="display:contents"><span class="up-date">Dec 2</span><span class="up-name">AI Office Hours</span></li>
       </ul>
-
     </div>
 
   </div>
 
-  <!-- FULL-WIDTH CALLOUT -->
-  <div class="callout" style="text-align: center; border-left: none; border-top: 2px solid var(--red); border-bottom: 2px solid var(--red); padding: 1.2vh 2vw;">
-    <p>Best way to learn: pick one task you already do, try it with AI, and see what happens. The bar for &ldquo;useful&rdquo; is much lower than people expect.</p>
-  </div>
-
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-left">Penn Carey Law &middot; AI Office Hours &middot; August 31, 2026<br>Informal notes &mdash; updated as tools and access change.</div>
-    <div class="footer-qr">
-      <div class="footer-qr-label">
-        <strong>pennlaw.link/ai-resources</strong>
-        Scan for all resources
-      </div>
-      <svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg"><path d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM11,2H12V3H11zM12,2H13V3H12zM14,2H15V3H14zM17,2H18V3H17zM18,2H19V3H18zM19,2H20V3H19zM20,2H21V3H20zM21,2H22V3H21zM22,2H23V3H22zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM27,2H28V3H27zM28,2H29V3H28zM29,2H30V3H29zM30,2H31V3H30zM2,3H3V4H2zM8,3H9V4H8zM11,3H12V4H11zM14,3H15V4H14zM20,3H21V4H20zM22,3H23V4H22zM24,3H25V4H24zM30,3H31V4H30zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM10,4H11V5H10zM12,4H13V5H12zM13,4H14V5H13zM16,4H17V5H16zM18,4H19V5H18zM24,4H25V5H24zM26,4H27V5H26zM27,4H28V5H27zM28,4H29V5H28zM30,4H31V5H30zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM12,5H13V6H12zM13,5H14V6H13zM14,5H15V6H14zM18,5H19V6H18zM19,5H20V6H19zM20,5H21V6H20zM24,5H25V6H24zM26,5H27V6H26zM27,5H28V6H27zM28,5H29V6H28zM30,5H31V6H30zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM11,6H12V7H11zM13,6H14V7H13zM15,6H16V7H15zM16,6H17V7H16zM17,6H18V7H17zM19,6H20V7H19zM20,6H21V7H20zM21,6H22V7H21zM22,6H23V7H22zM24,6H25V7H24zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM30,6H31V7H30zM2,7H3V8H2zM8,7H9V8H8zM10,7H11V8H10zM11,7H12V8H11zM13,7H14V8H13zM15,7H16V8H15zM16,7H17V8H16zM17,7H18V8H17zM18,7H19V8H18zM22,7H23V8H22zM24,7H25V8H24zM30,7H31V8H30zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM22,8H23V9H22zM24,8H25V9H24zM25,8H26V9H25zM26,8H27V9H26zM27,8H28V9H27zM28,8H29V9H28zM29,8H30V9H29zM30,8H31V9H30zM10,9H11V10H10zM11,9H12V10H11zM12,9H13V10H12zM15,9H16V10H15zM17,9H18V10H17zM21,9H22V10H21zM22,9H23V10H22zM2,10H3V11H2zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM11,10H12V11H11zM14,10H15V11H14zM16,10H17V11H16zM17,10H18V11H17zM19,10H20V11H19zM21,10H22V11H21zM24,10H25V11H24zM25,10H26V11H25zM26,10H27V11H26zM27,10H28V11H27zM28,10H29V11H28zM2,11H3V12H2zM3,11H4V12H3zM5,11H6V12H5zM6,11H7V12H6zM7,11H8V12H7zM9,11H10V12H9zM11,11H12V12H11zM17,11H18V12H17zM18,11H19V12H18zM21,11H22V12H21zM23,11H24V12H23zM24,11H25V12H24zM25,11H26V12H25zM26,11H27V12H26zM30,11H31V12H30zM2,12H3V13H2zM4,12H5V13H4zM7,12H8V13H7zM8,12H9V13H8zM9,12H10V13H9zM10,12H11V13H10zM11,12H12V13H11zM13,12H14V13H13zM19,12H20V13H19zM20,12H21V13H20zM22,12H23V13H22zM24,12H25V13H24zM5,13H6V14H5zM6,13H7V14H6zM10,13H11V14H10zM12,13H13V14H12zM13,13H14V14H13zM14,13H15V14H14zM16,13H17V14H16zM18,13H19V14H18zM20,13H21V14H20zM21,13H22V14H21zM23,13H24V14H23zM25,13H26V14H25zM27,13H28V14H27zM29,13H30V14H29zM2,14H3V15H2zM6,14H7V15H6zM8,14H9V15H8zM9,14H10V15H9zM12,14H13V15H12zM19,14H20V15H19zM21,14H22V15H21zM27,14H28V15H27zM28,14H29V15H28zM3,15H4V16H3zM4,15H5V16H4zM6,15H7V16H6zM7,15H8V16H7zM10,15H11V16H10zM11,15H12V16H11zM12,15H13V16H12zM14,15H15V16H14zM15,15H16V16H15zM16,15H17V16H16zM17,15H18V16H17zM20,15H21V16H20zM21,15H22V16H21zM22,15H23V16H22zM23,15H24V16H23zM24,15H25V16H24zM25,15H26V16H25zM26,15H27V16H26zM30,15H31V16H30zM3,16H4V17H3zM5,16H6V17H5zM6,16H7V17H6zM7,16H8V17H7zM8,16H9V17H8zM9,16H10V17H9zM10,16H11V17H10zM11,16H12V17H11zM12,16H13V17H12zM14,16H15V17H14zM15,16H16V17H15zM16,16H17V17H16zM17,16H18V17H17zM18,16H19V17H18zM23,16H24V17H23zM27,16H28V17H27zM28,16H29V17H28zM2,17H3V18H2zM5,17H6V18H5zM6,17H7V18H6zM7,17H8V18H7zM9,17H10V18H9zM15,17H16V18H15zM21,17H22V18H21zM22,17H23V18H22zM25,17H26V18H25zM29,17H30V18H29zM2,18H3V19H2zM4,18H5V19H4zM6,18H7V19H6zM8,18H9V19H8zM9,18H10V19H9zM14,18H15V19H14zM16,18H17V19H16zM17,18H18V19H17zM18,18H19V19H18zM19,18H20V19H19zM21,18H22V19H21zM27,18H28V19H27zM28,18H29V19H28zM2,19H3V20H2zM4,19H5V20H4zM5,19H6V20H5zM6,19H7V20H6zM11,19H12V20H11zM12,19H13V20H12zM13,19H14V20H13zM18,19H19V20H18zM21,19H22V20H21zM22,19H23V20H22zM24,19H25V20H24zM25,19H26V20H25zM26,19H27V20H26zM28,19H29V20H28zM30,19H31V20H30zM2,20H3V21H2zM5,20H6V21H5zM6,20H7V21H6zM7,20H8V21H7zM8,20H9V21H8zM9,20H10V21H9zM10,20H11V21H10zM12,20H13V21H12zM14,20H15V21H14zM17,20H18V21H17zM18,20H19V21H18zM19,20H20V21H19zM20,20H21V21H20zM22,20H23V21H22zM25,20H26V21H25zM26,20H27V21H26zM28,20H29V21H28zM2,21H3V22H2zM4,21H5V22H4zM7,21H8V22H7zM14,21H15V22H14zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM24,21H25V22H24zM25,21H26V22H25zM26,21H27V22H26zM29,21H30V22H29zM2,22H3V23H2zM6,22H7V23H6zM8,22H9V23H8zM9,22H10V23H9zM10,22H11V23H10zM12,22H13V23H12zM13,22H14V23H13zM14,22H15V23H14zM17,22H18V23H17zM19,22H20V23H19zM21,22H22V23H21zM22,22H23V23H22zM23,22H24V23H23zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM28,22H29V23H28zM29,22H30V23H29zM30,22H31V23H30zM10,23H11V24H10zM15,23H16V24H15zM16,23H17V24H16zM18,23H19V24H18zM19,23H20V24H19zM20,23H21V24H20zM22,23H23V24H22zM26,23H27V24H26zM27,23H28V24H27zM28,23H29V24H28zM29,23H30V24H29zM30,23H31V24H30zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM7,24H8V25H7zM8,24H9V25H8zM13,24H14V25H13zM15,24H16V25H15zM16,24H17V25H16zM17,24H18V25H17zM18,24H19V25H18zM19,24H20V25H19zM21,24H22V25H21zM22,24H23V25H22zM24,24H25V25H24zM26,24H27V25H26zM27,24H28V25H27zM28,24H29V25H28zM2,25H3V26H2zM8,25H9V26H8zM10,25H11V26H10zM12,25H13V26H12zM14,25H15V26H14zM15,25H16V26H15zM21,25H22V26H21zM22,25H23V26H22zM26,25H27V26H26zM2,26H3V27H2zM4,26H5V27H4zM5,26H6V27H5zM6,26H7V27H6zM8,26H9V27H8zM10,26H11V27H10zM12,26H13V27H12zM16,26H17V27H16zM17,26H18V27H17zM19,26H20V27H19zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM28,26H29V27H28zM29,26H30V27H29zM2,27H3V28H2zM4,27H5V28H4zM5,27H6V28H5zM6,27H7V28H6zM8,27H9V28H8zM10,27H11V28H10zM12,27H13V28H12zM15,27H16V28H15zM18,27H19V28H18zM23,27H24V28H23zM27,27H28V28H27zM28,27H29V28H28zM29,27H30V28H29zM30,27H31V28H30zM2,28H3V29H2zM4,28H5V29H4zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM10,28H11V29H10zM11,28H12V29H11zM12,28H13V29H12zM13,28H14V29H13zM14,28H15V29H14zM15,28H16V29H15zM17,28H18V29H17zM21,28H22V29H21zM22,28H23V29H22zM23,28H24V29H23zM24,28H25V29H24zM25,28H26V29H25zM26,28H27V29H26zM27,28H28V29H27zM28,28H29V29H28zM29,28H30V29H29zM2,29H3V30H2zM8,29H9V30H8zM14,29H15V30H14zM16,29H17V30H16zM22,29H23V30H22zM24,29H25V30H24zM26,29H27V30H26zM27,29H28V30H27zM29,29H30V30H29zM2,30H3V31H2zM3,30H4V31H3zM4,30H5V31H4zM5,30H6V31H5zM6,30H7V31H6zM7,30H8V31H7zM8,30H9V31H8zM10,30H11V31H10zM11,30H12V31H11zM14,30H15V31H14zM15,30H16V31H15zM16,30H17V31H16zM17,30H18V31H17zM18,30H19V31H18zM19,30H20V31H19zM21,30H22V31H21zM23,30H24V31H23zM24,30H25V31H24zM26,30H27V31H26zM27,30H28V31H27zM28,30H29V31H28z" fill="#011F5B" /></svg>
-    </div>
+    <p class="footer-quote">Best way to learn: pick one task you already do, try it with AI, and see what happens.</p>
     <div class="footer-sig">
       R. Polk Wagner
       <span>Deputy Dean for Academic Affairs &amp; Innovation · Penn Carey Law</span>
